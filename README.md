@@ -13,7 +13,7 @@ To start the local server.
 
 `$ npm start`
 
-Access `localhost:5000` in the browser.
+Access `localhost:3000` in the browser.
 
 
 To create the production code.
