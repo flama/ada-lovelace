@@ -9,14 +9,25 @@ class FilterableDatavis extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      filterTags: []
+      filterTags: [],
+      filteredData: this.props.dataList
     }
 
     this.handleUserInput = this.handleUserInput.bind(this)
   }
 
   handleUserInput(filterTags) {
-    this.setState({ filterTags })
+    let items = []
+    if(filterTags[0] === '' && filterTags.length === 1) {
+      items = this.props.dataList
+    } else {
+      items = this.props.dataList.filter(item => filterTags.filter(tag => {
+        let itemHasTag = ~item.tags.indexOf(tag)
+        return itemHasTag
+      }).length)
+    }
+
+    this.setState({ filterTags, filteredData: items })
   }
 
   render() {
@@ -27,8 +38,7 @@ class FilterableDatavis extends Component {
           onUserInput={this.handleUserInput}
         />
         <DataVis
-          dataList={this.props.dataList}
-          filterTags={this.state.filterTags}
+          dataList={this.state.filteredData}
         />
       </div>
     )
