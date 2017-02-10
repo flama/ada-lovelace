@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import FilterableDataVis from '../FilterableDataVis'
+import DataLoader from '../DataLoader'
 
 import './App.scss'
 
@@ -19,10 +20,25 @@ const women = [
 ]
 
 class App extends Component {
+  constructor(props) {
+    super(props)
 
-  render() {
+    this.state = {
+      dataList: []
+    }
+
+    this.fetchData = this.fetchData.bind(this)
+  }
+
+  fetchData(dataList) {
+    this.setState({ dataList })
+  }
+
+  render()
+  {
     return (
       <section>
+        <DataLoader fetchData={this.fetchData} />
         <FilterableDataVis dataList={women} />
       </section>
     )
