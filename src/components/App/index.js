@@ -1,24 +1,31 @@
 import React, { Component } from 'react'
-import 'whatwg-fetch'
+import FilterableDataVis from '../FilterableDataVis'
+
 import './App.scss'
 
-const wikipedia = {
-  english: 'https://en.wikipedia.org/w/api.php?action=parse&page=List_of_feminists&format=json'
-}
+const women = [
+  {
+    name: "Cora Coralina",
+    tags: ["poetry", "literature"]
+  },
+  {
+    name: "Leila Diniz",
+    tags: ["theater", "feminism"]
+  },
+  {
+    name: "Bertha Lutz",
+    tags: ["science", "education", "literature", "feminism"]
+  }
+]
 
 class App extends Component {
 
   render() {
-    let request = new Request(wikipedia.english, {
-      header: new Headers({
-        'Content-Type': 'application/json; charset=UTF-8',
-        'Origin': 'http://adalovelace.flama.me'
-      })
-    })
-
-    window.fetch(request)
-    .then(response => console.log(response))
-    return (<div/>)
+    return (
+      <section>
+        <FilterableDataVis dataList={women} />
+      </section>
+    )
   }
 }
 
