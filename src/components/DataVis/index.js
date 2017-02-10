@@ -6,12 +6,13 @@ class DataVis extends Component {
   render() {
     let rows = []
 
-    let items = this.props.dataList.filter(item => filterTags.filter(tag => {
+    let items = this.props.dataList.filter(item => this.props.filterTags.filter(tag => {
       let itemHasTag = ~item.tags.indexOf(tag)
       return itemHasTag
     }).length)
 
-    items.each(item => {
+    items.forEach(item => {
+      rows.push(<li key={item.name}>{item.name}</li>)
     })
 
     return (

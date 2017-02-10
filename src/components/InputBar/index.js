@@ -10,9 +10,9 @@ class InputBar extends Component {
   }
 
   handleUserInput() {
-    this.props.onUserInput() {
+    this.props.onUserInput(
       this.filterText.value.split(' ')
-    }
+    )
   }
 
   render() {
