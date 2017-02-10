@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import FilterableDatavis from '../FilterableDatavis'
+import FilterableDataVis from '../FilterableDataVis'
 
 import './App.scss'
 
@@ -8,7 +8,7 @@ class App extends Component {
   render() {
     return (
       <section>
-        <FilerableDatavis />
+        <FilterableDataVis />
       </section>
     )
   }
