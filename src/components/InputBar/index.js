@@ -13,7 +13,7 @@ class InputBar extends Component {
     this.props.onUserInput() {
       this.filterText.value.split(' ')
     }
-  },
+  }
 
   render() {
     return (

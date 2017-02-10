@@ -27,7 +27,7 @@ class FilterableDatavis extends Component {
           onUserInput={this.handleUserInput}
         />
         <DataVis
-          data={this.props.data}
+          dataList={this.props.dataList}
           filterTags={this.state.filterTags}
         />
       </div>
