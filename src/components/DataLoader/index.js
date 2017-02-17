@@ -43,6 +43,18 @@ class DataLoader extends Component {
         })
         return newWoman
       }))
+      .then(women => women.map(woman => {
+        let tags = []
+        let tagNames = ['1','2','3','4','5']
+
+        tagNames.forEach(filter => {
+          if(woman[`Filtro ${filter}`])
+            tags.push(woman[`Filtro ${filter}`])
+        })
+
+        woman.tags = tags
+        return woman
+      }))
   }
 
   render() {
