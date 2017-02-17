@@ -4,21 +4,6 @@ import DataLoader from '../DataLoader'
 
 import './App.scss'
 
-const women = [
-  {
-    name: "Cora Coralina",
-    tags: ["poetry", "literature"]
-  },
-  {
-    name: "Leila Diniz",
-    tags: ["theater", "feminism"]
-  },
-  {
-    name: "Bertha Lutz",
-    tags: ["science", "education", "literature", "feminism"]
-  }
-]
-
 class App extends Component {
   constructor(props) {
     super(props)
@@ -39,7 +24,7 @@ class App extends Component {
     return (
       <section>
         <DataLoader fetchData={this.fetchData} />
-        <FilterableDataVis dataList={women} />
+        <FilterableDataVis dataList={this.state.dataList} />
       </section>
     )
   }
