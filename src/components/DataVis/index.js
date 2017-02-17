@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import ScatterPlot from '../ScatterPlot'
 
 import './styles.scss'
 
@@ -12,6 +13,7 @@ class DataVis extends Component {
 
     return (
       <ul>
+        <ScatterPlot data={this.props.dataList} />
         {rows}
       </ul>
     )

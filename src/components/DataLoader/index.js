@@ -55,6 +55,10 @@ class DataLoader extends Component {
         woman.tags = tags
         return woman
       }))
+      .then(women => {
+        console.log(women)
+        return women
+      })
   }
 
   render() {
