@@ -1,21 +1,22 @@
 import React, { Component } from 'react'
-import d3chart from './d3chart'
+import ReactDOM from 'react-dom'
+import d3chartHelper from './d3chart-helper'
 
 import './styles.scss'
 
 class D3Chart extends Component {
 
   componentDidMount = () => {
-    let el = this.getDOMNode()
-    d3chart(el,{
+    let el = ReactDOM.findDOMNode(this)
+    this.d3Chart = new d3chartHelper(el,{
       width: "100%",
       height: "300px"
     }, this.getChartState())
   }
 
   componentDidUpdate = () => {
-    let el = this.getDOMNode()
-    d3chart.update(el,this.getChartState())
+    let el = ReactDOM.findDOMNode(this)
+    this.d3Chart.update(el,this.getChartState())
   }
 
   getChartState = () => {
@@ -25,9 +26,9 @@ class D3Chart extends Component {
     }
   }
 
-  componentWillMount = () => {
-    let el = this.getDOMNode();
-    d3chart.destroy(el);
+  componentWillUnmount = () => {
+    let el = ReactDOM.findDOMNode(this)
+    this.d3Chart.destroy(el)
   }
 
   render() {
