@@ -1,29 +1,30 @@
 import React, { Component } from 'react'
 import FilterableDataVis from '../FilterableDataVis'
+import DataLoader from '../DataLoader'
 
 import './App.scss'
 
-const women = [
-  {
-    name: "Cora Coralina",
-    tags: ["poetry", "literature"]
-  },
-  {
-    name: "Leila Diniz",
-    tags: ["theater", "feminism"]
-  },
-  {
-    name: "Bertha Lutz",
-    tags: ["science", "education", "literature", "feminism"]
-  }
-]
-
 class App extends Component {
+  constructor(props) {
+    super(props)
 
-  render() {
+    this.state = {
+      dataList: []
+    }
+
+    this.fetchData = this.fetchData.bind(this)
+  }
+
+  fetchData(dataList) {
+    this.setState({ dataList })
+  }
+
+  render()
+  {
     return (
       <section>
-        <FilterableDataVis dataList={women} />
+        <DataLoader fetchData={this.fetchData} />
+        <FilterableDataVis dataList={this.state.dataList} />
       </section>
     )
   }

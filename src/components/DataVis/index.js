@@ -7,7 +7,7 @@ class DataVis extends Component {
     let rows = []
 
     this.props.dataList.forEach(item => {
-      rows.push(<li key={item.name}>{item.name}</li>)
+      rows.push(<li key={item.Name}>{item.Name}</li>)
     })
 
     return (
