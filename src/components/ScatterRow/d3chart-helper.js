@@ -23,13 +23,13 @@ class d3ChartHelper {
   destroy(el){}
 
   _drawPoints(el, scales, data) {
-    console.log(data)
     let g = d3.select(el).selectAll('.d3-points')
 
     let point = g.selectAll('.d3-point')
       .data(data, d => d.Name)
       .enter()
       .append('circle')
+      .on('click', d => d.target())
       .attr('class', 'd3-point')
 
     point.attr('cx', d => scales.x(d.Born))

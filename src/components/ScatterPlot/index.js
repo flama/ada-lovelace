@@ -8,20 +8,24 @@ const Data = {
     {
       Name: 'Ana',
       Born: '1992',
-      tags: ['theater', 'literature']
+      tags: ['theater', 'literature'],
+      target: () => console.log('Ana')
     },
     {
       Name: 'Marcela',
       Born: '1989',
-      tags: ['theater', 'caricature']
+      tags: ['theater', 'caricature'],
+      target: () => console.log('Marcela')
     },{
       Name: 'Gabriela',
       Born: '1950',
-      tags: ['music', 'dance']
+      tags: ['music', 'dance'],
+      target: () => console.log('Gabriela')
     },{
       Name: 'Julia',
       Born: '1888',
-      tags: ['dance', 'literature']
+      tags: ['dance', 'literature'],
+      target: () => console.log('Julia')
     }
   ]
 }
