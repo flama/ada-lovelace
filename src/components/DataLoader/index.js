@@ -55,6 +55,26 @@ class DataLoader extends Component {
         woman.tags = tags
         return woman
       }))
+      .then(women => women.map(woman => {
+        let born = woman.Born.split(" ")
+        let result = parseInt(born[0])
+        if(born.length === 2 && born[1] === "BC") result = -result
+
+        woman.Born = result
+        return woman
+      }))
+      .then(women => {
+        let aggrupped = {}
+        women.forEach(woman => {
+          woman.tags.forEach(tag => {
+            if(typeof aggrupped[tag] !== "undefined")
+              aggrupped[tag].push(woman)
+            else
+              aggrupped[tag] = [ woman ]
+          })
+        })
+        return aggrupped
+      })
       .then(women => {
         console.log(women)
         return women

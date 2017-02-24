@@ -15,7 +15,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      dataList: [],
+      dataList: {},
       data: sampleData,
       domain: { x: [0, 30], y: [0, 100] }
     }

@@ -11,6 +11,8 @@ class FilterableScatterPlot extends Component {
       filterTags: []
     }
 
+    console.log(props.dataList)
+
     this.handleUserInput = this.handleUserInput.bind(this)
   }
 
@@ -35,10 +37,18 @@ class FilterableScatterPlot extends Component {
   render() {
     return (
       <div className="filterable">
-        <ScatterPlot />
+        <ScatterPlot dataList={ this.props.dataList }/>
       </div>
     )
   }
+}
+
+FilterableScatterPlot.defaultProps = {
+  dataList: {}
+}
+
+FilterableScatterPlot.propTypes = {
+  dataList: React.PropTypes.object
 }
 
 export default FilterableScatterPlot;

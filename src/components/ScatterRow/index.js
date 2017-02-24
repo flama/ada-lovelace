@@ -47,7 +47,7 @@ ScatterRow.defaultProps = {
 ScatterRow.propTypes = {
   data: React.PropTypes.array,
   domain: React.PropTypes.object.isRequired,
-  open: React.PropTypes.object.func
+  open: React.PropTypes.func
 }
 
 export default ScatterRow
