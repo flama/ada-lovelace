@@ -10,7 +10,7 @@ class ScatterRow extends Component {
     let el = ReactDOM.findDOMNode(this)
     this.d3Chart = new d3chartHelper(el,{
       width: "100%",
-      height: "300px"
+      height: "500px"
     }, this.getChartState())
   }
 

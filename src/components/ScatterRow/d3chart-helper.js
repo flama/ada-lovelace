@@ -27,14 +27,14 @@ class d3ChartHelper {
     let g = d3.select(el).selectAll('.d3-points')
 
     let point = g.selectAll('.d3-point')
-      .data(data, d => d.id)
+      .data(data, d => d.Name)
       .enter()
       .append('circle')
       .attr('class', 'd3-point')
 
-    point.attr('cx', d => scales.x(d.x))
-      .attr('cy', d => scales.y(d.y))
-      .attr('r', d => scales.z(d.z))
+    point.attr('cx', d => scales.x(d.Born))
+      .attr('cy', d => scales.y(Math.random()))
+      .attr('r', d => scales.z(10))
 
     point.exit()
       .remove()
@@ -52,7 +52,7 @@ class d3ChartHelper {
 
     let y = d3.scaleLinear()
       .range([height, 0])
-      .domain(domain.y)
+      .domain([-.5, 1.5])
 
     let z = d3.scaleLinear()
       .range([5, 20])

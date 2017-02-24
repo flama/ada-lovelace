@@ -3,49 +3,32 @@ import ScatterRow from '../ScatterRow'
 
 import './styles.scss'
 
-// const Data = {
-//   Arts : {
-//     Literature: [{
-//       Name: 'Ana',
-//       Born: '1992'
-//     },{
-//       Name: 'Marcela',
-//       Born: '1989'
-//     }],
-//     Theater: [{
-//       Name: 'Gabriela',
-//       Born: '1950'
-//     }, {
-//       Name: 'Julia',
-//       Born: '1888'
-//     }]
-//   }
-// }
-
-const Data = [
-  {
-    id: 'Arts',
-    x: 1992,
-    y: 'Ana',
-    z: 5
-  },
-  {
-    id: 'Technology',
-    x: 1950,
-    y: 'Julia',
-    z: 5
-  },
-  {
-    id: 'Science',
-    x: 1900,
-    y: 'Marcela',
-    z: 5
-  }
-]
+const Data = {
+  Arts : [
+    {
+      Name: 'Ana',
+      Born: '1992',
+      tags: ['theater', 'literature']
+    },
+    {
+      Name: 'Marcela',
+      Born: '1989',
+      tags: ['theater', 'caricature']
+    },{
+      Name: 'Gabriela',
+      Born: '1950',
+      tags: ['music', 'dance']
+    },{
+      Name: 'Julia',
+      Born: '1888',
+      tags: ['dance', 'literature']
+    }
+  ]
+}
 
 const domain = {
   x: [1800, 2000],
-  y: ['A', 'Z']
+  y: [0, 1]
 }
 
 class ScatterPlot extends Component {
@@ -53,11 +36,11 @@ class ScatterPlot extends Component {
   render() {
 
     //TODO: change to actual data
-    let topics = Data.map(category => {
+    let topics = Object.keys(Data).map(category => {
       return (<ScatterRow
-        data={ category }
+        data={ Data[category] }
         domain={ domain }
-        key={ category.id }
+        key={ category }
       />)
     })
 
