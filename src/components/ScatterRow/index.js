@@ -33,16 +33,21 @@ class ScatterRow extends Component {
   render() {
     return (
       <div className="scatter-row">
-        <div className="title"><h2>{ this.props.title }</h2></div>
+        <div className="title" onClick={ () => this.props.open() }><h2>{ this.props.title }</h2></div>
         <div className="graph" ref={ graph => { this.graph = graph } }></div>
       </div>
     )
   }
 }
 
+ScatterRow.defaultProps = {
+  open: _=>_
+}
+
 ScatterRow.propTypes = {
   data: React.PropTypes.array,
-  domain: React.PropTypes.object.isRequired
+  domain: React.PropTypes.object.isRequired,
+  open: React.PropTypes.object.func
 }
 
 export default ScatterRow
