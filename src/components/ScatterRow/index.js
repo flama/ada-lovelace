@@ -7,10 +7,9 @@ import './styles.scss'
 class ScatterRow extends Component {
 
   componentDidMount = () => {
-    let el = ReactDOM.findDOMNode(this)
-    this.d3Chart = new d3chartHelper(el,{
+    this.d3Chart = new d3chartHelper(this.graph,{
       width: "100%",
-      height: "500px"
+      height: "100%"
     }, this.getChartState())
   }
 
@@ -32,7 +31,12 @@ class ScatterRow extends Component {
   }
 
   render() {
-    return (<div className="Chart" />)
+    return (
+      <div className="scatter-row">
+        <div className="title"><h2>{ this.props.title }</h2></div>
+        <div className="graph" ref={ graph => { this.graph = graph } }></div>
+      </div>
+    )
   }
 }
 

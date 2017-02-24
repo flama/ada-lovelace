@@ -1,0 +1,29 @@
+@import "../base";
+
+.scatter-row {
+  display: flex;
+  align-items: center;
+
+  .title {
+    display: inline-block;
+    height: 100%;
+
+    padding-right: 1em;
+    padding-left: 0.5em;
+
+    color: $medium;
+
+    h2 {
+      font-weight: normal;
+    }
+  }
+
+  .graph {
+    display: inline-block;
+    width: 100%;
+
+    .d3-point {
+      fill: $selected;
+    }
+  }
+}

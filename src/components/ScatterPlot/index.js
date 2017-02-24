@@ -40,6 +40,7 @@ class ScatterPlot extends Component {
       return (<ScatterRow
         data={ Data[category] }
         domain={ domain }
+        title={ category }
         key={ category }
       />)
     })
