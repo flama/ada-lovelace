@@ -1,36 +1,64 @@
 import React, { Component } from 'react'
-import D3Chart from '../D3Chart'
+import ScatterRow from '../ScatterRow'
 
 import './styles.scss'
 
-const AreasOfInterest = {
-  Arts : ['literature', 'acting', 'theater'],
-  Science: ['technology', 'phisician']
+// const Data = {
+//   Arts : {
+//     Literature: [{
+//       Name: 'Ana',
+//       Born: '1992'
+//     },{
+//       Name: 'Marcela',
+//       Born: '1989'
+//     }],
+//     Theater: [{
+//       Name: 'Gabriela',
+//       Born: '1950'
+//     }, {
+//       Name: 'Julia',
+//       Born: '1888'
+//     }]
+//   }
+// }
+
+const Data = [
+  {
+    id: 'Arts',
+    x: 1992,
+    y: 'Ana',
+    z: 5
+  },
+  {
+    id: 'Technology',
+    x: 1950,
+    y: 'Julia',
+    z: 5
+  },
+  {
+    id: 'Science',
+    x: 1900,
+    y: 'Marcela',
+    z: 5
+  }
+]
+
+const domain = {
+  x: [1800, 2000],
+  y: ['A', 'Z']
 }
 
 class ScatterPlot extends Component {
 
-  filterWomen = (area, women) => {
-    return new Promise((resolve, reject) => {
-        resolve(women.filter(woman => {
-          return area.filter(tag => {
-            let womanHasTag = ~woman.tags.indexOf(tag)
-            return womanHasTag
-          })
-        }))
-    })
-  }
-
-  formatWomen = (women) => women
-
   render() {
 
-    let topics = []
-
-    Object.keys(AreasOfInterest).forEach(areaName => {
-      this.filterWomen(AreasOfInterest[areaName], this.props.data)
-      .then(filteredWomen => this.formatWomen(filteredWomen))
-      .then(formattedWomen => topics.push(<D3Chart data={formattedWomen} />))
+    //TODO: change to actual data
+    let topics = Data.map(category => {
+      return (<ScatterRow
+        data={ category }
+        domain={ domain }
+        key={ category.id }
+      />)
     })
 
     return (

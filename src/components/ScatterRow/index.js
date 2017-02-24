@@ -4,7 +4,7 @@ import d3chartHelper from './d3chart-helper'
 
 import './styles.scss'
 
-class D3Chart extends Component {
+class ScatterRow extends Component {
 
   componentDidMount = () => {
     let el = ReactDOM.findDOMNode(this)
@@ -36,9 +36,9 @@ class D3Chart extends Component {
   }
 }
 
-D3Chart.propTypes = {
+ScatterRow.propTypes = {
   data: React.PropTypes.array,
-  domain: React.PropTypes.object
+  domain: React.PropTypes.object.isRequired
 }
 
-export default D3Chart
+export default ScatterRow

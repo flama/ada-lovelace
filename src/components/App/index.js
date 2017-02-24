@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
-import FilterableDataVis from '../FilterableDataVis'
+import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
-import D3Chart from '../D3Chart'
-
-import D3Chart from '../D3Chart'
 
 import './App.scss'
 
@@ -35,8 +32,7 @@ class App extends Component {
     return (
       <section>
         <DataLoader fetchData={this.fetchData} />
-        <FilterableDataVis dataList={this.state.dataList} />
-        <D3Chart data={this.state.data} domain={this.state.domain} />
+        <FilterableScatterPlot dataList={this.state.dataList} />
       </section>
     )
   }

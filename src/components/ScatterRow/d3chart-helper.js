@@ -4,7 +4,6 @@ export default
 class d3ChartHelper {
 
   constructor(el, props, state) {
-    console.log(state)
     let svg = d3.select(el).append('svg')
       .attr('class', 'd3')
       .attr('width', props.width)
@@ -13,7 +12,6 @@ class d3ChartHelper {
     svg.append('g')
       .attr('class', 'd3-points')
 
-    this.update = this.update.bind(this)
     this.update(el, state)
   }
 
@@ -25,11 +23,13 @@ class d3ChartHelper {
   destroy(el){}
 
   _drawPoints(el, scales, data) {
+    console.log(data)
     let g = d3.select(el).selectAll('.d3-points')
 
     let point = g.selectAll('.d3-point')
       .data(data, d => d.id)
-      .enter().append('circle')
+      .enter()
+      .append('circle')
       .attr('class', 'd3-point')
 
     point.attr('cx', d => scales.x(d.x))
