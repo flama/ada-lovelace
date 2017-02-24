@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import FilterableDataVis from '../FilterableDataVis'
 import DataLoader from '../DataLoader'
+import D3Chart from '../D3Chart'
 
 import D3Chart from '../D3Chart'
 
