@@ -63,22 +63,20 @@ class DataLoader extends Component {
         woman.Born = result
         return woman
       }))
-      .then(women => {
-        let aggrupped = {}
-        women.forEach(woman => {
-          woman.tags.forEach(tag => {
-            if(typeof aggrupped[tag] !== "undefined")
-              aggrupped[tag].push(woman)
-            else
-              aggrupped[tag] = [ woman ]
-          })
+      .then(women => women.reduce((aggrupped, woman) => {
+        woman.tags.forEach(tag => {
+          if(typeof aggrupped[tag] !== "undefined")
+            aggrupped[tag].push(woman)
+          else
+            aggrupped[tag] = [ woman ]
         })
         return aggrupped
-      })
+      }, {}))
       .then(women => {
         console.log(women)
         return women
       })
+      .catch(error => console.error(error))
   }
 
   render() {
