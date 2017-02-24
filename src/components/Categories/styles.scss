@@ -1,0 +1,48 @@
+$light: rgb(227, 227, 227);
+$heavy: rgb(135, 135, 135);
+$selected: rgb(225, 40, 102);
+$inverted: white;
+
+.categories {
+  font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+  font-size: 16px;
+
+  .button {
+    padding-left: 2em;
+    padding-right: 2em;
+    margin-left: 0.5em;
+
+    border-style: solid;
+    border-width: 1px;
+    border-color: $light;
+    border-radius: 0.25em;
+
+    line-height: 1.5em;
+
+    color: $heavy;
+
+    background-color: transparent;
+
+    cursor: pointer;
+
+    &.selected {
+      border: none;
+      background-color: $selected;
+
+      color: $inverted;
+    }
+  }
+
+  .title {
+    font-weight: bold;
+    font-size: 0.75em;
+
+    margin-right: 1em;
+
+    &.-top {
+      display: block;
+      margin-bottom: 1em;
+      margin-left: 0.5em;
+    }
+  }
+}
