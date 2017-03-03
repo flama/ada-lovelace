@@ -34,7 +34,7 @@ class d3ChartHelper {
 
     point.attr('cx', d => scales.x(d.Born))
       .attr('cy', d => scales.y(Math.random()))
-      .attr('r', d => scales.z(10))
+      .attr('r', d => scales.z(5))
 
     point.exit()
       .remove()
@@ -52,7 +52,7 @@ class d3ChartHelper {
 
     let y = d3.scaleLinear()
       .range([height, 0])
-      .domain([-.5, 1.5])
+      .domain([-.75, 1.75])
 
     let z = d3.scaleLinear()
       .range([5, 20])

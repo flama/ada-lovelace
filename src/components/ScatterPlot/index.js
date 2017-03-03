@@ -4,7 +4,7 @@ import ScatterRow from '../ScatterRow'
 import './styles.scss'
 
 const domain = {
-  x: [1800, 2030]
+  x: [1800, 2017]
 }
 
 class ScatterPlot extends Component {

@@ -63,6 +63,9 @@ class DataLoader extends Component {
         woman.Born = result
         return woman
       }))
+      .then(women => {
+        return women.filter(woman => !isNaN(woman.Born))
+      })
       .then(women => women.reduce((aggrupped, woman) => {
         woman.tags.forEach(tag => {
           if(typeof aggrupped[tag] !== "undefined")
@@ -72,10 +75,6 @@ class DataLoader extends Component {
         })
         return aggrupped
       }, {}))
-      .then(women => {
-        console.log(women)
-        return women
-      })
       .catch(error => console.error(error))
   }
 
