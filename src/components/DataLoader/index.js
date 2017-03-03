@@ -5,59 +5,62 @@ import './styles.scss'
 
 class DataLoader extends Component {
 
-  constructor(props) {
-    super(props)
+  joinSheets = sheets => {
+    return sheets.reduce((acc, value) => acc.concat(value))
+  }
 
-    this.request()
-    .then(womenList => props.fetchData(womenList))
+  sheetToObject = columnNames => {
+    return women => {
+      let newWoman = {}
+      columnNames.forEach((column, index) => newWoman[column] = women[index])
+      return newWoman
+    }
+  }
+
+  removeEmptyWomen = women => women.filter(woman => woman[0] !== "")
+
+  convertFiltersToTags = women => women.map(woman => {
+    let tags = []
+    let tagNames = ['1','2','3','4','5']
+
+    tagNames.forEach(filter => {
+      if(woman[`Filtro ${filter}`])
+        tags.push(woman[`Filtro ${filter}`])
+    })
+
+    woman.tags = tags
+    return woman
+  })
+
+  createUrl = () => {
+    const spreadsheetId = '18VumVINXYypPAPA5aqLhw-BoFHqb5CGCrDI3JeBIs6I'
+    const regions = ['Africa', 'America do Sul', 'America Central', 'America do Norte', 'Asia', 'Europa', 'Oceania']
+    const baseAPI = 'https://sheets.googleapis.com/v4/spreadsheets'
+
+    let values = regions.reduce((acc, value) => acc += `ranges=${value}&`, "")
+
+    return `${baseAPI}/${spreadsheetId}/values:batchGet?${values}key=${apiKey}`
   }
 
   request = () => {
-    const spreadsheetId = '18VumVINXYypPAPA5aqLhw-BoFHqb5CGCrDI3JeBIs6I'
-    const regions = ['Africa', 'America do Sul', 'America Central', 'America do Norte', 'Asia', 'Europa', 'Oceania']
-
     let tableCols = []
-    let values = []
 
-    values = regions.reduce((acc, value) => acc += `ranges=${value}&`, "")
-
-    return fetch(`https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}/values:batchGet?${values}key=${apiKey}`)
-      // extracts the data
+    return fetch(this.createUrl())
       .then(response => response.json())
       .then(data => data.valueRanges)
       .then(ranges => ranges.map(range => range.values))
-      // removes column names
       .then(tables => tables.map(table => {
         tableCols = table[0]
         return table.slice(1)
       }))
-      // joins multiple sheets into one
-      .then(multipleArrays => multipleArrays.reduce((acc, value) => acc.concat(value)))
-      // removes empty women
-      .then(women => women.filter(woman => woman[0] !== ""))
-      // finally, formats into object, using column names as properties
-      .then(women => women.map(woman => {
-        let newWoman = {}
-        tableCols.forEach((property, index) => {
-          newWoman[property] = woman[index]
-        })
-        return newWoman
-      }))
-      .then(women => women.map(woman => {
-        let tags = []
-        let tagNames = ['1','2','3','4','5']
-
-        tagNames.forEach(filter => {
-          if(woman[`Filtro ${filter}`])
-            tags.push(woman[`Filtro ${filter}`])
-        })
-
-        woman.tags = tags
-        return woman
-      }))
+      .then(this.joinSheets)
+      .then(this.removeEmptyWomen)
+      .then(this.sheetToObject(tableCols))
+      .then(this.convertFiltersToTags)
   }
 
   render() {
+    this.request().then(womenList => props.fetchData(womenList))
     return (<div />)
   }
 }
