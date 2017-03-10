@@ -1,0 +1,31 @@
+@import "../../ambience";
+@import "../../flama-grid-overrided";
+
+#navbar {
+  @include grid(10);
+  @include offset(left, 2);
+
+  padding-top: $ultra-large;
+
+  text-transform: uppercase;
+  font-weight: $weight-medium;
+  font-size: $lesser;
+
+  > .left {
+    @include grid(3);
+    @include offset(right, 3);
+  }
+
+  > .right {
+    @include grid(2);
+    text-align: right;
+  }
+
+  > * {
+    transition: all 0.3s ease;
+  }
+
+  > *:hover {
+    color: gold; // TODO: change to an actual color
+  }
+}
