@@ -60,7 +60,7 @@ class DataLoader extends Component {
   }
 
   render() {
-    this.request().then(womenList => props.fetchData(womenList))
+    this.request().then(womenList => this.props.fetchData(womenList))
     return (<div />)
   }
 }
