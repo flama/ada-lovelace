@@ -1,9 +1,10 @@
 @import "../../ambience";
-// @import "~grid-framework/flama-grid";
+@import "../../flama-grid-overrided";
 
 #home {
   height: 100vh;
   width: 100vw;
+
   background-image: url('./home.png');
   background-size: cover;
   background-position: center;
@@ -14,25 +15,39 @@
   flex-direction: column;
 
   .header {
-    display: flex;
-    justify-content: space-around;
+    @include grid(10);
+    @include offset(left, 2);
+
     padding-top: $ultra-large;
 
     text-transform: uppercase;
     font-weight: $weight-medium;
-    font-size: $small;
+    font-size: $lesser;
 
-    .noink {
-      text-decoration: none;
-      color: inherit;
+    > .left {
+      @include grid(3);
+      @include offset(right, 3);
+    }
+
+    > .right {
+      @include grid(2);
+      text-align: right;
+    }
+
+    > * {
+      transition: all 0.3s ease;
+    }
+
+    > *:hover {
+      color: gold; // TODO: change to an actual color
     }
   }
 
   .body {
     flex: 1;
 
-    width: 70%;
-    margin: auto;
+    @include grid(10);
+    @include offset(left, 2);
 
     display: flex;
     flex-direction: column;
@@ -40,18 +55,22 @@
 
     > h1 {
       font-size: $gigantic;
-      font-weight: $weight-medium;
+      font-weight: bold;
       margin: 0;
     }
 
     > p {
-      font-size: 24px;
-      font-weight: $weight-light;
-      width: 85%;
-    }
+      @include grid(8);
 
-    > img.arrow-down {
-      margin-bottom: $large;
+      font-size: $normal;
+      font-weight: lighter;
+      line-height: $greater;
+      opacity: 0.7;
     }
+  }
+
+  img.arrow-down {
+    margin-bottom: $large;
+    cursor: pointer;
   }
 }

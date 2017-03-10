@@ -9,11 +9,14 @@ class Home extends Component {
     return (
       <section id="home">
         <div className="header">
-          <a href="#" className="noink">
+          <a href="#" className="noink left">
             made with ♥ by flama
           </a>
-          <a href="#" className="noink">
-            wanna help us?
+          <a href="#" className="noink right">
+            about
+          </a>
+          <a href="#" className="noink right">
+            contributing
           </a>
         </div>
         <div className="body">
