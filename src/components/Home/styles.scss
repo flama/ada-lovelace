@@ -1,0 +1,57 @@
+@import "../../ambience";
+// @import "~grid-framework/flama-grid";
+
+#home {
+  height: 100vh;
+  width: 100vw;
+  background-image: url('./home.png');
+  background-size: cover;
+  background-position: center;
+
+  color: white;
+
+  display: flex;
+  flex-direction: column;
+
+  .header {
+    display: flex;
+    justify-content: space-around;
+    padding-top: $ultra-large;
+
+    text-transform: uppercase;
+    font-weight: $weight-medium;
+    font-size: $small;
+
+    .noink {
+      text-decoration: none;
+      color: inherit;
+    }
+  }
+
+  .body {
+    flex: 1;
+
+    width: 70%;
+    margin: auto;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    > h1 {
+      font-size: $gigantic;
+      font-weight: $weight-medium;
+      margin: 0;
+    }
+
+    > p {
+      font-size: 24px;
+      font-weight: $weight-light;
+      width: 85%;
+    }
+
+    > img.arrow-down {
+      margin-bottom: $large;
+    }
+  }
+}

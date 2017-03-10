@@ -2,8 +2,7 @@ import React, { Component } from 'react'
 import FilterableDataVis from '../FilterableDataVis'
 import DataLoader from '../DataLoader'
 import D3Chart from '../D3Chart'
-
-import D3Chart from '../D3Chart'
+import Home from '../Home'
 
 // temp
 import Categories from '../Categories'
@@ -37,19 +36,22 @@ class App extends Component {
   {
     let options = ['Artes', 'Negócios', 'Exploração']
     return (
-      <section>
-        <Categories
-          title="Categorias" titlePosition="top" options={options}
-          onChange={ index => console.log('selected', index) }
-        />
-        <Categories
-          title="Organizar por" titlePosition="inline" options={options}
-          onChange={ index => console.log('selected', index) }
-        />
-        <DataLoader fetchData={this.fetchData} />
-        <FilterableDataVis dataList={this.state.dataList} />
-        <D3Chart data={this.state.data} domain={this.state.domain} />
-      </section>
+      <div id="app">
+        <Home />
+        <section>
+          <Categories
+            title="Categorias" titlePosition="top" options={options}
+            onChange={ index => console.log('selected', index) }
+          />
+          <Categories
+            title="Organizar por" titlePosition="inline" options={options}
+            onChange={ index => console.log('selected', index) }
+          />
+          <DataLoader fetchData={this.fetchData} />
+          <FilterableDataVis dataList={this.state.dataList} />
+          <D3Chart data={this.state.data} domain={this.state.domain} />
+        </section>
+      </div>
     )
   }
 }
