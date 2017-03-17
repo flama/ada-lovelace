@@ -16,3 +16,10 @@ npm-debug.log
 
 #keys
 src/alicia-keys.js
+
+#private fonts
+src/fonts/**/*.eot
+src/fonts/**/*.otf
+src/fonts/**/*.svg
+src/fonts/**/*.ttf
+src/fonts/**/*.woff

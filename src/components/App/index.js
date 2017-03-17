@@ -34,18 +34,22 @@ class App extends Component {
   {
     let options = ['Artes', 'Negócios', 'Exploração']
     return (
-      <section>
-        <Categories
-          title="Categorias" titlePosition="top" options={options}
-          onChange={ index => console.log('selected', index) }
-        />
-        <Categories
-          title="Organizar por" titlePosition="inline" options={options}
-          onChange={ index => console.log('selected', index) }
-        />
-        <DataLoader fetchData={this.fetchData} />
-        <FilterableScatterPlot dataList={this.state.dataList} />
-      </section>
+      <div id="app">
+        <Home />
+        <section>
+          <Categories
+            title="Categorias" titlePosition="top" options={options}
+            onChange={ index => console.log('selected', index) }
+          />
+          <Categories
+            title="Organizar por" titlePosition="inline" options={options}
+            onChange={ index => console.log('selected', index) }
+          />
+          <DataLoader fetchData={this.fetchData} />
+          <FilterableDataVis dataList={this.state.dataList} />
+          <D3Chart data={this.state.data} domain={this.state.domain} />
+        </section>
+      </div>
     )
   }
 }
