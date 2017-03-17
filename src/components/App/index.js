@@ -2,6 +2,11 @@ import React, { Component } from 'react'
 import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
 
+import D3Chart from '../D3Chart'
+
+// temp
+import Categories from '../Categories'
+
 import './App.scss'
 
 let sampleData = [
@@ -29,8 +34,17 @@ class App extends Component {
 
   render()
   {
+    let options = ['Artes', 'Negócios', 'Exploração']
     return (
       <section>
+        <Categories
+          title="Categorias" titlePosition="top" options={options}
+          onChange={ index => console.log('selected', index) }
+        />
+        <Categories
+          title="Organizar por" titlePosition="inline" options={options}
+          onChange={ index => console.log('selected', index) }
+        />
         <DataLoader fetchData={this.fetchData} />
         <FilterableScatterPlot dataList={this.state.dataList} />
       </section>
