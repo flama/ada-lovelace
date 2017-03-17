@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import cache from 'memory-cache'
+import Cookies from 'js-cookie'
 
 import { apiKey } from '../../alicia-keys'
 
@@ -15,14 +15,7 @@ class DataLoader extends Component {
   }
 
   request = () => {
-    const URL = this.createUrl()
-
-    let cachedResponse = cache.get(URL)
-
-    if(cachedResponse)
-      return new Promise(resolve => resolve(cachedResponse))
-
-    return fetch(URL)
+    return Cookies.getJSON('sheet-data') || fetch(this.createUrl())
       .then(response => response.json())
       .then(data => data.valueRanges)
       .then(ranges => ranges.map(range => range.values))
@@ -34,10 +27,6 @@ class DataLoader extends Component {
       .then(this.transformBCToNegative)
       .then(this.removeWomenThatAreNotBorn)
       .then(this.organizeByTag)
-      .then(data => {
-        cache.put(URL, data, 60*1000)
-        return data
-      })
       .catch(error => console.error(error))
   }
 
