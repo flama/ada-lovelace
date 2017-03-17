@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
-import Home from '../Home'
 
 // temp
 import Categories from '../Categories'
@@ -47,7 +46,8 @@ class App extends Component {
             onChange={ index => console.log('selected', index) }
           />
           <DataLoader fetchData={this.fetchData} />
-          <FilterableScatterPlot dataList={this.state.dataList} />
+          <FilterableDataVis dataList={this.state.dataList} />
+          <D3Chart data={this.state.data} domain={this.state.domain} />
         </section>
       </div>
     )
