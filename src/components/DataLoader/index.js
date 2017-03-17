@@ -57,7 +57,7 @@ class DataLoader extends Component {
   transformBCToNegative = women => women.map(woman => {
     let [year, bc] = woman.Born.split(" ")
     year = parseInt(year)
-    if(typeof born !== "undefined")
+    if(typeof bc !== "undefined")
       year = -year
 
     woman.Born = year
