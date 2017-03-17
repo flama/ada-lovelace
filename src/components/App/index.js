@@ -2,8 +2,6 @@ import React, { Component } from 'react'
 import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
 
-import D3Chart from '../D3Chart'
-
 // temp
 import Categories from '../Categories'
 

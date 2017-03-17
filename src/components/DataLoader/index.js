@@ -31,7 +31,7 @@ class DataLoader extends Component {
 
   joinSheets = sheets => sheets.reduce((acc, value) => acc.concat(value))
   removeEmptyWomen = women => women.filter(woman => woman[0] !== "")
-  removeWomenThatAreNotBorn = women =>
+  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born))
 
   sheetToObject = columnNames => {
     return women => {
@@ -55,7 +55,7 @@ class DataLoader extends Component {
   })
 
   transformBCToNegative = women => women.map(woman => {
-    [year, bc] = woman.Born.split(" ")
+    let [year, bc] = woman.Born.split(" ")
     year = parseInt(year)
     if(typeof born !== "undefined")
       year = -year
