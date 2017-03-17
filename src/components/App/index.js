@@ -1,8 +1,6 @@
 import React, { Component } from 'react'
-import FilterableDataVis from '../FilterableDataVis'
+import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
-import D3Chart from '../D3Chart'
-import Home from '../Home'
 
 // temp
 import Categories from '../Categories'
@@ -20,7 +18,7 @@ class App extends Component {
     super(props)
 
     this.state = {
-      dataList: [],
+      dataList: {},
       data: sampleData,
       domain: { x: [0, 30], y: [0, 100] }
     }

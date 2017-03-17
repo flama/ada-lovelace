@@ -4,7 +4,6 @@ export default
 class d3ChartHelper {
 
   constructor(el, props, state) {
-    console.log(state)
     let svg = d3.select(el).append('svg')
       .attr('class', 'd3')
       .attr('width', props.width)
@@ -13,7 +12,6 @@ class d3ChartHelper {
     svg.append('g')
       .attr('class', 'd3-points')
 
-    this.update = this.update.bind(this)
     this.update(el, state)
   }
 
@@ -28,13 +26,15 @@ class d3ChartHelper {
     let g = d3.select(el).selectAll('.d3-points')
 
     let point = g.selectAll('.d3-point')
-      .data(data, d => d.id)
-      .enter().append('circle')
+      .data(data, d => d.Name)
+      .enter()
+      .append('circle')
+      .on('click', d => d.target())
       .attr('class', 'd3-point')
 
-    point.attr('cx', d => scales.x(d.x))
-      .attr('cy', d => scales.y(d.y))
-      .attr('r', d => scales.z(d.z))
+    point.attr('cx', d => scales.x(d.Born))
+      .attr('cy', d => scales.y(Math.random()))
+      .attr('r', d => scales.z(5))
 
     point.exit()
       .remove()
@@ -52,7 +52,7 @@ class d3ChartHelper {
 
     let y = d3.scaleLinear()
       .range([height, 0])
-      .domain(domain.y)
+      .domain([-.75, 1.75])
 
     let z = d3.scaleLinear()
       .range([5, 20])

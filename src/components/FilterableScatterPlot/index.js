@@ -1,16 +1,17 @@
 import React, { Component } from 'react'
-import InputBar from '../InputBar'
-import DataVis from '../DataVis'
+import ScatterPlot from '../ScatterPlot'
 
 import './style.scss'
 
-class FilterableDatavis extends Component {
+class FilterableScatterPlot extends Component {
 
   constructor(props) {
     super(props)
     this.state = {
       filterTags: []
     }
+
+    console.log(props.dataList)
 
     this.handleUserInput = this.handleUserInput.bind(this)
   }
@@ -35,17 +36,19 @@ class FilterableDatavis extends Component {
 
   render() {
     return (
-      <div>
-        <InputBar
-          filterTags={this.state.filterTags}
-          onUserInput={this.handleUserInput}
-        />
-        <DataVis
-          dataList={this.filterDataList(this.props.dataList, this.state.filterTags)}
-        />
+      <div className="filterable">
+        <ScatterPlot dataList={ this.props.dataList }/>
       </div>
     )
   }
 }
 
-export default FilterableDatavis;
+FilterableScatterPlot.defaultProps = {
+  dataList: {}
+}
+
+FilterableScatterPlot.propTypes = {
+  dataList: React.PropTypes.object
+}
+
+export default FilterableScatterPlot;
