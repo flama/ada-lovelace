@@ -4,13 +4,12 @@ import d3chartHelper from './d3chart-helper'
 
 import './styles.scss'
 
-class D3Chart extends Component {
+class ScatterRow extends Component {
 
   componentDidMount = () => {
-    let el = ReactDOM.findDOMNode(this)
-    this.d3Chart = new d3chartHelper(el,{
+    this.d3Chart = new d3chartHelper(this.graph,{
       width: "100%",
-      height: "300px"
+      height: "50px"
     }, this.getChartState())
   }
 
@@ -32,13 +31,23 @@ class D3Chart extends Component {
   }
 
   render() {
-    return (<div className="Chart" />)
+    return (
+      <div className="scatter-row">
+        <div className="title" onClick={ () => this.props.open() }><h2>{ this.props.title }</h2></div>
+        <div className="graph" ref={ graph => { this.graph = graph } }></div>
+      </div>
+    )
   }
 }
 
-D3Chart.propTypes = {
-  data: React.PropTypes.array,
-  domain: React.PropTypes.object
+ScatterRow.defaultProps = {
+  open: _=>_
 }
 
-export default D3Chart
+ScatterRow.propTypes = {
+  data: React.PropTypes.array,
+  domain: React.PropTypes.object.isRequired,
+  open: React.PropTypes.func
+}
+
+export default ScatterRow
