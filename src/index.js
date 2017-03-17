@@ -3,8 +3,7 @@ import ReactDOM from 'react-dom'
 import { Router, Route, hashHistory } from 'react-router'
 import App from './components/App'
 
-import './index.scss'
-import './fonts/Circular/font.scss'
+import "./fonts/Circular/font.scss";
 
 ReactDOM.render((
   <Router history={hashHistory}>

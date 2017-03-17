@@ -1,5 +1,4 @@
-@import "../../ambience";
-@import "../../flama-grid-overrided";
+@import '../../config';
 
 #home {
   height: 100vh;
@@ -25,7 +24,7 @@
     justify-content: center;
 
     > h1 {
-      font-size: $gigantic;
+      font-size: $font-size-kilo;
       font-weight: bold;
       margin: 0;
     }
@@ -33,15 +32,15 @@
     > p {
       @include grid(8);
 
-      font-size: $normal;
-      font-weight: lighter;
-      line-height: $greater;
+      font-size: $font-size-deca;
+      font-weight: $light;
+      line-height: 2rem;
       opacity: 0.7;
     }
   }
 
   img.arrow-down {
-    margin-bottom: $large;
+    margin-bottom: $space-l;
     cursor: pointer;
   }
 }

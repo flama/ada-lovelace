@@ -1,15 +1,14 @@
-@import "../../ambience";
-@import "../../flama-grid-overrided";
+@import '../../config';
 
 #navbar {
   @include grid(10);
   @include offset(left, 2);
 
-  padding-top: $ultra-large;
+  padding-top: $space-xxl;
 
+  font-size: $font-size-deci;
+  font-weight: $medium;
   text-transform: uppercase;
-  font-weight: $weight-medium;
-  font-size: $lesser;
 
   > .left {
     @include grid(3);

@@ -1,0 +1,17 @@
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+
+  background-color: $feminist-purple;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
