@@ -23,6 +23,12 @@ class d3ChartHelper {
   destroy(el){}
 
   _drawPoints(el, scales, data) {
+    let simulation = d3.forceSimulation(data)
+      .force("collide", d3.forceCollide(10))
+      .stop()
+
+    for(let i=0; i<120; ++i) simulation.tick()
+
     let g = d3.select(el).selectAll('.d3-points')
 
     let point = g.selectAll('.d3-point')
