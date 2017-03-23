@@ -1,68 +1,84 @@
 import React, { Component } from 'react'
+import Cookies from 'js-cookie'
+
 import { apiKey } from '../../alicia-keys'
 
 class DataLoader extends Component {
 
   render() {
+    return <div />
+  }
+
+  componentWillMount() {
     this.request().then(womenList => this.props.fetchData(womenList))
     return (<div />)
   }
 
   request = () => {
-    let tableCols = []
-
-    return fetch(this.createUrl())
-    .then(response => response.json())
-    .then(data => data.valueRanges)
-    .then(ranges => ranges.map(range => range.values))
-    .then(tables => tables.map(table => {
-      tableCols = table[0]
-      return table.slice(1)
-    }))
-    .then(this.joinSheets)
-    .then(this.removeEmptyWomen)
-    .then(this.sheetToObject(tableCols))
-    .then(this.convertFiltersToTags)
-    .then(this.transformBCToNegative)
-    .then(this.removeWomenThatAreNotBorn)
-    .then(this.organizeByTag)
-    .catch(error => console.error(error))
+    return Cookies.getJSON('sheet-data') || fetch(this.createUrl())
+      .then(response => response.json())
+      .then(data => data.valueRanges)
+      .then(ranges => ranges.map(range => range.values))
+      .then(this.segregateColsFromSheets)
+      .then(this.joinSheets)
+      .then(this.removeEmptyWomen)
+      .then(this.sheetToObject)
+      .then(this.convertFiltersToTags)
+      .then(this.transformBCToNegative)
+      .then(this.removeWomenThatAreNotBorn)
+      .then(this.organizeByTag)
+      .catch(error => console.error(error))
   }
 
-  joinSheets = sheets => sheets.reduce((acc, value) => acc.concat(value))
-  removeEmptyWomen = women => women.filter(woman => woman[0] !== "")
-  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born))
+  segregateColsFromSheets = tables => {
+    let cols = tables[0][0]
+    let sheets = tables.map(table => table.slice(1))
 
-  sheetToObject = columnNames => {
-    return women => {
+    return { cols, sheets }
+  }
+
+  joinSheets = ({cols, sheets}) => {
+    return { cols, women: sheets.reduce((acc, value) => acc.concat(value)) }
+  }
+
+  removeEmptyWomen = ({cols, women}) => {
+    return { cols, women: women.filter(woman => woman[0] !== "") }
+  }
+
+  sheetToObject = ({ cols, women }) => {
+    return women.map(woman => {
       let newWoman = {}
-      columnNames.forEach((column, index) => newWoman[column] = women[index])
+      cols.forEach((column, index) => newWoman[column] = woman[index])
       return newWoman
-    }
+    })
   }
 
-  convertFiltersToTags = women => women.map(woman => {
-    let tags = []
-    let tagNames = ['1','2','3','4','5']
+  convertFiltersToTags = women => {
+    return women.map(woman => {
+      let tags = []
+      let tagNames = ['1','2','3','4','5']
 
-    tagNames.forEach(filter => {
-      if(woman[`Filtro ${filter}`])
+      tagNames.forEach(filter => {
+        if(woman[`Filtro ${filter}`])
         tags.push(woman[`Filtro ${filter}`])
-    })
+      })
 
-    woman.tags = tags
-    return woman
-  })
+      woman.tags = tags
+      return woman
+    })
+  }
 
   transformBCToNegative = women => women.map(woman => {
     let [year, bc] = woman.Born.split(" ")
-    year = parseInt(year)
+    year = parseInt(year, 10)
     if(typeof bc !== "undefined")
-      year = -year
+    year = -year
 
     woman.Born = year
     return woman
   })
+
+  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born))
 
   organizeByTag = women => women.reduce((aggrupped, woman) => {
     woman.tags.forEach(tag => {

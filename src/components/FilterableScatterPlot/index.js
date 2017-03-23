@@ -11,8 +11,6 @@ class FilterableScatterPlot extends Component {
       filterTags: []
     }
 
-    console.log(props.dataList)
-
     this.handleUserInput = this.handleUserInput.bind(this)
   }
 
