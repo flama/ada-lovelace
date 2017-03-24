@@ -9,7 +9,7 @@ class d3ChartHelper {
       .attr('width', props.width)
       .attr('height', props.height)
 
-    svg.append('g')
+    this.g = svg.append('g')
       .attr('class', 'd3-points')
 
     this.update(el, state)
@@ -17,27 +17,40 @@ class d3ChartHelper {
 
   update(el, state) {
     let scales = this._scales(el, state.domain)
-    this._drawPoints(el, scales, state.data)
+    this._drawPoints(el, this._format(state.data, scales))
   }
 
   destroy(el){}
 
-  _drawPoints(el, scales, data) {
-    let g = d3.select(el).selectAll('.d3-points')
+  _format = (data, scales) => data.map(value => {
+    return {
+      x: scales.x(value.Born),
+      y: scales.y(Math.random())
+    }
+  })
 
-    let point = g.selectAll('.d3-point')
-      .data(data, d => d.Name)
+  _drawPoints(el, data) {
+    let simulation = d3.forceSimulation(data)
+      .force("collide", d3.forceCollide(8))
+      .stop()
+
+    for(let i=0; i<120; ++i) simulation.tick()
+
+    let cell = this.g.append("g")
+      .selectAll("g")
+      .data(data)
       .enter()
-      .append('circle')
-      .on('click', d => d.target())
-      .attr('class', 'd3-point')
+      .append("g")
+      .append("circle")
+      .attr("r", 7)
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y)
 
-    point.attr('cx', d => scales.x(d.Born))
-      .attr('cy', d => scales.y(Math.random()))
-      .attr('r', d => scales.z(5))
-
-    point.exit()
-      .remove()
+    simulation.on("tick", () => {
+      cell
+        .attr("cx", d => d.x)
+        .attr("cy", d => d.y)
+    })
   }
 
   _scales(el, domain) {
@@ -54,10 +67,6 @@ class d3ChartHelper {
       .range([height, 0])
       .domain([-.75, 1.75])
 
-    let z = d3.scaleLinear()
-      .range([5, 20])
-      .domain([1, 10])
-
-    return { x, y, z }
+    return { x, y }
   }
 }
