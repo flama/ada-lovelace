@@ -92,7 +92,7 @@ class DataLoader extends Component {
 
   createUrl = () => {
     const spreadsheetId = '18VumVINXYypPAPA5aqLhw-BoFHqb5CGCrDI3JeBIs6I'
-    const regions = ['Africa', 'America do Sul', 'America Central', 'America do Norte', 'Asia', 'Europa', 'Oceania']
+    const regions = ['Africa', 'America Latina', 'America do Norte', 'Asia', 'Europa', 'Oceania']
     const baseAPI = 'https://sheets.googleapis.com/v4/spreadsheets'
 
     let values = regions.reduce((acc, value) => acc += `ranges=${value}&`, "")
