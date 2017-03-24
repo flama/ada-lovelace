@@ -9,7 +9,7 @@ class ScatterRow extends Component {
   componentDidMount = () => {
     this.d3Chart = new d3chartHelper(this.graph,{
       width: "100%",
-      height: "50px"
+      height: "20vh"
     }, this.getChartState())
   }
 
@@ -26,6 +26,8 @@ class ScatterRow extends Component {
   }
 
   reduceDataToArray = data => {
+    console.log("props", this.props)
+    if(!data) return []
     return Object.keys(data)
       .reduce((accumulator, key) => {
         return accumulator.concat(data[key])

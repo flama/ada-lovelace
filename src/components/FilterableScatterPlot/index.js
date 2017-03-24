@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ScatterPlot from '../ScatterPlot'
+import Categories from '../Categories'
 
 import './style.scss'
 
@@ -8,26 +9,24 @@ class FilterableScatterPlot extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      filterTags: []
+      filterTag: -1
     }
 
     this.handleUserInput = this.handleUserInput.bind(this)
   }
 
-  handleUserInput(filterTags) {
-    this.setState({ filterTags })
+  handleUserInput(optionIndex) {
+    this.setState({
+      filterTag: this.props.options[optionIndex] || -1
+    })
   }
 
-  filterDataList = (dataList, filterTags) => {
-    let items = []
-    if(filterTags.length === 0 || (filterTags[0] === '' && filterTags.length === 1)) {
+  filterDataList = dataList => {
+    let items = null
+    if(this.state.filterTag === -1) {
       items = dataList
     } else {
-      if(dataList.length)
-        items = dataList.filter(item => filterTags.filter(tag => {
-          let itemHasTag = ~item.tags.indexOf(tag)
-          return itemHasTag
-        }).length)
+      items = dataList[this.state.filterTag]
     }
     return items
   }
@@ -35,7 +34,11 @@ class FilterableScatterPlot extends Component {
   render() {
     return (
       <div className="filterable">
-        <ScatterPlot dataList={ this.props.dataList }/>
+        <Categories
+          title="Categorias" titlePosition="top" options={this.props.options}
+          onChange={ index => this.handleUserInput(index) }
+        />
+        <ScatterPlot dataList={ this.filterDataList(this.props.dataList) }/>
       </div>
     )
   }

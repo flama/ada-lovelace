@@ -9,7 +9,7 @@ class DataLoader extends Component {
   }
 
   componentWillMount() {
-    this.request().then(womenList => this.props.fetchData(womenList))
+    this.request().then(data => this.props.fetchData(data))
   }
 
   request = () => {
@@ -45,7 +45,7 @@ class DataLoader extends Component {
           organized[categoryName][subcategory] = data[subcategory]
         })
       })
-      return organized
+      return { dataList: organized, options: categories.map(x => x[0]) }
     })
   }
 

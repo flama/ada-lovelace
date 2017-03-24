@@ -1,11 +1,13 @@
 import * as d3 from 'd3'
 
+const radius = 10
+
 export default
 class d3ChartHelper {
 
   constructor(el, props, state) {
     let svg = d3.select(el).append('svg')
-      .attr('class', 'd3')
+      .attr('class', 'd3 scatter-row')
       .attr('width', props.width)
       .attr('height', props.height)
 
@@ -33,7 +35,7 @@ class d3ChartHelper {
   _drawPoints = (el, data) => {
     debugger
     let simulation = d3.forceSimulation(data)
-      .force("collide", d3.forceCollide(8))
+      .force("collide", d3.forceCollide(radius + 1))
       .stop()
 
     for(let i=0; i<120; ++i) simulation.tick()
@@ -44,7 +46,8 @@ class d3ChartHelper {
       .enter()
       .append("g")
       .append("circle")
-      .attr("r", 7)
+      .attr("class", "d3-point")
+      .attr("r", radius)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
 
