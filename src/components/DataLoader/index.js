@@ -24,8 +24,8 @@ class DataLoader extends Component {
       .then(this.removeEmptyWomen)
       .then(this.sheetToObject)
       .then(this.convertFiltersToTags)
-      .then(this.transformBCToNegative)
       .then(this.removeWomenThatAreNotBorn)
+      .then(this.transformBCToNegative)
       .then(this.organizeByTag)
       .catch(error => console.error(error))
   }
@@ -68,6 +68,8 @@ class DataLoader extends Component {
     })
   }
 
+  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born) && woman.Born)
+
   transformBCToNegative = women => women.map(woman => {
     let [year, bc] = woman.Born.split(" ")
     year = parseInt(year, 10)
@@ -77,8 +79,6 @@ class DataLoader extends Component {
     woman.Born = year
     return woman
   })
-
-  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born))
 
   organizeByTag = women => women.reduce((aggrupped, woman) => {
     woman.tags.forEach(tag => {
