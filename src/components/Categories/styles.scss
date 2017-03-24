@@ -21,7 +21,7 @@
     cursor: pointer;
 
     &.selected {
-      border: none;
+      border-color: transparent;
       background-color: $selected;
       color: $inverted;
     }
