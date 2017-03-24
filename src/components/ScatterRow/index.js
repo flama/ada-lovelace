@@ -26,6 +26,8 @@ class ScatterRow extends Component {
   }
 
   reduceDataToArray = data => {
+    console.log("props", this.props)
+    if(!data) return []
     return Object.keys(data)
       .reduce((accumulator, key) => {
         return accumulator.concat(data[key])
