@@ -17,6 +17,7 @@ class d3ChartHelper {
 
   update(el, state) {
     let scales = this._scales(el, state.domain)
+    debugger
     this._drawPoints(el, this._format(state.data, scales))
   }
 
@@ -29,7 +30,8 @@ class d3ChartHelper {
     }
   })
 
-  _drawPoints(el, data) {
+  _drawPoints = (el, data) => {
+    debugger
     let simulation = d3.forceSimulation(data)
       .force("collide", d3.forceCollide(8))
       .stop()

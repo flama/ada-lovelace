@@ -20,9 +20,17 @@ class ScatterRow extends Component {
 
   getChartState = () => {
     return {
-      data: this.props.data,
+      data: this.reduceDataToArray(this.props.data),
       domain: this.props.domain
     }
+  }
+
+  reduceDataToArray = data => {
+    return Object.keys(data)
+      .reduce((accumulator, key) => {
+        return accumulator.concat(data[key])
+      }, [])
+      .filter(value => value)
   }
 
   componentWillUnmount = () => {
@@ -45,7 +53,7 @@ ScatterRow.defaultProps = {
 }
 
 ScatterRow.propTypes = {
-  data: React.PropTypes.array,
+  data: React.PropTypes.object,
   domain: React.PropTypes.object.isRequired,
   open: React.PropTypes.func
 }

@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import Cookies from 'js-cookie'
 
 import { apiKey } from '../../alicia-keys'
 
@@ -11,23 +10,50 @@ class DataLoader extends Component {
 
   componentWillMount() {
     this.request().then(womenList => this.props.fetchData(womenList))
-    return (<div />)
   }
 
   request = () => {
-    return Cookies.getJSON('sheet-data') || fetch(this.createUrl())
-      .then(response => response.json())
-      .then(data => data.valueRanges)
-      .then(ranges => ranges.map(range => range.values))
-      .then(this.segregateColsFromSheets)
-      .then(this.joinSheets)
-      .then(this.removeEmptyWomen)
-      .then(this.sheetToObject)
-      .then(this.convertFiltersToTags)
-      .then(this.removeWomenThatAreNotBorn)
-      .then(this.transformBCToNegative)
-      .then(this.organizeByTag)
-      .catch(error => console.error(error))
+    return Promise.all([
+      fetch(this.createUrl())
+        .then(response => response.json())
+        .then(data => data.valueRanges)
+        .then(ranges => ranges.map(range => range.values))
+        .then(this.segregateColsFromSheets)
+        .then(this.joinSheets)
+        .then(this.removeEmptyWomen)
+        .then(this.sheetToObject)
+        .then(this.convertFiltersToTags)
+        .then(this.removeWomenThatAreNotBorn)
+        .then(this.transformBCToNegative)
+        .then(this.organizeByTag)
+        .catch(error => console.error(error)),
+      fetch(this.createUrl({ categories: true }))
+        .then(response => response.json())
+        .then(data => data.valueRanges)
+        .then(ranges => ranges.map(range => range.values))
+        .then(data => data[0])
+    ])
+    .then(([ data, categories ]) => {
+      let organized = {}
+      categories.forEach(category => {
+        let categoryName = category[0]
+        let subcategories = category.slice(1)
+
+        organized[categoryName] = {}
+
+        subcategories.forEach(subcategory => {
+          organized[categoryName][subcategory] = data[subcategory]
+        })
+      })
+      return organized
+    })
+  }
+
+  printData = label => {
+    return data => {
+      console.log(`[${label}]:`, data)
+      return data
+    }
   }
 
   segregateColsFromSheets = tables => {
@@ -83,21 +109,31 @@ class DataLoader extends Component {
   organizeByTag = women => women.reduce((aggrupped, woman) => {
     woman.tags.forEach(tag => {
       if(typeof aggrupped[tag] !== "undefined")
-      aggrupped[tag].push(woman)
+        aggrupped[tag].push(woman)
       else
-      aggrupped[tag] = [ woman ]
+        aggrupped[tag] = [ woman ]
     })
     return aggrupped
   }, {})
 
-  createUrl = () => {
+  organizeByCategory = tags => tags.reduce((aggrupped, tag) => {
+
+
+    return aggrupped
+  }, {})
+
+  createUrl = options => {
     const spreadsheetId = '18VumVINXYypPAPA5aqLhw-BoFHqb5CGCrDI3JeBIs6I'
+    const baseAPI = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}`
     const regions = ['Africa', 'America Latina', 'America do Norte', 'Asia', 'Europa', 'Oceania']
-    const baseAPI = 'https://sheets.googleapis.com/v4/spreadsheets'
+    const categoriesIndex = 'Subcategories'
 
     let values = regions.reduce((acc, value) => acc += `ranges=${value}&`, "")
 
-    return `${baseAPI}/${spreadsheetId}/values:batchGet?${values}key=${apiKey}`
+    if(options && options.categories)
+      return `${baseAPI}/values:batchGet?ranges=${categoriesIndex}&key=${apiKey}`
+    else
+      return `${baseAPI}/values:batchGet?${values}key=${apiKey}`
   }
 }
 
