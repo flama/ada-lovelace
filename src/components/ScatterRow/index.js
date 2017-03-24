@@ -9,7 +9,7 @@ class ScatterRow extends Component {
   componentDidMount = () => {
     this.d3Chart = new d3chartHelper(this.graph,{
       width: "100%",
-      height: "50px"
+      height: "20vh"
     }, this.getChartState())
   }
 
