@@ -44,12 +44,13 @@ class d3ChartHelper {
       .selectAll("g")
       .data(data)
       .enter()
-      .append("g")
       .append("circle")
       .attr("class", "d3-point")
       .attr("r", radius)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
+      .attr("onmouseover", `evt.target.setAttribute('r', '${radius*1.1}')`)
+      .attr("onmouseout", `evt.target.setAttribute('r', '${radius}')`)
 
     simulation.on("tick", () => {
       cell
