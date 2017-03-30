@@ -7,7 +7,7 @@ class d3ChartHelper {
 
   constructor(el, props, state) {
     let svg = d3.select(el).append('svg')
-      .attr('class', 'd3 scatter-row')
+      .attr('class', 'd3 scatter-row-svg')
       .attr('width', props.width)
       .attr('height', props.height)
 

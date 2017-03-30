@@ -17,6 +17,7 @@ class ScatterPlot extends Component {
         domain={ domain }
         title={ category }
         key={ category }
+        active={ this.props.activeRow === category || this.props.activeRow === -1 }
       />)
     })
 

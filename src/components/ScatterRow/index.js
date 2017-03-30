@@ -9,14 +9,14 @@ class ScatterRow extends Component {
   componentDidMount = () => {
     this.d3Chart = new d3chartHelper(this.graph,{
       width: "100%",
-      height: "20vh"
+      height: "100%"
     }, this.getChartState())
   }
 
-  componentDidUpdate = () => {
-    let el = ReactDOM.findDOMNode(this)
-    this.d3Chart.update(el,this.getChartState())
-  }
+  // componentDidUpdate = () => {
+  //   let el = ReactDOM.findDOMNode(this)
+  //   this.d3Chart.update(el,this.getChartState())
+  // }
 
   getChartState = () => {
     return {
@@ -41,8 +41,9 @@ class ScatterRow extends Component {
   }
 
   render() {
+    console.log(this.props.active)
     return (
-      <div className="scatter-row">
+      <div className={ `scatter-row ${ this.props.active? 'active':'' }` }>
         <div className="title" onClick={ () => this.props.open() }><h2>{ this.props.title }</h2></div>
         <div className="graph" ref={ graph => { this.graph = graph } }></div>
       </div>
@@ -57,7 +58,8 @@ ScatterRow.defaultProps = {
 ScatterRow.propTypes = {
   data: React.PropTypes.object,
   domain: React.PropTypes.object.isRequired,
-  open: React.PropTypes.func
+  open: React.PropTypes.func,
+  active: React.PropTypes.bool
 }
 
 export default ScatterRow
