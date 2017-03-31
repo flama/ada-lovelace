@@ -1,30 +1,38 @@
 @import '../../config';
 
 #navbar {
-  @include grid(10);
-  @include offset(left, 2);
+  @include wrap;
 
-  padding-top: $space-xxl;
+  &:first-child {color: gold;}
 
-  font-size: $font-size-deci;
-  font-weight: $medium;
-  text-transform: uppercase;
+  > .left, > .right {
+    margin-top: $space-xl;
+    padding: $space-xxs;
+    font-size: $font-size-deci;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: $light-purple;
+  }
 
   > .left {
-    @include grid(3);
-    @include offset(right, 3);
+    display: block;
+    float: left;
   }
 
   > .right {
-    @include grid(2);
-    text-align: right;
+    display: block;
+    float: right;
+    margin-left: $space-xs;
   }
 
-  > * {
-    transition: all 0.3s ease;
-  }
+  > * { transition: all 0.3s ease; }
 
-  > *:hover {
-    color: gold; // TODO: change to an actual color
+  > *:hover { color: #fff; }
+
+  @include small-only {
+    @include wrap-mobile;
+
+    > .left, > .right { padding: $space-xxxs; }
+    > .right { margin-left: $space-xxs; }
   }
 }

@@ -1,0 +1,57 @@
+@import '../../config';
+
+#graph-page {
+  @include big-wrap;
+
+  > h2 {
+    margin-bottom: $space-xs;
+    font-size: $font-size-hecto;
+    line-height: $line-height-hecto;
+    font-weight: $heavy;
+    color: #fff;
+  }
+
+  > .content {
+    margin-bottom: $space-m;
+    display: flex;
+    align-items: center;
+
+    > p {
+      width: 70%;
+      float: left;
+
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+      font-weight: $regular;
+      color: $light-purple;
+    }
+
+    > .legend {
+      width: 30%;
+      float: right;
+      text-align: right;
+      display: flex;
+      justify-content: flex-end;
+
+      > span {
+        font-size: $font-size-deci;
+        color: $light-purple;
+        display: flex;
+        align-items: center;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: $space-xxs;
+          height: 18px;
+          width: 18px;
+          border-radius: 50%;
+          background-color: $selected;
+          text-align: center;
+          color: #fff;
+        }
+      }
+    }
+
+  }
+}
