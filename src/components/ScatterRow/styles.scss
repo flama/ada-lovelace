@@ -42,17 +42,21 @@ $base-time: 0.2s;
       //   transition-timing-function: cubic-bezier(.25,5,1,5);
       // }
 
-      // kick-off animation
-      transition: all #{0.4*$base-time}s cubic-bezier(0.44, 0.23, 0.19, 0.98);
+      transition: all 0.5*$base-time ease-in-out;
+
+      &:hover {
+        // kick-off animation
+        transition: all 0.2*$base-time cubic-bezier(0.44, 0.23, 0.19, 0.98);
+      }
 
       // growing animation
       &.growing {
-        transition: all 0.16s cubic-bezier(0.44, 0.23, 0.19, 0.98);
+        transition: all 0.8*$base-time cubic-bezier(0.44, 0.23, 0.19, 0.98);
       }
 
       &.shrinking {
-        transition-delay: 0.08s;
-        transition-duration: 0.1s;
+        transition-delay: 0.4*$base-time;
+        transition-duration: 0.5*$base-time;
         transition-timing-function: ease-in-out;
       }
     }

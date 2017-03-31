@@ -67,7 +67,7 @@ class d3ChartHelper {
 
       for(let i=0; i<balls.length; ++i)
       {
-        if(balls[i] == target) continue
+        if(balls[i] === target) continue
 
         balls[i].classList.add('shrinking')
         balls[i].setAttribute('r', radius*2/3)
