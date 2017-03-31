@@ -1,12 +1,12 @@
 @import '../../config';
 
 #home {
-
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 
   .body {
     @include wrap;
+    margin-bottom: 360px;
 
     > h1 {
       font-size: $font-size-kilo;
