@@ -40,16 +40,18 @@ class Categories extends Component {
     })
 
     return (
-      <div className="categories">
-        <span className={ this.styleTitle(this.props.titlePosition) }>
-          { this.props.title }
-        </span>
-        <button className={ this.styleButton(ALL) }
-          onClick={ () => this.choose(ALL) }
-        >
-          { this.props.all }
-        </button>
-        { options }
+      <div className="categories-container">
+        <h3 className={ this.styleTitle(this.props.titlePosition) }>
+          Quem são elas?
+        </h3>
+        <div className="categories">
+          <button className={ this.styleButton(ALL) }
+            onClick={ () => this.choose(ALL) }
+          >
+            { this.props.all }
+          </button>
+          { options }
+        </div>
       </div>
     )
   }
