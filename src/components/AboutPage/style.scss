@@ -1,0 +1,12 @@
+@import '../../config';
+
+#about-page {
+  @include big-wrap;
+  margin-top: 84px;
+
+  > h2 {
+    font-size: 100px;
+    line-height: 100px;
+    color: #fff;
+  }
+}
