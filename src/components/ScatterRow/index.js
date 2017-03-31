@@ -13,14 +13,10 @@ class ScatterRow extends Component {
     }, this.getChartState())
   }
 
-  // componentDidUpdate = () => {
-  //   let el = ReactDOM.findDOMNode(this)
-  //   this.d3Chart.update(el,this.getChartState())
-  // }
-
   getChartState = () => {
     return {
-      data: this.props.all ? this.reduceDataToArray(this.props.data) : this.props.data.data,
+      data: this.props.all || !this.props.active ?
+        this.reduceDataToArray(this.props.data) : this.props.data.data,
       domain: this.props.domain
     }
   }
