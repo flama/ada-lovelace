@@ -14,12 +14,12 @@ class NavBar extends Component {
         <a href="#" className={ this.classesFor("home", "left") }>
           made with ♥ by flama
         </a>
-        <a href="#" className={ this.classesFor("about", "right") }>
-          about
-        </a>
-        <a href="#" className={ this.classesFor("contributing", "right")}>
-          contributing
-        </a>
+          <a href="#" className={ this.classesFor("contributing", "right")}>
+            contributing
+          </a>
+          <a href="#" className={ this.classesFor("about", "right") }>
+            about
+          </a>
       </div>
     )
   }
