@@ -20,13 +20,12 @@ class ScatterRow extends Component {
 
   getChartState = () => {
     return {
-      data: this.reduceDataToArray(this.props.data),
+      data: this.props.all ? this.reduceDataToArray(this.props.data) : this.props.data.data,
       domain: this.props.domain
     }
   }
 
   reduceDataToArray = data => {
-    console.log("props", this.props)
     if(!data) return []
     return Object.keys(data)
       .reduce((accumulator, key) => {
@@ -41,9 +40,8 @@ class ScatterRow extends Component {
   }
 
   render() {
-    console.log(this.props.active)
     return (
-      <div className={ `scatter-row ${ this.props.active? 'active':'' }` }>
+      <div className={ `scatter-row ${ this.props.data.active || this.props.all ? 'active':'' }` }>
         <div className="title" onClick={ () => this.props.open() }><h2>{ this.props.title }</h2></div>
         <div className="graph" ref={ graph => { this.graph = graph } }></div>
       </div>

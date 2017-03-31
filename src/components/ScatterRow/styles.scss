@@ -42,7 +42,7 @@
 
   &:not(.active) {
     flex-grow: 0;
-    display: block;
+    // display: block;
     height: 0;
     overflow: hidden;
   }
