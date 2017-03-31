@@ -3,6 +3,10 @@
 #home {
   height: 100%;
   width: 100vw;
+  background-image: url('./home.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 
   .body {
     @include wrap;
