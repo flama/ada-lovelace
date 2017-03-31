@@ -2,41 +2,45 @@
 
 .categories {
 
-  .button {
-    padding-left: $space-m;
-    padding-right: $space-m;
-    margin-left: $space-xxs;
-
-    border-style: solid;
-    border-width: 1px;
-    border-color: $light;
-    border-radius: 0.25em;
-
-    line-height: 1.5em;
-
-    color: $heavy;
-
-    background-color: transparent;
-
-    cursor: pointer;
-
-    &.selected {
-      border-color: transparent;
-      background-color: $selected;
-      color: $inverted;
-    }
+  .title {
+    display: block;
+    margin-bottom: $space-s;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    font-weight: $regular;
+    color: #fff;
   }
 
-  .title {
-    margin-right: $space-xs;
+  .main {
+    margin-bottom: $space-m;
 
-    font-size: $font-size-deci;
-    font-weight: $heavy;
-
-    &.-top {
-      display: block;
-      margin-bottom: $space-xs;
+    .button {
+      padding-left: $space-s;
+      padding-right: $space-s;
       margin-left: $space-xxs;
+
+      border-style: solid;
+      border-width: 1px;
+      border-color: $light-purple;
+      border-radius: 0.5em;
+
+      line-height: 1.5em;
+      letter-spacing: 0.44px;
+      color: $light-purple;
+      background-color: transparent;
+      cursor: pointer;
+
+      transition: all 0.3s ease;
+
+      &:first-child { margin-left: 0; }
+
+      &:hover { color: #fff; }
+
+      &.selected {
+        border-color: transparent;
+        background-color: $selected;
+        color: #fff;
+      }
     }
   }
 }

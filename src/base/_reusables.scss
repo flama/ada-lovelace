@@ -28,3 +28,27 @@
     clear: both;
   }
 }
+
+@mixin wrap {
+  @include clearfix;
+  margin: 0 auto;
+  max-width: calc(100% - 40px);
+  position: relative;
+  width: calc(65% + 50px);
+}
+
+@mixin big-wrap {
+  @include clearfix;
+  margin: 0 auto;
+  max-width: calc(100% - 40px);
+  position: relative;
+  width: calc(65% + 300px);
+}
+
+@mixin wrap-mobile {
+  margin: 0 auto;
+  max-width: calc(100% - 40px);
+  position: relative;
+  width: calc(65% + 200px);
+}
+
