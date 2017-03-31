@@ -40,11 +40,11 @@ class Categories extends Component {
     })
 
     return (
-      <div className="categories-container">
+      <div className="categories">
         <h3 className={ this.styleTitle(this.props.titlePosition) }>
           Quem são elas?
         </h3>
-        <div className="categories">
+        <div className="main">
           <button className={ this.styleButton(ALL) }
             onClick={ () => this.choose(ALL) }
           >

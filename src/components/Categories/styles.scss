@@ -1,6 +1,6 @@
 @import '../../config';
 
-.categories-container {
+.categories {
 
   .title {
     display: block;
@@ -11,7 +11,7 @@
     color: #fff;
   }
 
-  .categories {
+  .main {
     margin-bottom: $space-m;
 
     .button {
