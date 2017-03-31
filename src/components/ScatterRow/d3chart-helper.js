@@ -47,8 +47,51 @@ class d3ChartHelper {
       .attr("r", radius)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
-      .attr("onmouseover", `evt.target.setAttribute('r', '${radius*1.1}')`)
-      .attr("onmouseout", `evt.target.setAttribute('r', '${radius}')`)
+      .attr("onmouseenter", `window.wikiminaGrow(evt.target)`)
+        // evt.target.setAttribute('r', '${radius*1.7}');
+        // window.wikiminaEnlarge = setTimeout(() => {
+        //   evt.target.setAttribute('r', '${radius*1.5}');
+        // }, 200)
+        // `)
+      .attr("onmouseleave", `window.wikiminaShrink(evt.target)`)
+        // `evt.target.setAttribute('r', '${radius}')
+        // if(window.wikiminaEnlarge) {
+        // clearTimeout(window.wikiminaEnlarge)
+        // `)
+
+    window.wikiminaGrow = target => {
+      target.setAttribute('r', radius*2.26)
+      target.classList.add('growing')
+
+      let balls = document.getElementsByClassName('d3-point')
+
+      for(let i=0; i<balls.length; ++i)
+      {
+        if(balls[i] == target) continue
+
+        balls[i].classList.add('shrinking')
+        balls[i].setAttribute('r', radius*2/3)
+      }
+
+      window.wikiminaTime = setTimeout(() => {
+        target.classList.remove('growing')
+        target.setAttribute('r', radius*2)
+      }, 160)
+    }
+
+    window.wikiminaShrink = target => {
+      if(window.wikiminaTime) {
+        clearTimeout(window.wikiminaTime)
+        window.wikiminaTime = undefined
+      }
+
+      let balls = document.getElementsByClassName('d3-point')
+      for(let i=0; i<balls.length; ++i)
+      {
+        balls[i].classList.remove('shrinking')
+        balls[i].setAttribute('r', radius)
+      }
+    }
 
     simulation.on("tick", () => {
       cell

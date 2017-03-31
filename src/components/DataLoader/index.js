@@ -34,6 +34,7 @@ class DataLoader extends Component {
         .then(data => data[0])
     ])
     .then(([ data, categories ]) => {
+      console.log(data, categories)
       let organized = {}
       categories.forEach(category => {
         let categoryName = category[0]
