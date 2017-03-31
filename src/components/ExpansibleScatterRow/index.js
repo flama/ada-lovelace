@@ -4,6 +4,10 @@ import ScatterRow from '../ScatterRow'
 import './styles.scss'
 
 class ExpansibleScatterRow extends Component {
+  classNames = () => {
+    return `expansible-scatter-row ${!this.props.data.active && !this.props.all ? 'hidden':''}`
+  }
+
   render() {
     let topics, subtopics
 
@@ -13,7 +17,7 @@ class ExpansibleScatterRow extends Component {
           data={ this.props.data.division[subcategory] || [] }
           domain={ this.props.domain }
           title={ subcategory }
-          hidden={ false }
+          hidden={ true }
           key={ subcategory }
           />)
         })
@@ -22,13 +26,13 @@ class ExpansibleScatterRow extends Component {
         data={ this.props.data.array }
         domain={ this.props.domain }
         title={ this.props.title }
-        hidden={ !this.props.data.active && !this.props.all }
+        hidden={ !this.props.all }
       />)
     }
 
 
     return (
-      <div className="expansible-scatter-row">
+      <div className={ this.classNames() }>
         { topics || subtopics }
       </div>
     )

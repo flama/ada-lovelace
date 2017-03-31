@@ -1,0 +1,15 @@
+@import "../base";
+
+.expansible-scatter-row {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  transition: all 0.5s ease-in-out;
+
+  &.hidden {
+    overflow: hidden;
+    height: 0;
+  }
+}
