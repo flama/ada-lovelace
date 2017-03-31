@@ -26,6 +26,7 @@ class DataLoader extends Component {
         .then(this.removeWomenThatAreNotBorn)
         .then(this.transformBCToNegative)
         .then(this.organizeByTag)
+        .then(this.addStatusToTags(false))
         .catch(error => console.error(error)),
       fetch(this.createUrl({ categories: true }))
         .then(response => response.json())
@@ -34,7 +35,6 @@ class DataLoader extends Component {
         .then(data => data[0])
     ])
     .then(([ data, categories ]) => {
-      console.log(data, categories)
       let organized = {}
       categories.forEach(category => {
         let categoryName = category[0]
@@ -46,8 +46,12 @@ class DataLoader extends Component {
           organized[categoryName][subcategory] = data[subcategory]
         })
       })
+
       return { dataList: organized, options: categories.map(x => x[0]) }
     })
+    .then(this.addStatusToCategories(true))
+    .then(this.categoriesToArrays)
+    .then(this.printData('final_data'))
   }
 
   printData = label => {
@@ -117,11 +121,48 @@ class DataLoader extends Component {
     return aggrupped
   }, {})
 
-  organizeByCategory = tags => tags.reduce((aggrupped, tag) => {
+  addStatusToTags = status => {
+    return tags => {
+      Object.keys(tags).forEach(tagName => {
+        tags[tagName] = {
+          active: status,
+          array: tags[tagName]
+        }
+      })
 
+      return tags
+    }
+  }
 
-    return aggrupped
-  }, {})
+  addStatusToCategories = status => {
+    return ({ dataList, options }) => {
+      Object.keys(dataList).forEach(categoryName => {
+        dataList[categoryName] = {
+          division: dataList[categoryName],
+          active: true
+        }
+      })
+
+      return { dataList, options }
+    }
+  }
+
+  categoriesToArrays = ({ dataList, options }) => {
+    Object.keys(dataList).forEach(categoryName => {
+      let subcategories = dataList[categoryName].division
+
+      dataList[categoryName].array = Object.keys(subcategories)
+        .reduce((accumulator, subcategoryName) => {
+          let subcategory = subcategories[subcategoryName]
+
+          if(typeof subcategory === "undefined") return accumulator
+
+          return accumulator.concat(subcategory.array || [])
+        }, [])
+    })
+
+    return ({ dataList, options })
+  }
 
   createUrl = options => {
     const spreadsheetId = '18VumVINXYypPAPA5aqLhw-BoFHqb5CGCrDI3JeBIs6I'

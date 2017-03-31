@@ -15,8 +15,7 @@ class ScatterRow extends Component {
 
   getChartState = () => {
     return {
-      data: this.props.all || !this.props.active ?
-        this.reduceDataToArray(this.props.data) : this.props.data.data,
+      data: this.props.data,
       domain: this.props.domain
     }
   }
@@ -37,8 +36,8 @@ class ScatterRow extends Component {
 
   render() {
     return (
-      <div className={ `scatter-row ${ this.props.data.active || this.props.all ? 'active':'' }` }>
-        <div className="title" onClick={ () => this.props.open() }><h2>{ this.props.title }</h2></div>
+      <div className={ `scatter-row ${ this.props.active ? 'active':'' }` }>
+        <div className="title"><h2>{ this.props.title }</h2></div>
         <div className="graph" ref={ graph => { this.graph = graph } }></div>
       </div>
     )
@@ -49,11 +48,11 @@ ScatterRow.defaultProps = {
   open: _=>_
 }
 
-ScatterRow.propTypes = {
-  data: React.PropTypes.object,
-  domain: React.PropTypes.object.isRequired,
-  open: React.PropTypes.func,
-  active: React.PropTypes.bool
-}
+// ScatterRow.propTypes = {
+//   data: React.PropTypes.object,
+//   domain: React.PropTypes.object.isRequired,
+//   open: React.PropTypes.func,
+//   active: React.PropTypes.bool
+// }
 
 export default ScatterRow
