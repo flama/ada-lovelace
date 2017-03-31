@@ -16,8 +16,8 @@ class ScatterPlot extends Component {
         data={ this.props.dataList[category] }
         domain={ domain }
         title={ category }
-        key={ category }
         all={ this.props.all }
+        key={ category }
       />)
     })
 

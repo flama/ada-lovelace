@@ -19,6 +19,22 @@ class FilterableScatterPlot extends Component {
     })
   }
 
+  selectCategory = data => {
+    if(this.state.activeRow === -1) return data
+
+    let finalData = {}
+
+
+    Object.keys(data).forEach(dataKey => {
+      finalData[dataKey] = { ...data[dataKey] }
+
+      if(dataKey === this.state.activeRow)
+        finalData[dataKey].active = true
+    })
+
+    return {...data, ...finalData}
+  }
+
   render() {
     return (
       <div className="filterable">
@@ -26,7 +42,7 @@ class FilterableScatterPlot extends Component {
           title="Categorias" titlePosition="top" options={this.props.options}
           onChange={ index => this.handleUserInput(index) }
         />
-        <ScatterPlot dataList={ this.props.dataList } all={ this.state.activeRow === -1 } />
+        <ScatterPlot dataList={ this.selectCategory(this.props.dataList) } all={ this.state.activeRow === -1 } />
       </div>
     )
   }

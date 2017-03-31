@@ -5,27 +5,31 @@ import './styles.scss'
 
 class ExpansibleScatterRow extends Component {
   render() {
-    console.log('extensible', this.props.data)
+    let topics, subtopics
 
-    let topics = (<ScatterRow
-      data={ this.props.data.array }
-      domain={ this.props.domain }
-      title={ this.props.title }
-      active={ this.props.data.active }
-    />)
+    if(this.props.data.active) {
+      subtopics = Object.keys(this.props.data.division).map(subcategory => {
+        return (<ScatterRow
+          data={ this.props.data.division[subcategory] || [] }
+          domain={ this.props.domain }
+          title={ subcategory }
+          hidden={ false }
+          key={ subcategory }
+          />)
+        })
+    } else {
+      topics = (<ScatterRow
+        data={ this.props.data.array }
+        domain={ this.props.domain }
+        title={ this.props.title }
+        hidden={ !this.props.data.active && !this.props.all }
+      />)
+    }
 
-    // let subtopics = Object.keys(this.props.data.division).map(subcategory => {
-    //   return (<ScatterRow
-    //     data={ this.props.data[subcategory].array }
-    //     doman={ this.props.domain }
-    //     title={ subcategory }
-    //     active={ this.props.data[subcategory].array }
-    //     />)
-    //   })
 
     return (
       <div className="expansible-scatter-row">
-        { topics }
+        { topics || subtopics }
       </div>
     )
   }

@@ -26,7 +26,6 @@ class DataLoader extends Component {
         .then(this.removeWomenThatAreNotBorn)
         .then(this.transformBCToNegative)
         .then(this.organizeByTag)
-        .then(this.addStatusToTags(false))
         .catch(error => console.error(error)),
       fetch(this.createUrl({ categories: true }))
         .then(response => response.json())
@@ -121,25 +120,12 @@ class DataLoader extends Component {
     return aggrupped
   }, {})
 
-  addStatusToTags = status => {
-    return tags => {
-      Object.keys(tags).forEach(tagName => {
-        tags[tagName] = {
-          active: status,
-          array: tags[tagName]
-        }
-      })
-
-      return tags
-    }
-  }
-
   addStatusToCategories = status => {
     return ({ dataList, options }) => {
       Object.keys(dataList).forEach(categoryName => {
         dataList[categoryName] = {
           division: dataList[categoryName],
-          active: true
+          active: false
         }
       })
 
@@ -157,7 +143,7 @@ class DataLoader extends Component {
 
           if(typeof subcategory === "undefined") return accumulator
 
-          return accumulator.concat(subcategory.array || [])
+          return accumulator.concat(subcategory || [])
         }, [])
     })
 

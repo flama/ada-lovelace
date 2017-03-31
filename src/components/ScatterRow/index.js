@@ -7,7 +7,7 @@ import './styles.scss'
 class ScatterRow extends Component {
 
   componentDidMount = () => {
-    this.d3Chart = new d3chartHelper(this.graph,{
+    this.d3Chart = new d3chartHelper(this.graph, {
       width: "100%",
       height: "100%"
     }, this.getChartState())
@@ -36,7 +36,7 @@ class ScatterRow extends Component {
 
   render() {
     return (
-      <div className={ `scatter-row ${ this.props.active ? 'active':'' }` }>
+      <div className={ `scatter-row ${ this.props.hidden ? 'hidden':'' }` }>
         <div className="title"><h2>{ this.props.title }</h2></div>
         <div className="graph" ref={ graph => { this.graph = graph } }></div>
       </div>
