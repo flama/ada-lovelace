@@ -27,7 +27,7 @@
 
   > * { transition: all 0.3s ease; }
 
-  > *:hover { color: $selected; }
+  > *:hover { color: #fff; }
 
   @include small-only {
     @include wrap-mobile;
