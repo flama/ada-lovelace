@@ -88,6 +88,7 @@ class d3ChartHelper {
       let balls = document.getElementsByClassName('d3-point')
       for(let i=0; i<balls.length; ++i)
       {
+        balls[i].classList.remove('growing')
         balls[i].classList.remove('shrinking')
         balls[i].setAttribute('r', radius)
       }
