@@ -22,5 +22,23 @@
       font-weight: $regular;
       color: #fff;
     }
+
+    @include small-only {
+      @include wrap-mobile;
+
+      > h1 {
+        margin-top: $space-xl;
+        font-size: $font-size-hecto;
+        line-height: $line-height-hecto;
+      }
+
+      > p {
+        margin-top: $space-m;
+        font-size: $font-size-deca;
+        line-height: $line-height-deca;
+      }
+
+    }
   }
+
 }

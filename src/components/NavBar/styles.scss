@@ -28,4 +28,11 @@
   > * { transition: all 0.3s ease; }
 
   > *:hover { color: $selected; }
+
+  @include small-only {
+    @include wrap-mobile;
+
+    > .left, > .right { padding: $space-xxxs; }
+    > .right { margin-left: $space-xxs; }
+  }
 }
