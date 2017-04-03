@@ -48,16 +48,7 @@ class d3ChartHelper {
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
       .attr("onmouseenter", `window.wikiminaGrow(evt.target)`)
-        // evt.target.setAttribute('r', '${radius*1.7}');
-        // window.wikiminaEnlarge = setTimeout(() => {
-        //   evt.target.setAttribute('r', '${radius*1.5}');
-        // }, 200)
-        // `)
       .attr("onmouseleave", `window.wikiminaShrink(evt.target)`)
-        // `evt.target.setAttribute('r', '${radius}')
-        // if(window.wikiminaEnlarge) {
-        // clearTimeout(window.wikiminaEnlarge)
-        // `)
 
     window.wikiminaGrow = target => {
       target.setAttribute('r', radius*2.26)

@@ -44,15 +44,11 @@ class ScatterRow extends Component {
   }
 }
 
-ScatterRow.defaultProps = {
-  open: _=>_
+ScatterRow.propTypes = {
+  data: React.PropTypes.array,
+  domain: React.PropTypes.object.isRequired,
+  hidden: React.PropTypes.bool
+  title: React.PropTypes.string
 }
-
-// ScatterRow.propTypes = {
-//   data: React.PropTypes.object,
-//   domain: React.PropTypes.object.isRequired,
-//   open: React.PropTypes.func,
-//   active: React.PropTypes.bool
-// }
 
 export default ScatterRow
