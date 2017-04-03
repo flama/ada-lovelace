@@ -1,0 +1,11 @@
+@import '../../config';
+
+#share {
+  @include wrap;
+
+  > p {
+    font-size: $font-size-deci;
+    line-height: $line-height-deci;
+    color: #fff;
+  }
+}
