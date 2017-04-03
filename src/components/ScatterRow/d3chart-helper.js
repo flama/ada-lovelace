@@ -7,7 +7,7 @@ class d3ChartHelper {
 
   constructor(el, props, state) {
     let svg = d3.select(el).append('svg')
-      .attr('class', 'd3 scatter-row')
+      .attr('class', 'd3 scatter-row-svg')
       .attr('width', props.width)
       .attr('height', props.height)
 
@@ -19,7 +19,6 @@ class d3ChartHelper {
 
   update(el, state) {
     let scales = this._scales(el, state.domain)
-    debugger
     this._drawPoints(el, this._format(state.data, scales))
   }
 
@@ -33,7 +32,6 @@ class d3ChartHelper {
   })
 
   _drawPoints = (el, data) => {
-    debugger
     let simulation = d3.forceSimulation(data)
       .force("collide", d3.forceCollide(radius + 1))
       .stop()
@@ -44,12 +42,48 @@ class d3ChartHelper {
       .selectAll("g")
       .data(data)
       .enter()
-      .append("g")
       .append("circle")
       .attr("class", "d3-point")
       .attr("r", radius)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
+      .attr("onmouseenter", `window.wikiminaGrow(evt.target)`)
+      .attr("onmouseleave", `window.wikiminaShrink(evt.target)`)
+
+    window.wikiminaGrow = target => {
+      target.setAttribute('r', radius*2.26)
+      target.classList.add('growing')
+
+      let balls = document.getElementsByClassName('d3-point')
+
+      for(let i=0; i<balls.length; ++i)
+      {
+        if(balls[i] === target) continue
+
+        balls[i].classList.add('shrinking')
+        balls[i].setAttribute('r', radius*2/3)
+      }
+
+      window.wikiminaTime = setTimeout(() => {
+        target.classList.remove('growing')
+        target.setAttribute('r', radius*2)
+      }, 160)
+    }
+
+    window.wikiminaShrink = target => {
+      if(window.wikiminaTime) {
+        clearTimeout(window.wikiminaTime)
+        window.wikiminaTime = undefined
+      }
+
+      let balls = document.getElementsByClassName('d3-point')
+      for(let i=0; i<balls.length; ++i)
+      {
+        balls[i].classList.remove('growing')
+        balls[i].classList.remove('shrinking')
+        balls[i].setAttribute('r', radius)
+      }
+    }
 
     simulation.on("tick", () => {
       cell

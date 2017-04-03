@@ -7,26 +7,20 @@ import './styles.scss'
 class ScatterRow extends Component {
 
   componentDidMount = () => {
-    this.d3Chart = new d3chartHelper(this.graph,{
+    this.d3Chart = new d3chartHelper(this.graph, {
       width: "100%",
       height: "100%"
     }, this.getChartState())
   }
 
-  componentDidUpdate = () => {
-    let el = ReactDOM.findDOMNode(this)
-    this.d3Chart.update(el,this.getChartState())
-  }
-
   getChartState = () => {
     return {
-      data: this.reduceDataToArray(this.props.data),
+      data: this.props.data,
       domain: this.props.domain
     }
   }
 
   reduceDataToArray = data => {
-    console.log("props", this.props)
     if(!data) return []
     return Object.keys(data)
       .reduce((accumulator, key) => {
@@ -42,22 +36,19 @@ class ScatterRow extends Component {
 
   render() {
     return (
-      <div className="scatter-row">
-        <div className="title" onClick={ () => this.props.open() }><h2>{ this.props.title }</h2></div>
+      <div className={ `scatter-row ${ this.props.hidden ? 'hidden':'' }` }>
+        <div className="title"><h2>{ this.props.title }</h2></div>
         <div className="graph" ref={ graph => { this.graph = graph } }></div>
       </div>
     )
   }
 }
 
-ScatterRow.defaultProps = {
-  open: _=>_
-}
-
 ScatterRow.propTypes = {
-  data: React.PropTypes.object,
+  data: React.PropTypes.array,
   domain: React.PropTypes.object.isRequired,
-  open: React.PropTypes.func
+  hidden: React.PropTypes.bool,
+  title: React.PropTypes.string
 }
 
 export default ScatterRow

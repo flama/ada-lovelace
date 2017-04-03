@@ -9,26 +9,30 @@ class FilterableScatterPlot extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      filterTag: -1
+      activeRow: -1
     }
-
-    this.handleUserInput = this.handleUserInput.bind(this)
   }
 
-  handleUserInput(optionIndex) {
+  handleUserInput = optionIndex => {
     this.setState({
-      filterTag: this.props.options[optionIndex] || -1
+      activeRow: this.props.options[optionIndex] || -1
     })
   }
 
-  filterDataList = dataList => {
-    let items = null
-    if(this.state.filterTag === -1) {
-      items = dataList
-    } else {
-      items = dataList[this.state.filterTag]
-    }
-    return items
+  selectCategory = data => {
+    if(this.state.activeRow === -1) return data
+
+    let finalData = {}
+
+
+    Object.keys(data).forEach(dataKey => {
+      finalData[dataKey] = { ...data[dataKey] }
+
+      if(dataKey === this.state.activeRow)
+        finalData[dataKey].active = true
+    })
+
+    return {...data, ...finalData}
   }
 
   render() {
@@ -38,7 +42,7 @@ class FilterableScatterPlot extends Component {
           title="Categorias" titlePosition="top" options={this.props.options}
           onChange={ index => this.handleUserInput(index) }
         />
-        <ScatterPlot dataList={ this.filterDataList(this.props.dataList) }/>
+        <ScatterPlot dataList={ this.selectCategory(this.props.dataList) } all={ this.state.activeRow === -1 } />
       </div>
     )
   }
@@ -49,7 +53,8 @@ FilterableScatterPlot.defaultProps = {
 }
 
 FilterableScatterPlot.propTypes = {
-  dataList: React.PropTypes.object
+  dataList: React.PropTypes.object,
+  options: React.PropTypes.array
 }
 
 export default FilterableScatterPlot;

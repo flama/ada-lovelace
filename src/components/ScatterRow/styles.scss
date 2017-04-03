@@ -1,9 +1,12 @@
 @import "../base";
 @import '../../config';
 
+$base-time: 0.2s;
+
 .scatter-row {
   display: flex;
   align-items: center;
+  flex-grow: 1;
 
   .title {
     display: inline-block;
@@ -30,6 +33,27 @@
     .d3-point {
       fill: $selected;
       cursor: pointer;
+
+      // return-to-normal animation
+      transition: all 0.5 * $base-time ease-in-out;
+
+      &:hover {
+        // kick-off animation
+        transition: all 0.2 * $base-time cubic-bezier(0.44, 0.23, 0.19, 0.98);
+      }
+
+      // growing animation
+      &.growing {
+        transition: all 0.8 * $base-time cubic-bezier(0.44, 0.23, 0.19, 0.98);
+      }
+
+      transition-delay: 0.5 * $base-time;
+
+      &.shrinking {
+        transition-delay: 0.75 * $base-time;
+        transition-duration: 0.5 * $base-time;
+        transition-timing-function: ease-in-out;
+      }
     }
   }
 }

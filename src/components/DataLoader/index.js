@@ -45,8 +45,12 @@ class DataLoader extends Component {
           organized[categoryName][subcategory] = data[subcategory]
         })
       })
+
       return { dataList: organized, options: categories.map(x => x[0]) }
     })
+    .then(this.addStatusToCategories(true))
+    .then(this.categoriesToArrays)
+    .then(this.printData('final_data'))
   }
 
   printData = label => {
@@ -116,11 +120,35 @@ class DataLoader extends Component {
     return aggrupped
   }, {})
 
-  organizeByCategory = tags => tags.reduce((aggrupped, tag) => {
+  addStatusToCategories = status => {
+    return ({ dataList, options }) => {
+      Object.keys(dataList).forEach(categoryName => {
+        dataList[categoryName] = {
+          division: dataList[categoryName],
+          active: false
+        }
+      })
 
+      return { dataList, options }
+    }
+  }
 
-    return aggrupped
-  }, {})
+  categoriesToArrays = ({ dataList, options }) => {
+    Object.keys(dataList).forEach(categoryName => {
+      let subcategories = dataList[categoryName].division
+
+      dataList[categoryName].array = Object.keys(subcategories)
+        .reduce((accumulator, subcategoryName) => {
+          let subcategory = subcategories[subcategoryName]
+
+          if(typeof subcategory === "undefined") return accumulator
+
+          return accumulator.concat(subcategory || [])
+        }, [])
+    })
+
+    return ({ dataList, options })
+  }
 
   createUrl = options => {
     const spreadsheetId = '18VumVINXYypPAPA5aqLhw-BoFHqb5CGCrDI3JeBIs6I'
@@ -135,6 +163,10 @@ class DataLoader extends Component {
     else
       return `${baseAPI}/values:batchGet?${values}key=${apiKey}`
   }
+}
+
+DataLoader.propTypes = {
+  fetchData: React.PropTypes.func
 }
 
 export default DataLoader

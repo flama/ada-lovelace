@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ScatterRow from '../ScatterRow'
+import ExpansibleScatterRow from '../ExpansibleScatterRow'
 
 import './styles.scss'
 
@@ -12,10 +12,11 @@ class ScatterPlot extends Component {
   render() {
 
     let topics = Object.keys(this.props.dataList).map(category => {
-      return (<ScatterRow
+      return (<ExpansibleScatterRow
         data={ this.props.dataList[category] }
         domain={ domain }
         title={ category }
+        all={ this.props.all }
         key={ category }
       />)
     })
@@ -26,6 +27,11 @@ class ScatterPlot extends Component {
       </div>
     )
   }
+}
+
+ScatterPlot.propTypes = {
+  dataList: React.PropTypes.object,
+  all: React.PropTypes.bool
 }
 
 export default ScatterPlot
