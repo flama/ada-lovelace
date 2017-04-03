@@ -7,10 +7,6 @@
   > h2 {
     @include medium-wrap;
     margin-bottom: $space-s;
-
-    font-size: $font-size-kilo;
-    line-height: $line-height-kilo;
-    color: #fff;
   }
 
   > .content {
@@ -23,6 +19,4 @@
       color: $light-purple;
     }
   }
-
-
 }

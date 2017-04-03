@@ -3,13 +3,31 @@ body {
   font-size: 16px;
 }
 
+h1, h2, h3, h4 { font-weight: $heavy; }
+p { font-weight: $regular; }
+
 h1 {
+  font-size: $font-size-tera;
+  line-height: $line-height-tera;
+}
+
+h2 {
+  font-size: $font-size-giga;
+  line-height: $line-height-giga;
+}
+
+h3 {
   font-size: $font-size-mega;
   line-height: $line-height-mega;
+}
+
+h4 {
+  font-size: $font-size-kilo;
+  line-height: $line-height-kilo;
 }
 
 p {
   font-size: $font-size-base;
   line-height: $line-height-base;
-
 }
+
