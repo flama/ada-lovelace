@@ -1,7 +1,6 @@
 @import '../../config';
 
 #about-page {
-  @include big-wrap;
   margin-top: $space-xxl;
 
   > h2 {
