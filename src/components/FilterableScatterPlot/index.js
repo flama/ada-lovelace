@@ -53,7 +53,8 @@ FilterableScatterPlot.defaultProps = {
 }
 
 FilterableScatterPlot.propTypes = {
-  dataList: React.PropTypes.object
+  dataList: React.PropTypes.object,
+  options: React.PropTypes.array
 }
 
 export default FilterableScatterPlot;

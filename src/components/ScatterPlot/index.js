@@ -29,4 +29,9 @@ class ScatterPlot extends Component {
   }
 }
 
+ScatterPlot.propTypes = {
+  dataList: React.PropTypes.object,
+  all: React.PropTypes.bool
+}
+
 export default ScatterPlot

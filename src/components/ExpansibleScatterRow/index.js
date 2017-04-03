@@ -39,4 +39,12 @@ class ExpansibleScatterRow extends Component {
   }
 }
 
+ExpansibleScatterRow.propTypes = {
+  data: React.PropTypes.object,
+  domain: React.PropTypes.object,
+  title: React.PropTypes.string,
+  hidden: React.PropTypes.bool,
+  all: React.PropTypes.bool
+}
+
 export default ExpansibleScatterRow

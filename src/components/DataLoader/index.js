@@ -165,4 +165,8 @@ class DataLoader extends Component {
   }
 }
 
+DataLoader.propTypes = {
+  fetchData: React.PropTypes.func
+}
+
 export default DataLoader
