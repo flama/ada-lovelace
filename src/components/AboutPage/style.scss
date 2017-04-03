@@ -5,8 +5,24 @@
   margin-top: 84px;
 
   > h2 {
-    font-size: 100px;
-    line-height: 100px;
+    @include medium-wrap;
+    margin-bottom: $space-s;
+
+    font-size: $font-size-kilo;
+    line-height: $line-height-kilo;
     color: #fff;
   }
+
+  > .content {
+    @include wrap;
+    margin-bottom: $space-m;
+
+    > p {
+      margin-bottom: $space-m;
+
+      color: $light-purple;
+    }
+  }
+
+
 }
