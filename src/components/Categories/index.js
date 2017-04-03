@@ -41,9 +41,9 @@ class Categories extends Component {
 
     return (
       <div className="categories">
-        <h3 className={ this.styleTitle(this.props.titlePosition) }>
-          Quem são elas?
-        </h3>
+        <h4 className={ this.styleTitle(this.props.titlePosition) }>
+          Who are the wonderful women who helped shape the world?
+        </h4>
         <div className="main">
           <button className={ this.styleButton(ALL) }
             onClick={ () => this.choose(ALL) }
