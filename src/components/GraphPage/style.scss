@@ -6,12 +6,43 @@
   > h3 { margin-bottom: $space-xs; }
 
   > .content {
-    margin-bottom: $space-m;
     display: flex;
     align-items: center;
 
     > p {
       margin-bottom: $space-xl;
+    }
+  }
+
+  .graph-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    .title {
+      display: block;
+      margin-bottom: $space-l;
+    }
+
+     > .legend {
+      > span {
+        font-size: $font-size-centi;
+        color: $light-purple;
+        display: flex;
+        align-items: center;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: $space-xxs;
+          height: 18px;
+          width: 18px;
+          border-radius: 50%;
+          background-color: $selected;
+          text-align: center;
+          color: #fff;
+        }
+      }
     }
   }
 }

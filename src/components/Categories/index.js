@@ -14,10 +14,6 @@ class Categories extends Component {
     }
   }
 
-  styleTitle = position => {
-    return `title -${position}`
-  }
-
   styleButton = index => {
     return `button ${index === this.state.selected? 'selected':''}`
   }
@@ -41,22 +37,12 @@ class Categories extends Component {
 
     return (
       <div className="categories">
-        <div className="content">
-          <h4 className={ this.styleTitle(this.props.titlePosition) }>
-            Who are the wonderful women who helped shape the world?
-          </h4>
-          <div className="legend">
-            <span>Women</span>
-          </div>
-        </div>
-        <div className="main">
-          <button className={ this.styleButton(ALL) }
-            onClick={ () => this.choose(ALL) }
-          >
-            { this.props.all }
-          </button>
-          { options }
-        </div>
+        <button className={ this.styleButton(ALL) }
+          onClick={ () => this.choose(ALL) }
+        >
+          { this.props.all }
+        </button>
+        { options }
       </div>
     )
   }

@@ -1,70 +1,35 @@
 @import '../../config';
 
 .categories {
+  margin-bottom: $space-m;
 
-  .content {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
+  .button {
+    padding-left: $space-s;
+    padding-right: $space-s;
+    margin-left: $space-xxs;
 
-    .title {
-      display: block;
-      margin-bottom: $space-l;
-    }
+    border-style: solid;
+    border-width: 1px;
+    border-color: $light-purple;
+    border-radius: 0.5em;
 
-     > .legend {
-      > span {
-        font-size: $font-size-centi;
-        color: $light-purple;
-        display: flex;
-        align-items: center;
+    font-size: $font-size-centi;
+    line-height: 1.5em;
+    letter-spacing: 0.44px;
+    color: $light-purple;
+    background-color: transparent;
+    cursor: pointer;
 
-        &:before {
-          content: '';
-          display: inline-block;
-          margin-right: $space-xxs;
-          height: 18px;
-          width: 18px;
-          border-radius: 50%;
-          background-color: $selected;
-          text-align: center;
-          color: #fff;
-        }
-      }
-    }
-  }
+    transition: all 0.3s ease;
 
-  .main {
-    margin-bottom: $space-m;
+    &:first-child { margin-left: 0; }
 
-    .button {
-      padding-left: $space-s;
-      padding-right: $space-s;
-      margin-left: $space-xxs;
+    &:hover { color: #fff; }
 
-      border-style: solid;
-      border-width: 1px;
-      border-color: $light-purple;
-      border-radius: 0.5em;
-
-      font-size: $font-size-centi;
-      line-height: 1.5em;
-      letter-spacing: 0.44px;
-      color: $light-purple;
-      background-color: transparent;
-      cursor: pointer;
-
-      transition: all 0.3s ease;
-
-      &:first-child { margin-left: 0; }
-
-      &:hover { color: #fff; }
-
-      &.selected {
-        border-color: transparent;
-        background-color: $selected;
-        color: #fff;
-      }
+    &.selected {
+      border-color: transparent;
+      background-color: $selected;
+      color: #fff;
     }
   }
 }
