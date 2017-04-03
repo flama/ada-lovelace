@@ -47,7 +47,7 @@ class ScatterRow extends Component {
 ScatterRow.propTypes = {
   data: React.PropTypes.array,
   domain: React.PropTypes.object.isRequired,
-  hidden: React.PropTypes.bool
+  hidden: React.PropTypes.bool,
   title: React.PropTypes.string
 }
 
