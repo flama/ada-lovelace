@@ -1,0 +1,18 @@
+@import '../../config';
+
+#about-page {
+  @include big-wrap;
+  margin-top: $space-xxl;
+
+  > h2 {
+    @include medium-wrap;
+    margin-bottom: $space-s;
+  }
+
+  > .content {
+    @include wrap;
+    margin-bottom: $space-m;
+
+    > p { margin-bottom: $space-m; }
+  }
+}

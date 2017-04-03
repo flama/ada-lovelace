@@ -1,4 +1,5 @@
 @import "../base";
+@import '../../config';
 
 $base-time: 0.2s;
 
@@ -20,7 +21,8 @@ $base-time: 0.2s;
     color: $medium;
 
     h2 {
-      font-weight: normal;
+      font-size: $font-size-deci;
+      line-height: $line-height-deci;
     }
   }
 

@@ -4,11 +4,7 @@
 
   .title {
     display: block;
-    margin-bottom: $space-s;
-    font-size: $font-size-base;
-    line-height: $line-height-base;
-    font-weight: $regular;
-    color: #fff;
+    margin-bottom: $space-l;
   }
 
   .main {
@@ -24,6 +20,7 @@
       border-color: $light-purple;
       border-radius: 0.5em;
 
+      font-size: $font-size-centi;
       line-height: 1.5em;
       letter-spacing: 0.44px;
       color: $light-purple;

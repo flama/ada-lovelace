@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import GraphPage from '../GraphPage'
+import AboutPage from '../AboutPage'
 import Home from '../Home'
 
 import './App.scss'
@@ -12,6 +13,7 @@ class App extends Component {
       <div id="app">
         <Home />
         <GraphPage />
+        <AboutPage />
       </div>
     )
   }
