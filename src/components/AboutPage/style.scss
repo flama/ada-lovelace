@@ -2,7 +2,7 @@
 
 #about-page {
   @include big-wrap;
-  margin-top: 84px;
+  margin-top: $space-xxl;
 
   > h2 {
     @include medium-wrap;
