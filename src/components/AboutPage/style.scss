@@ -13,10 +13,6 @@
     @include wrap;
     margin-bottom: $space-m;
 
-    > p {
-      margin-bottom: $space-m;
-
-      color: $light-purple;
-    }
+    > p { margin-bottom: $space-m; }
   }
 }

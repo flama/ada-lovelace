@@ -1,7 +1,7 @@
 @import '../../config';
 
 #navbar {
-  @include wrap;
+  @include medium-wrap;
 
   &:first-child {color: gold;}
 
