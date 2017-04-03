@@ -6,23 +6,25 @@
   > h3 { margin-bottom: $space-xs; }
 
   > .content {
-    margin-bottom: $space-m;
     display: flex;
     align-items: center;
 
     > p {
-      width: 70%;
-      float: left;
       margin-bottom: $space-xl;
     }
+  }
 
-    > .legend {
-      width: 30%;
-      float: right;
-      text-align: right;
-      display: flex;
-      justify-content: flex-end;
+  .graph-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
 
+    .title {
+      display: block;
+      margin-bottom: $space-l;
+    }
+
+     > .legend {
       > span {
         font-size: $font-size-centi;
         color: $light-purple;
@@ -42,6 +44,5 @@
         }
       }
     }
-
   }
 }

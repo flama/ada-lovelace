@@ -1,43 +1,35 @@
 @import '../../config';
 
 .categories {
+  margin-bottom: $space-m;
 
-  .title {
-    display: block;
-    margin-bottom: $space-l;
-  }
+  .button {
+    padding-left: $space-s;
+    padding-right: $space-s;
+    margin-left: $space-xxs;
 
-  .main {
-    margin-bottom: $space-m;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $light-purple;
+    border-radius: 0.5em;
 
-    .button {
-      padding-left: $space-s;
-      padding-right: $space-s;
-      margin-left: $space-xxs;
+    font-size: $font-size-centi;
+    line-height: 1.5em;
+    letter-spacing: 0.44px;
+    color: $light-purple;
+    background-color: transparent;
+    cursor: pointer;
 
-      border-style: solid;
-      border-width: 1px;
-      border-color: $light-purple;
-      border-radius: 0.5em;
+    transition: all 0.3s ease;
 
-      font-size: $font-size-centi;
-      line-height: 1.5em;
-      letter-spacing: 0.44px;
-      color: $light-purple;
-      background-color: transparent;
-      cursor: pointer;
+    &:first-child { margin-left: 0; }
 
-      transition: all 0.3s ease;
+    &:hover { color: #fff; }
 
-      &:first-child { margin-left: 0; }
-
-      &:hover { color: #fff; }
-
-      &.selected {
-        border-color: transparent;
-        background-color: $selected;
-        color: #fff;
-      }
+    &.selected {
+      border-color: transparent;
+      background-color: $selected;
+      color: #fff;
     }
   }
 }

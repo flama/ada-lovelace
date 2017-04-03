@@ -60,3 +60,11 @@
   width: calc(65% + 200px);
 }
 
+// Dotted border mixin by @poopsplat: http://codepen.io/poopsplat/pen/xEIty?editors=1100
+@mixin dots($color, $spacing, $position: bottom) {
+  background-position: $position;
+  background-repeat: repeat-x;
+  background-size: $spacing 1px;
+  background-image: linear-gradient(to right, $color 10%, rgba(255, 255, 255, 0) 0%);
+  background-image: -webkit-linear-gradient(to right, $color 10%, rgba(255, 255, 255, 0) 0%);
+}

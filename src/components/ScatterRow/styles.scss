@@ -7,10 +7,14 @@ $base-time: 0.2s;
   align-items: center;
   flex-grow: 1;
 
+  @include dots($light-purple, 6px);
+
   .title {
     display: inline-block;
     height: 100%;
     width: 12vw;
+    align-self: flex-start;
+    margin-top: $space-xs;
 
     padding-right: 1em;
     padding-left: 0.5em;
@@ -20,6 +24,7 @@ $base-time: 0.2s;
     h2 {
       font-size: $font-size-deci;
       line-height: $line-height-deci;
+      font-weight: $regular;
     }
   }
 
