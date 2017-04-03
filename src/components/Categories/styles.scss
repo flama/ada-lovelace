@@ -2,9 +2,40 @@
 
 .categories {
 
-  .title {
-    display: block;
-    margin-bottom: $space-l;
+  .content {
+    @include clearfix;
+
+    .title {
+      display: block;
+      float: left;
+      margin-bottom: $space-l;
+    }
+
+     > .legend {
+      float: right;
+      // text-align: right;
+      // display: flex;
+      // justify-content: flex-end;
+
+      > span {
+        font-size: $font-size-centi;
+        color: $light-purple;
+        display: flex;
+        align-items: center;
+
+        &:before {
+          content: '';
+          display: inline-block;
+          margin-right: $space-xxs;
+          height: 18px;
+          width: 18px;
+          border-radius: 50%;
+          background-color: $selected;
+          text-align: center;
+          color: #fff;
+        }
+      }
+    }
   }
 
   .main {

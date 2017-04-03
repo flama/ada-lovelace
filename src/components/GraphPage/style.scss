@@ -11,37 +11,7 @@
     align-items: center;
 
     > p {
-      width: 70%;
-      float: left;
       margin-bottom: $space-xl;
     }
-
-    > .legend {
-      width: 30%;
-      float: right;
-      text-align: right;
-      display: flex;
-      justify-content: flex-end;
-
-      > span {
-        font-size: $font-size-centi;
-        color: $light-purple;
-        display: flex;
-        align-items: center;
-
-        &:before {
-          content: '';
-          display: inline-block;
-          margin-right: $space-xxs;
-          height: 18px;
-          width: 18px;
-          border-radius: 50%;
-          background-color: $selected;
-          text-align: center;
-          color: #fff;
-        }
-      }
-    }
-
   }
 }

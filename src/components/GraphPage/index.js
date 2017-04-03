@@ -26,9 +26,6 @@ class GraphPage extends Component {
           <p>{ `There's a woman behind every single change in our history — whether you know her
           or not. We have picked a few (for know) to try and show it, by sorting them into their
           influence areas and through time.` }</p>
-          <div className="legend">
-            <span>Women</span>
-          </div>
         </div>
         <DataLoader fetchData={this.fetchData} />
         <FilterableScatterPlot dataList={this.state.dataList} options={this.state.options} />
