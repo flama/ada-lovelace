@@ -1,0 +1,20 @@
+@import '../../config';
+
+#details-bubble {
+  width: 182px;
+  height: 182px;
+  border-radius: 50%;
+  background-color: $selected;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-around;
+
+  h3 { font-size: $font-size-deca; }
+
+  p, a { font-size: $font-size-centi; }
+
+  a { color: $color-ghost; }
+
+}
