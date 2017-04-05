@@ -29,16 +29,15 @@ $bubble-time: 0.3s;
     font-size: 0;
 
     &.external:after {
-      height: 1em;
-      width: 1em;
-      margin-left: $space-xxs;
-      margin-right: $space-xxs;
+      height: $space-xxs;
+      width: $space-xxs;
+      margin-left: $space-xxxs;
       display: inline-block;
       content: "";
       background-image: url('./open.svg?name=Icon');
       background-repeat: no-repeat;
       background-size: 100%;
-      background-position: center center;
+      background-position: center bottom;
     }
   }
 
