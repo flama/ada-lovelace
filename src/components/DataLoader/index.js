@@ -20,16 +20,13 @@ class DataLoader extends Component {
         .then(ranges => ranges.map(range => range.values))
         .then(this.segregateColsFromSheets)
         .then(this.joinSheets)
-        .then(data => {
-          console.log(data.women.length)
-          return data
-        })
         .then(this.removeEmptyWomen)
         .then(this.sheetToObject)
         .then(this.convertFiltersToTags)
         .then(this.removeWomenThatAreNotBorn)
         .then(this.transformBCToNegative)
         .then(this.organizeByTag)
+        .then(this.printData('women'))
         .catch(error => console.error(error)),
       fetch(this.createUrl({ categories: true }))
         .then(response => response.json())
