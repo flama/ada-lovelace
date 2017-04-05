@@ -32,13 +32,24 @@
     justify-content: center;
     align-items: center;
 
-    h3 {
+    > * {
+      max-width: $space-xxxl;
+      text-align: center;
+    }
+
+    .name {
       font-size: $font-size-deca;
-      line-height: 1em;
+      line-height: $line-height-base;
+      font-weight: $regular;
     }
   }
 
-  p, a { font-size: $font-size-centi; }
+  .description, a { font-size: $font-size-centi; }
+
+  .description {
+    line-height: $line-height-mili;
+    color: $feminist-purple;
+  }
 
   a {
     color: $color-ghost;
