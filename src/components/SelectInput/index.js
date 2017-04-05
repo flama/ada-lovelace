@@ -5,7 +5,7 @@ import './styles.scss'
 class SelectInput extends Component {
 
   handleUserInput = () => {
-    this.props.onUserInput(this.select.value)
+    this.props.onChange(this.select.value)
   }
 
   render() {
@@ -17,7 +17,8 @@ class SelectInput extends Component {
 
     return (
       <div className="select-input">
-        <select required="required" ref={ select => this.select = select }>
+        <select required="required" onChange={ this.handleUserInput }
+          ref={ select => this.select = select }>
           <option value={ -1 }>{ `Continents (All)` }</option>
           { options }
         </select>
@@ -27,11 +28,12 @@ class SelectInput extends Component {
 }
 
 SelectInput.defaultProps = {
-  options: []
+  options: [],
+  onChange: _=>_
 }
 
 SelectInput.propTypes = {
-  onUserInput: React.PropTypes.func,
+  onChange: React.PropTypes.func,
   options: React.PropTypes.array
 }
 

@@ -16,7 +16,8 @@ class FilterableScatterPlot extends Component {
 
   handleUserInput = optionIndex => {
     this.setState({
-      activeRow: this.props.options[optionIndex] || -1
+      activeRow: this.props.options.categories[optionIndex] ||
+        this.props.options.continents[optionIndex]|| -1
     })
   }
 
@@ -44,9 +45,11 @@ class FilterableScatterPlot extends Component {
             title="Categorias" titlePosition="top" options={this.props.options.categories}
             onChange={ index => this.handleUserInput(index) }
           />
-          <SelectInput options={this.props.options.continents}/>
+          <SelectInput options={this.props.options.continents}
+            onChange={ index => this.handleUserInput(index) }
+          />
         </div>
-        <ScatterPlot dataList={ this.selectCategory(this.props.dataList) } all={ this.state.activeRow === -1 } />
+        <ScatterPlot dataList={ this.filterContinent(this.selectCategory(this.props.dataList)) } all={ this.state.activeRow === -1 } />
       </div>
     )
   }
