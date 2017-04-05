@@ -18,13 +18,12 @@
   transition: 0.5s ease-in-out;
   transition-property: height, width, margin-top, margin-left;
 
-  &.show {
-    width: 182px;
-    height: 182px;
-    margin-top: -91px;
-    margin-left: -91px;
-    transition: 0.5s ease-in-out;
-    transition-property: height, width, margin-top, margin-left;
+  a {
+    color: $color-ghost;
+    margin-top: $space-xs;
+    margin-bottom: $space-xs;
+    flex-grow: 0.25;
+    font-size: 0;
   }
 
   .content {
@@ -35,42 +34,40 @@
     align-items: center;
 
     > * {
-      max-width: $space-xxxl;
+      max-width: 0;
       text-align: center;
+      font-size: 0;
     }
 
     .name {
-      font-size: $font-size-deca;
       line-height: $line-height-octo;
       font-weight: $regular;
     }
+
+    .description {
+      line-height: $line-height-mili;
+      color: $feminist-purple;
+    }
   }
 
-  .description, a { font-size: $font-size-centi; }
-
-  .description {
-    line-height: $line-height-mili;
-    color: $feminist-purple;
+  &.show {
+    width: 182px;
+    height: 182px;
+    margin-top: -91px;
+    margin-left: -91px;
+    transition: 0.5s ease-in-out;
+    transition-property: height, width, margin-top, margin-left;
   }
 
-  a {
-    color: $color-ghost;
-    margin-top: $space-xs;
-    margin-bottom: $space-xs;
-    flex-grow: 0.25;
+  &.show > * {
+    > * {
+      transition: 0.3s ease-in-out;
+      transition-property: font, max-width;
+      transition-delay: 0.2s;
+      max-width: $space-xxxl;
+    }
 
-    // TODO: make svg be a thing
-    // &.external:after {
-    //   height: 1em;
-    //   width: 1em;
-    //   margin-left: $space-xxs;
-    //   margin-right: $space-xxs;
-    //   display: inline-block;
-    //   content: "";
-    //   background-image: url('./open.svg');
-    //   background-repeat: no-repeat;
-    //   background-size: 100%;
-    //   background-position: center center;
-    // }
+    .name { font-size: $font-size-deca; }
+    .description, &.external, &.close { font-size: $font-size-centi; }
   }
 }

@@ -9,7 +9,7 @@ class DetailsBubble extends Component {
   render() {
     return (
       <div id="details-bubble">
-        <a onClick={ this.close }>Close</a>
+        <a onClick={ this.close } className="close">Close</a>
         <div className="content">
           <h3 className="name"></h3>
           <p className="description"></p>
