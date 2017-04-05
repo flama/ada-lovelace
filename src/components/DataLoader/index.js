@@ -26,7 +26,6 @@ class DataLoader extends Component {
         .then(this.removeWomenThatAreNotBorn)
         .then(this.transformBCToNegative)
         .then(this.organizeByTag)
-        .then(this.printData('women'))
         .catch(error => console.error(error)),
       fetch(this.createUrl({ categories: true }))
         .then(response => response.json())
