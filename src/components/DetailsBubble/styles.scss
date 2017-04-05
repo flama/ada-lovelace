@@ -1,5 +1,7 @@
 @import '../../config';
 
+$bubble-time: 0.3s;
+
 #details-bubble {
   width: 0;
   height: 0;
@@ -15,7 +17,7 @@
 
   margin-top: 0;
   margin-left: 0;
-  transition: 0.5s ease-in-out;
+  transition: $bubble-time ease-in-out;
   transition-property: height, width, margin-top, margin-left;
 
   a {
@@ -55,15 +57,15 @@
     height: 182px;
     margin-top: -91px;
     margin-left: -91px;
-    transition: 0.5s ease-in-out;
+    transition: $bubble-time ease-in-out;
     transition-property: height, width, margin-top, margin-left;
   }
 
   &.show > * {
     > * {
-      transition: 0.3s ease-in-out;
+      transition: $bubble-time/2 ease-in-out;
       transition-property: font, max-width;
-      transition-delay: 0.2s;
+      transition-delay: $bubble-time/2;
       max-width: $space-xxxl;
     }
 

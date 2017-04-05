@@ -91,26 +91,28 @@ class d3ChartHelper {
       let bubble = document.getElementById('details-bubble')
       bubble.classList.remove('show')
 
-      let rect = target.getBoundingClientRect()
-      let plot = document.getElementsByClassName('scatter-plot').item(0).getBoundingClientRect()
+      setTimeout(() => {
+        let rect = target.getBoundingClientRect()
+        let plot = document.getElementsByClassName('scatter-plot').item(0).getBoundingClientRect()
 
-      let name = document.createTextNode(data.Name)
-      let nameContainer = bubble.getElementsByClassName('name').item(0)
-      clearNodes(nameContainer)
-      nameContainer.appendChild(name)
+        let name = document.createTextNode(data.Name)
+        let nameContainer = bubble.getElementsByClassName('name').item(0)
+        clearNodes(nameContainer)
+        nameContainer.appendChild(name)
 
-      let capitalizedOccupation = data.Occupation[0].toUpperCase() + data.Occupation.slice(1)
-      let description = document.createTextNode(`${capitalizedOccupation} from ${data.Country}`)
-      let descriptionContainer = bubble.getElementsByClassName('description').item(0)
-      clearNodes(descriptionContainer)
-      descriptionContainer.appendChild(description)
+        let capitalizedOccupation = data.Occupation[0].toUpperCase() + data.Occupation.slice(1)
+        let description = document.createTextNode(`${capitalizedOccupation} from ${data.Country}`)
+        let descriptionContainer = bubble.getElementsByClassName('description').item(0)
+        clearNodes(descriptionContainer)
+        descriptionContainer.appendChild(description)
 
-      let link = bubble.getElementsByClassName('external').item(0)
-      link.setAttribute('href', data.Informations)
+        let link = bubble.getElementsByClassName('external').item(0)
+        link.setAttribute('href', data.Informations)
 
-      bubble.style.top = `${rect.top - plot.top + 20}px`
-      bubble.style.left = `${rect.left - plot.left + 20}px`
-      bubble.classList.add('show')
+        bubble.style.top = `${rect.top - plot.top + 20}px`
+        bubble.style.left = `${rect.left - plot.left + 20}px`
+        bubble.classList.add('show')
+      }, 200)
     }
 
     window.wikiminaCloseBubble = () => {
