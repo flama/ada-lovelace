@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import NavBar from '../NavBar'
 
-import './styles.scss'
 import './home.png'
+import './styles.scss'
 
 class Home extends Component {
   render() {

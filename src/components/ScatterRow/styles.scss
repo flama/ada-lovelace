@@ -56,6 +56,10 @@ $base-time: 0.2s;
         transition-duration: 0.5 * $base-time;
         transition-timing-function: ease-in-out;
       }
+
+      &.faded {
+        fill: $faded-purple;
+      }
     }
   }
 }
