@@ -41,10 +41,10 @@ class FilterableScatterPlot extends Component {
       <div className="filterable">
         <div className="filters">
           <Categories
-            title="Categorias" titlePosition="top" options={this.props.options}
+            title="Categorias" titlePosition="top" options={this.props.options.categories}
             onChange={ index => this.handleUserInput(index) }
           />
-          <SelectInput />
+          <SelectInput options={this.props.options.continents}/>
         </div>
         <ScatterPlot dataList={ this.selectCategory(this.props.dataList) } all={ this.state.activeRow === -1 } />
       </div>
@@ -58,7 +58,7 @@ FilterableScatterPlot.defaultProps = {
 
 FilterableScatterPlot.propTypes = {
   dataList: React.PropTypes.object,
-  options: React.PropTypes.array
+  options: React.PropTypes.object
 }
 
 export default FilterableScatterPlot;
