@@ -1,8 +1,9 @@
 @import '../../config';
 
 #details-bubble {
-  width: 182px;
-  height: 182px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
   border-radius: 50%;
   background-color: $selected;
   position: absolute;
@@ -12,8 +13,19 @@
   align-items: center;
   justify-content: space-around;
 
-  .content {
+  margin-top: -20px;
+  margin-left: -20px;
 
+  &.show {
+    width: 182px;
+    height: 182px;
+    margin-top: -91px;
+    margin-left: -91px;
+    transition: 0.5s ease-in-out;
+    transition-property: height, width, margin-top, margin-left;
+  }
+
+  .content {
     flex-grow: 1;
     display: flex;
     flex-direction: column;

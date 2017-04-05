@@ -27,7 +27,8 @@ class d3ChartHelper {
   _format = (data, scales) => data.map(value => {
     return {
       x: scales.x(value.Born),
-      y: scales.y(Math.random())
+      y: scales.y(Math.random()),
+      extended: value
     }
   })
 
@@ -49,6 +50,7 @@ class d3ChartHelper {
       .attr("cy", d => d.y)
       .attr("onmouseenter", `window.wikiminaGrow(evt.target)`)
       .attr("onmouseleave", `window.wikiminaShrink(evt.target)`)
+      .attr("onclick", d => `window.wikiminaOpenBubble(evt.target)`)
 
     window.wikiminaGrow = target => {
       target.setAttribute('r', radius*2.26)
@@ -83,6 +85,18 @@ class d3ChartHelper {
         balls[i].classList.remove('shrinking')
         balls[i].setAttribute('r', radius)
       }
+    }
+
+    window.wikiminaOpenBubble = target => {
+      let bubble = document.getElementById('details-bubble')
+      bubble.classList.remove('show')
+
+      let rect = target.getBoundingClientRect()
+      let plot = document.getElementsByClassName('scatter-plot').item(0).getBoundingClientRect()
+
+      bubble.style.top = `${rect.top - plot.top + 20}px`
+      bubble.style.left = `${rect.left - plot.left + 20}px`
+      bubble.classList.add('show')
     }
 
     simulation.on("tick", () => {
