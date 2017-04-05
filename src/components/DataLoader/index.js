@@ -18,6 +18,8 @@ class DataLoader extends Component {
         .then(response => response.json())
         .then(data => data.valueRanges)
         .then(ranges => ranges.map(range => range.values))
+        .then(data => data.map(datum => datum.map(atom => atom.map(subatom => subatom.trim()))))
+        .then(this.printData('isthistrimmed'))
         .then(this.segregateColsFromSheets)
         .then(this.joinSheets)
         .then(this.removeEmptyWomen)
@@ -32,6 +34,8 @@ class DataLoader extends Component {
         .then(data => data.valueRanges)
         .then(ranges => ranges.map(range => range.values))
         .then(data => data[0])
+        .then(data => data.map(datum => datum.map(atom => atom.trim())))
+        .then(this.printData('trimmed'))
     ])
     .then(([ data, categories ]) => {
       let organized = {}
