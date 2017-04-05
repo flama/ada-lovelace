@@ -53,6 +53,8 @@ class d3ChartHelper {
       .attr("onclick", d => `window.wikiminaOpenBubble(evt.target, ${JSON.stringify(d.extended)})`)
 
     window.wikiminaGrow = target => {
+
+      if(target.classList.contains('faded')) return
       target.setAttribute('r', radius*2.26)
       target.classList.add('growing')
 
@@ -91,9 +93,11 @@ class d3ChartHelper {
     window.wikiminaOpenBubble = (target, data) => {
       let bubble = document.getElementById('details-bubble')
       let balls = document.getElementsByClassName('d3-point')
+
       for(let i=0; i<balls.length; ++i)
       {
-        if(balls === bubble) continue
+        balls[i].setAttribute('r', radius*2/3)
+        if(balls[i] === bubble) continue
 
         balls[i].classList.add('shrinking')
         balls[i].classList.add('faded')
