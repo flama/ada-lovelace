@@ -7,6 +7,7 @@ $bubble-time: 0.3s;
   height: 0;
   overflow: hidden;
   border-radius: 50%;
+  box-shadow: 0 0 4px rgba(#000, 0.5);
   background-color: $selected;
   position: absolute;
 
@@ -26,6 +27,19 @@ $bubble-time: 0.3s;
     margin-bottom: $space-xs;
     flex-grow: 0.25;
     font-size: 0;
+
+    &.external:after {
+      height: 1em;
+      width: 1em;
+      margin-left: $space-xxs;
+      margin-right: $space-xxs;
+      display: inline-block;
+      content: "";
+      background-image: url('./open3.svg');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center center;
+    }
   }
 
   .content {
