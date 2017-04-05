@@ -83,12 +83,21 @@ class d3ChartHelper {
       {
         balls[i].classList.remove('growing')
         balls[i].classList.remove('shrinking')
-        balls[i].setAttribute('r', radius)
+        if(!balls[i].classList.contains('faded'))
+          balls[i].setAttribute('r', radius)
       }
     }
 
     window.wikiminaOpenBubble = (target, data) => {
       let bubble = document.getElementById('details-bubble')
+      let balls = document.getElementsByClassName('d3-point')
+      for(let i=0; i<balls.length; ++i)
+      {
+        if(balls === bubble) continue
+
+        balls[i].classList.add('shrinking')
+        balls[i].classList.add('faded')
+      }
       bubble.classList.remove('show')
 
       setTimeout(() => {
@@ -117,6 +126,15 @@ class d3ChartHelper {
 
     window.wikiminaCloseBubble = () => {
       let bubble = document.getElementById('details-bubble')
+      let balls = document.getElementsByClassName('d3-point')
+
+      for(let i=0; i<balls.length; ++i)
+      {
+        balls[i].classList.remove('shrinking')
+        balls[i].classList.remove('faded')
+        balls[i].setAttribute('r', radius)
+      }
+
       bubble.classList.remove('show')
     }
 
