@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ScatterPlot from '../ScatterPlot'
 import Categories from '../Categories'
+import SelectInput from '../SelectInput'
 
 import './style.scss'
 
@@ -38,10 +39,13 @@ class FilterableScatterPlot extends Component {
   render() {
     return (
       <div className="filterable">
-        <Categories
-          title="Categorias" titlePosition="top" options={this.props.options}
-          onChange={ index => this.handleUserInput(index) }
-        />
+        <div className="filters">
+          <Categories
+            title="Categorias" titlePosition="top" options={this.props.options}
+            onChange={ index => this.handleUserInput(index) }
+          />
+          <SelectInput />
+        </div>
         <ScatterPlot dataList={ this.selectCategory(this.props.dataList) } all={ this.state.activeRow === -1 } />
       </div>
     )

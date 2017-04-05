@@ -1,12 +1,9 @@
 @import '../../config';
 
-.categories {
-  margin-bottom: $space-m;
-
-  .button {
-    padding-left: $space-xs;
-    padding-right: $space-xs;
-    margin-left: $space-xxs;
+.select-input {
+  select {
+    width: $space-xxxl;
+    padding-left: $space-xxs;
 
     border-style: solid;
     border-width: 1px;
@@ -22,14 +19,11 @@
 
     transition: all 0.3s ease;
 
-    &:first-child { margin-left: 0; }
-
     &:hover { color: #fff; }
 
-    &.selected {
-      border-color: transparent;
-      background-color: $selected;
-      color: #fff;
-    }
+    background-image: url('./arrow-down.svg?name=Arrow');
+    background-repeat: no-repeat;
+    background-position: 95% center;
+
   }
 }
