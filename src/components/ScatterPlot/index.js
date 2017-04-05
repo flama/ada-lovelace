@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ExpansibleScatterRow from '../ExpansibleScatterRow'
+import ScatterPlotTimeline from '../ScatterPlotTimeline'
 
 import './styles.scss'
 
@@ -21,9 +22,15 @@ class ScatterPlot extends Component {
       />)
     })
 
+
     return (
-      <div className="scatter-plot">
-        { topics }
+      <div>
+        <div categorylassName="scatter-plot">
+          { topics }
+        </div>
+        <div>
+          <ScatterPlotTimeline domain={ domain } />
+        </div>
       </div>
     )
   }

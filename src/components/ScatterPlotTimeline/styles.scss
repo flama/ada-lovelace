@@ -1,0 +1,7 @@
+.timeline {
+  margin-top: 16px;
+
+  .tick > line { display:none; }
+  .tick > text { text-anchor: left }
+  .domain { stroke: #fff; }
+}
