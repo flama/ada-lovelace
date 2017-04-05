@@ -50,7 +50,7 @@ class d3ChartHelper {
       .attr("cy", d => d.y)
       .attr("onmouseenter", `window.wikiminaGrow(evt.target)`)
       .attr("onmouseleave", `window.wikiminaShrink(evt.target)`)
-      .attr("onclick", d => `window.wikiminaOpenBubble(evt.target)`)
+      .attr("onclick", d => `window.wikiminaOpenBubble(evt.target, ${JSON.stringify(d.extended)})`)
 
     window.wikiminaGrow = target => {
       target.setAttribute('r', radius*2.26)
@@ -87,16 +87,32 @@ class d3ChartHelper {
       }
     }
 
-    window.wikiminaOpenBubble = target => {
+    window.wikiminaOpenBubble = (target, data) => {
       let bubble = document.getElementById('details-bubble')
       bubble.classList.remove('show')
 
       let rect = target.getBoundingClientRect()
       let plot = document.getElementsByClassName('scatter-plot').item(0).getBoundingClientRect()
 
+      let name = document.createTextNode(data.Name)
+      let nameContainer = bubble.getElementsByClassName('name').item(0)
+      clearNodes(nameContainer)
+      nameContainer.appendChild(name)
+
+      let description = document.createTextNode(`${data.Occupation} from ${data.Country}`)
+      let descriptionContainer = bubble.getElementsByClassName('description').item(0)
+      clearNodes(descriptionContainer)
+      descriptionContainer.appendChild(description)
+
       bubble.style.top = `${rect.top - plot.top + 20}px`
       bubble.style.left = `${rect.left - plot.left + 20}px`
       bubble.classList.add('show')
+    }
+
+    function clearNodes(node) {
+      while(node.lastChild) {
+        node.removeChild(node.childNodes[0])
+      }
     }
 
     simulation.on("tick", () => {

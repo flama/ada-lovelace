@@ -8,8 +8,8 @@ class DetailsBubble extends Component {
       <div id="details-bubble">
         <a>Close</a>
         <div className="content">
-          <h3 className="name">Frida Kahlo</h3>
-          <p className="description">Painter from Mexico</p>
+          <h3 className="name"></h3>
+          <p className="description"></p>
         </div>
         <a className="external">More info</a>
       </div>
