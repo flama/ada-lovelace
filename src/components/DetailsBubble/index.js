@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Icon from './open3.svg?name=Icon'
 
 import './styles.scss'
 
@@ -14,7 +15,7 @@ class DetailsBubble extends Component {
           <h3 className="name"></h3>
           <p className="description"></p>
         </div>
-        <a className="external" target="_blank">More info</a>
+        <a className="external" target="_blank">More info <img src={ Icon } /></a>
       </div>
     )
   }
