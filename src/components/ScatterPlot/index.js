@@ -12,7 +12,6 @@ const domain = {
 class ScatterPlot extends Component {
 
   render() {
-
     let topics = Object.keys(this.props.dataList).map(category => {
       return (<ExpansibleScatterRow
         data={ this.props.dataList[category] }

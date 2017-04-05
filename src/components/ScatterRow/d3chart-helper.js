@@ -22,7 +22,7 @@ class d3ChartHelper {
     this._drawPoints(el, this._format(state.data, scales))
   }
 
-  destroy(el){}
+  destroy() {}
 
   _format = (data, scales) => data.map(value => {
     return {
@@ -39,18 +39,27 @@ class d3ChartHelper {
 
     for(let i=0; i<120; ++i) simulation.tick()
 
-    let cell = this.g.append("g")
-      .selectAll("g")
+    console.log(data)
+
+    let cell = this.g.selectAll("circle")
       .data(data)
-      .enter()
+
+    cell.exit().transition()
+      .attr("r", 0)
+      .remove()
+
+    cell
+    .enter()
       .append("circle")
       .attr("class", "d3-point")
-      .attr("r", radius)
+      .attr("r", 0)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
       .attr("onmouseenter", `window.wikiminaGrow(evt.target)`)
       .attr("onmouseleave", `window.wikiminaShrink(evt.target)`)
       .attr("onclick", d => `window.wikiminaOpenBubble(evt.target, ${JSON.stringify(d.extended)})`)
+    .transition()
+      .attr("r", radius)
 
     window.wikiminaGrow = target => {
 

@@ -19,7 +19,7 @@ class Categories extends Component {
   }
 
   choose = selected => {
-    window.wikiminaCloseBubble()
+    window.wikiminaCloseBubble && window.wikiminaCloseBubble()
 
     this.setState({ selected })
     this.props.onChange(selected)

@@ -10,22 +10,49 @@ class FilterableScatterPlot extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      activeRow: -1
+      activeRow: -1,
+      activeContinent: -1
     }
   }
 
-  handleUserInput = optionIndex => {
+  handleCategoryChange = newCategory => {
     this.setState({
-      activeRow: this.props.options.categories[optionIndex] ||
-        this.props.options.continents[optionIndex]|| -1
+      ...this.state,
+      activeRow: this.props.options.categories[newCategory] || -1
     })
+  }
+
+  handleUserSelect = newContinent => {
+    this.setState({
+      ...this.state,
+      activeContinent: newContinent
+    })
+  }
+
+  filterContinent = data => {
+    if(this.state.activeContinent === -1) return data
+
+    let finalData = {}
+
+    Object.keys(data).forEach(dataKey => {
+      let datum = data[dataKey]
+
+      finalData[dataKey] = {...data[dataKey]}
+      finalData[dataKey].array = datum.array.filter(woman => woman.Continent === this.state.activeContinent)
+
+      Object.keys(datum.division).forEach(divisionKey => {
+        let subdivision = datum.division[divisionKey] || []
+        finalData[dataKey].division[divisionKey] = subdivision.filter(woman => woman.Continent === this.state.activeContinent)
+      })
+    })
+
+    return {...data, ...finalData}
   }
 
   selectCategory = data => {
     if(this.state.activeRow === -1) return data
 
     let finalData = {}
-
 
     Object.keys(data).forEach(dataKey => {
       finalData[dataKey] = { ...data[dataKey] }
@@ -38,18 +65,22 @@ class FilterableScatterPlot extends Component {
   }
 
   render() {
+    console.log(this.selectCategory(this.filterContinent(this.props.dataList)))
     return (
       <div className="filterable">
         <div className="filters">
           <Categories
             title="Categorias" titlePosition="top" options={this.props.options.categories}
-            onChange={ index => this.handleUserInput(index) }
+            onChange={ index => this.handleCategoryChange(index) }
           />
           <SelectInput options={this.props.options.continents}
-            onChange={ index => this.handleUserInput(index) }
+            onChange={ index => this.handleUserSelect(index) }
           />
         </div>
-        <ScatterPlot dataList={ this.filterContinent(this.selectCategory(this.props.dataList)) } all={ this.state.activeRow === -1 } />
+        <ScatterPlot
+          dataList={ this.selectCategory(this.filterContinent(this.props.dataList)) }
+          all={ this.state.activeRow === -1 }
+        />
       </div>
     )
   }
