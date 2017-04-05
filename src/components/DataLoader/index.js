@@ -20,6 +20,10 @@ class DataLoader extends Component {
         .then(ranges => ranges.map(range => range.values))
         .then(this.segregateColsFromSheets)
         .then(this.joinSheets)
+        .then(data => {
+          console.log(data.women.length)
+          return data
+        })
         .then(this.removeEmptyWomen)
         .then(this.sheetToObject)
         .then(this.convertFiltersToTags)
