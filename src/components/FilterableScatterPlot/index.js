@@ -64,6 +64,21 @@ class FilterableScatterPlot extends Component {
     return {...data, ...finalData}
   }
 
+  closeBubble = () => {
+    const radius = 10
+    let bubble = document.getElementById('details-bubble')
+    let balls = document.getElementsByClassName('d3-point')
+
+    for(let i=0; i<balls.length; ++i)
+    {
+      balls[i].classList.remove('shrinking')
+      balls[i].classList.remove('faded')
+      balls[i].setAttribute('r', radius)
+    }
+
+    bubble.classList.remove('show')
+  }
+
   render() {
     console.log(this.selectCategory(this.filterContinent(this.props.dataList)))
     return (
@@ -72,6 +87,7 @@ class FilterableScatterPlot extends Component {
           <Categories
             title="Categorias" titlePosition="top" options={this.props.options.categories}
             onChange={ index => this.handleCategoryChange(index) }
+            closeBubble={ () => this.closeBubble() }
           />
           <SelectInput options={this.props.options.continents}
             onChange={ index => this.handleUserSelect(index) }
@@ -80,6 +96,7 @@ class FilterableScatterPlot extends Component {
         <ScatterPlot
           dataList={ this.selectCategory(this.filterContinent(this.props.dataList)) }
           all={ this.state.activeRow === -1 }
+          closeBubble={ () => this.closeBubble() }
         />
       </div>
     )

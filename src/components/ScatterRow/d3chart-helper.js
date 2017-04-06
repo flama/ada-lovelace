@@ -39,8 +39,6 @@ class d3ChartHelper {
 
     for(let i=0; i<120; ++i) simulation.tick()
 
-    console.log(data)
-
     let cell = this.g.selectAll("circle")
       .data(data)
 
@@ -48,20 +46,19 @@ class d3ChartHelper {
       .attr("r", 0)
       .remove()
 
-    cell
-    .enter()
-      .append("circle")
+    cell.enter().append("circle")
       .attr("class", "d3-point")
       .attr("r", 0)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
-      .attr("onmouseenter", `window.wikiminaGrow(evt.target)`)
-      .attr("onmouseleave", `window.wikiminaShrink(evt.target)`)
-      .attr("onclick", d => `window.wikiminaOpenBubble(evt.target, ${JSON.stringify(d.extended)})`)
+      .on("mouseenter", function(){ ballGrow(this) })
+      .on("mouseleave", function(){ ballShrink(this) })
+      .on("click", function(d) { openBubble(this, d.extended) })
+
     .transition()
       .attr("r", radius)
 
-    window.wikiminaGrow = target => {
+    let ballGrow = target => {
 
       if(target.classList.contains('faded')) return
       target.setAttribute('r', radius*2.26)
@@ -83,7 +80,7 @@ class d3ChartHelper {
       }, 160)
     }
 
-    window.wikiminaShrink = target => {
+    let ballShrink = target => {
       if(window.wikiminaTime) {
         clearTimeout(window.wikiminaTime)
         window.wikiminaTime = undefined
@@ -99,7 +96,7 @@ class d3ChartHelper {
       }
     }
 
-    window.wikiminaOpenBubble = (target, data) => {
+    let openBubble = (target, data) => {
       let bubble = document.getElementById('details-bubble')
       let balls = document.getElementsByClassName('d3-point')
 
@@ -135,20 +132,6 @@ class d3ChartHelper {
         bubble.style.left = `${rect.left - plot.left + 20}px`
         bubble.classList.add('show')
       }, 200)
-    }
-
-    window.wikiminaCloseBubble = () => {
-      let bubble = document.getElementById('details-bubble')
-      let balls = document.getElementsByClassName('d3-point')
-
-      for(let i=0; i<balls.length; ++i)
-      {
-        balls[i].classList.remove('shrinking')
-        balls[i].classList.remove('faded')
-        balls[i].setAttribute('r', radius)
-      }
-
-      bubble.classList.remove('show')
     }
 
     function clearNodes(node) {

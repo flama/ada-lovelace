@@ -25,7 +25,7 @@ class ScatterPlot extends Component {
     return (
       <div className="scatter-plot">
         { topics }
-        <DetailsBubble />
+        <DetailsBubble close={ () => this.props.closeBubble() }/>
       </div>
     )
   }
