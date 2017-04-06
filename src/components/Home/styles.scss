@@ -7,9 +7,11 @@
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+  overflow: auto;
 
   .body {
-    @include wrap;
+    @include grid(8);
+    @include offsetLeft(2);
     margin-bottom: 360px;
 
     > h1 {
@@ -25,7 +27,7 @@
     }
 
     @include small-only {
-      @include wrap-mobile;
+      @include grid(4);
 
       > h1 {
         margin-top: $space-xl;
