@@ -121,9 +121,10 @@ class d3ChartHelper {
     for(let i=0; i<120; ++i) simulation.tick()
 
     let cells = this.g.selectAll("circle")
-      .data(data)
+      .data(simulation.nodes())
 
     cells.exit().transition()
+      .delay((d,i) => i*5)
       .attr("r", 0)
       .remove()
 
@@ -136,6 +137,7 @@ class d3ChartHelper {
       .on("mouseleave", function(){ ballShrink(this) })
       .on("click", function(d) { openBubble(this, d.extended) })
     .transition()
+      .delay((d,i) => i*5)
       .attr("r", radius)
 
     simulation.on("tick", () => {
