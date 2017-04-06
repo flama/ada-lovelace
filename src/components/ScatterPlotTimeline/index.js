@@ -19,9 +19,7 @@ class GraphTimeline extends Component {
 
   render() {
     return (
-      <div>
-        <div className="timeline" ref={ timeline => { this.timeline = timeline } }></div>
-      </div>
+      <div className="timeline" ref={ timeline => { this.timeline = timeline } }></div>
     )
   }
 }
