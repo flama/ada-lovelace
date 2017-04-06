@@ -11,7 +11,7 @@ class FilterableScatterPlot extends Component {
     super(props)
     this.state = {
       activeRow: -1,
-      activeContinent: -1
+      activeContinent: "-1"
     }
   }
 
@@ -30,7 +30,7 @@ class FilterableScatterPlot extends Component {
   }
 
   filterContinent = data => {
-    if(this.state.activeContinent === -1) return data
+    if(this.state.activeContinent === "-1") return data
 
     let finalData = {}
 
