@@ -1,9 +1,9 @@
 @import '../../config';
 
 #navbar {
-  @include medium-wrap;
-
-  &:first-child {color: gold;}
+  @include grid(10);
+  @include offsetLeft(1);
+  @include offsetRight(2);
 
   > .left, > .right {
     margin-top: $space-xl;

@@ -4,7 +4,8 @@
   width: 100%;
 
   > .content {
-    @include medium-wrap;
+    @include grid(2);
+    @include offsetLeft(1);
     padding-top: $space-xs;
     padding-bottom: $space-xs;
 
