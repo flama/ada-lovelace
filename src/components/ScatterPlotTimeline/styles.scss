@@ -1,8 +1,6 @@
 @import '../../config';
 
 .timeline {
-  margin-top: $space-xs;
-
   .tick { font-size: $font-size-centi; }
   .tick > line { display: none; }
   .tick > text {

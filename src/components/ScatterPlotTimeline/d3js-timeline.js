@@ -30,6 +30,6 @@ class d3TimelineHelper {
   _draw(svg, domain, x) {
 
     let g = svg.append("g")
-      .call(d3.axisBottom(x).tickSizeOuter(0).ticks(25));
+      .call(d3.axisBottom(x).tickSizeOuter(0).ticks(25).tickPadding(12));
   }
 }
