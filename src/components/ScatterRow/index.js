@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
 import d3chartHelper from './d3chart-helper'
 
 import './styles.scss'
@@ -10,28 +9,11 @@ class ScatterRow extends Component {
     this.d3Chart = new d3chartHelper(this.graph, {
       width: "100%",
       height: "100%"
-    }, this.getChartState())
+    }, this.props)
   }
 
-  getChartState = () => {
-    return {
-      data: this.props.data,
-      domain: this.props.domain
-    }
-  }
-
-  reduceDataToArray = data => {
-    if(!data) return []
-    return Object.keys(data)
-      .reduce((accumulator, key) => {
-        return accumulator.concat(data[key])
-      }, [])
-      .filter(value => value)
-  }
-
-  componentWillUnmount = () => {
-    let el = ReactDOM.findDOMNode(this)
-    this.d3Chart.destroy(el)
+  componentDidUpdate = () => {
+    this.d3Chart.update(this.graph, this.props)
   }
 
   render() {

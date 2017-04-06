@@ -19,7 +19,7 @@ class Categories extends Component {
   }
 
   choose = selected => {
-    window.wikiminaCloseBubble()
+    this.props.closeBubble()
 
     this.setState({ selected })
     this.props.onChange(selected)
@@ -52,6 +52,7 @@ class Categories extends Component {
 
 Categories.defaultProps = {
   onChange: _=>_,
+  closeBubble: _=>_,
   options: [],
   all: "All",
   titlePosition: "inline"
@@ -59,6 +60,7 @@ Categories.defaultProps = {
 
 Categories.propTypes = {
   onChange: React.PropTypes.func,
+  closeBubble: React.PropTypes.func,
   title: React.PropTypes.string.isRequired,
   options: React.PropTypes.arrayOf(React.PropTypes.string),
   all: React.PropTypes.string,
