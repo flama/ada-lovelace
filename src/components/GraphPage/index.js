@@ -10,7 +10,7 @@ class GraphPage extends Component {
 
     this.state = {
       dataList: {},
-      options: []
+      options: {}
     }
   }
 

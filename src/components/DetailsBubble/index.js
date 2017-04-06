@@ -4,12 +4,10 @@ import './styles.scss'
 
 class DetailsBubble extends Component {
 
-  close = () => window.wikiminaCloseBubble()
-
   render() {
     return (
       <div id="details-bubble">
-        <a onClick={ this.close } className="close">Close</a>
+        <a onClick={ () => this.props.close() } className="close">Close</a>
         <div className="content">
           <h3 className="name"></h3>
           <p className="description"></p>

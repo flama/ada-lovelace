@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 
 import { apiKey } from '../../alicia-keys'
 
+const regions = ['Africa', 'Latin America', 'North America', 'Asia', 'Europe', 'Oceania']
+
 class DataLoader extends Component {
 
   render() {
@@ -20,6 +22,7 @@ class DataLoader extends Component {
         .then(ranges => ranges.map(range => range.values))
         .then(data => data.map(datum => datum.map(atom => atom.map(subatom => subatom.trim()))))
         .then(this.segregateColsFromSheets)
+        .then(this.addContinentToWomen)
         .then(this.joinSheets)
         .then(this.removeEmptyWomen)
         .then(this.sheetToObject)
@@ -48,7 +51,10 @@ class DataLoader extends Component {
         })
       })
 
-      return { dataList: organized, options: categories.map(x => x[0]) }
+      return { dataList: organized, options: {
+        categories: categories.map(x => x[0]),
+        continents: regions
+      }}
     })
     .then(this.addStatusToCategories(true))
     .then(this.categoriesToArrays)
@@ -66,6 +72,14 @@ class DataLoader extends Component {
     let cols = tables[0][0]
     let sheets = tables.map(table => table.slice(1))
 
+    return { cols, sheets }
+  }
+
+  addContinentToWomen = ({cols, sheets}) => {
+    cols.unshift("Continent")
+    sheets = sheets.map((sheet, regionIndex) => {
+      return sheet.map(woman => [regions[regionIndex]].concat(woman))
+    })
     return { cols, sheets }
   }
 
@@ -155,7 +169,6 @@ class DataLoader extends Component {
   createUrl = options => {
     const spreadsheetId = '18VumVINXYypPAPA5aqLhw-BoFHqb5CGCrDI3JeBIs6I'
     const baseAPI = `https://sheets.googleapis.com/v4/spreadsheets/${spreadsheetId}`
-    const regions = ['Africa', 'America Latina', 'America do Norte', 'Asia', 'Europa', 'Oceania']
     const categoriesIndex = 'Subcategories'
 
     let values = regions.reduce((acc, value) => acc += `ranges=${value}&`, "")
