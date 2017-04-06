@@ -2,14 +2,18 @@
 
 #about-page {
   margin-top: $space-xxl;
+  overflow: auto;
 
   > h2 {
-    @include medium-wrap;
     margin-bottom: $space-s;
+    @include grid(9);
+    @include offsetLeft(1);
   }
 
   > .content {
-    @include wrap;
+    @include grid(7);
+    @include offsetLeft(2);
+    @include offsetRight(3);
     margin-bottom: $space-m;
 
     > p { margin-bottom: $space-m; }
