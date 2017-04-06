@@ -27,7 +27,12 @@ class ScatterPlot extends Component {
       <div className="scatter-plot">
         <div className="topics">{ topics }</div>
         <DetailsBubble close={ () => this.props.closeBubble() }/>
-        <ScatterPlotTimeline domain={ domain } />
+        <div className="scatter-row ">
+          <div className="title"></div>
+
+          <ScatterPlotTimeline className="graph" domain={ domain } />
+
+        </div>
       </div>
     )
   }
