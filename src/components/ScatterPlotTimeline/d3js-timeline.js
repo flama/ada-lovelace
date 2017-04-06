@@ -22,9 +22,9 @@ class d3TimelineHelper {
 
     let width = el.offsetWidth
 
-    let x = d3.scaleLinear()
-      .range([0, width-5])
-      .domain(domain.x)
+    let x = d3.scaleTime()
+      .range([0, width])
+      .domain([new Date(domain.x[0], 1, 1), new Date(domain.x[1], 1, 1)])
       .nice()
 
     return x
@@ -32,7 +32,7 @@ class d3TimelineHelper {
 
   _draw(svg, domain, x) {
 
-    svg.append("g")
-      .call(d3.axisBottom(x));
+    let g = svg.append("g")
+      .call(d3.axisBottom(x).tickSizeOuter(0).ticks(25));
   }
 }

@@ -3,10 +3,6 @@ import React, { Component } from 'react'
 import './styles.scss'
 import d3TimelineHelper from './d3js-timeline'
 
-const domain = {
-  x: [1800, 2017]
-}
-
 class GraphTimeline extends Component {
   componentDidMount = () => {
     this.d3TimelineHelper = new d3TimelineHelper(this.timeline, {
