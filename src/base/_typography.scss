@@ -3,8 +3,8 @@ body {
   font-size: 16px;
 }
 
-h1, h2, h3, h4 { font-weight: $heavy; }
-p { font-weight: $regular; }
+h1, h2, h3, h4 { font-weight: bold; }
+p { font-weight: lighter; }
 
 h1 {
   font-size: $font-size-tera;
