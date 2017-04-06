@@ -2,10 +2,17 @@
 
 #graph-page {
   @include wrap;
-  > * { @include grid(12); }
-  > h3 { margin-bottom: $space-xs; }
+  display: flex;
+  flex-direction: column;
+
+  > h3 {
+    @include grid(12);
+    margin-bottom: $space-xs;
+   }
 
   > .content {
+    @include grid(9);
+    @include offsetRight(4);
     display: flex;
     align-items: center;
 
@@ -20,6 +27,7 @@
     align-items: baseline;
 
     .title {
+      @include grid(7);
       display: block;
       margin-bottom: $space-l;
     }
