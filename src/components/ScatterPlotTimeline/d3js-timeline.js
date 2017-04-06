@@ -7,9 +7,7 @@ class d3TimelineHelper {
     let svg = d3.select(el).append('svg')
       .attr('width', '100%')
       .attr('height', '60px')
-      .attr('stroke', '#fff')
       .attr('background', '#000')
-
 
     let x = this._scaleX(el, state.domain)
 
@@ -25,7 +23,6 @@ class d3TimelineHelper {
     let x = d3.scaleTime()
       .range([0, width])
       .domain([new Date(domain.x[0], 1, 1), new Date(domain.x[1], 1, 1)])
-      .nice()
 
     return x
   }

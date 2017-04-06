@@ -1,7 +1,14 @@
-.timeline {
-  margin-top: 16px;
+@import '../../config';
 
-  .tick > line { display:none; }
-  .tick > text { text-anchor: left }
-  .domain { stroke: #fff; }
+.timeline {
+  margin-top: $space-xs;
+
+  .tick { font-size: $font-size-centi; }
+  .tick > line { display: none; }
+  .tick > text {
+    fill: $color-ghost;
+    text-anchor: left;
+  }
+
+  .domain { stroke: $color-ghost; }
 }
