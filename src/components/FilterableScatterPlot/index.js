@@ -80,7 +80,6 @@ class FilterableScatterPlot extends Component {
   }
 
   render() {
-    console.log(this.selectCategory(this.filterContinent(this.props.dataList)))
     return (
       <div className="filterable">
         <div className="filters">

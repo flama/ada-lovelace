@@ -92,7 +92,6 @@ class DataLoader extends Component {
   }
 
   sheetToObject = ({ cols, women }) => {
-    console.log(cols)
     return women.map(woman => {
       let newWoman = {}
       cols.forEach((column, index) => newWoman[column] = woman[index])
