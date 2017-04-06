@@ -1,0 +1,13 @@
+@import '../../config';
+
+.timeline {
+  .tick { font-size: $font-size-centi; }
+  .tick > line { display: none; }
+  .tick > text {
+    fill: $color-ghost;
+    font-family: 'Circular';
+    text-anchor: left;
+  }
+
+  .domain { stroke: $color-ghost; }
+}
