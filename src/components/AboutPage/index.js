@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Element } from 'react-scroll'
 
 import './style.scss'
 
@@ -14,7 +15,7 @@ class AboutPage extends Component {
 
   render() {
     return (
-      <section id="about-page">
+      <Element name="about-page" id="about-page">
         <h2>{ `they have always been there` }</h2>
         <div className="content">
           <p>{ `We’ve come to a time when the pursuit of gender equality might seem close to an
@@ -39,7 +40,7 @@ class AboutPage extends Component {
             changes we want to see in the world, but also to not forget they have always been
             there.` }</p>
         </div>
-      </section>
+      </Element>
     )
   }
 }
