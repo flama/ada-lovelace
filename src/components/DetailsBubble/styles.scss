@@ -1,0 +1,88 @@
+@import '../../config';
+
+$bubble-time: 0.3s;
+
+#details-bubble {
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  border-radius: 50%;
+  box-shadow: 0 0 4px rgba(#000, 0.5);
+  background-color: $selected;
+  position: absolute;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+
+  margin-top: 0;
+  margin-left: 0;
+  transition: $bubble-time ease-in-out;
+  transition-property: height, width, margin-top, margin-left;
+
+  a {
+    color: $color-ghost;
+    margin-top: $space-xs;
+    margin-bottom: $space-xs;
+    flex-grow: 0.25;
+    font-size: 0;
+
+    &.external:after {
+      height: $space-xxs;
+      width: $space-xxs;
+      margin-left: $space-xxxs;
+      display: inline-block;
+      content: "";
+      background-image: url('./open.svg?name=Icon');
+      background-repeat: no-repeat;
+      background-size: 100%;
+      background-position: center bottom;
+    }
+  }
+
+  .content {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    > * {
+      max-width: 0;
+      text-align: center;
+      font-size: 0;
+    }
+
+    .name {
+      line-height: $line-height-octo;
+      font-weight: $regular;
+    }
+
+    .description {
+      line-height: $line-height-mili;
+      color: $feminist-purple;
+    }
+  }
+
+  &.show {
+    width: 182px;
+    height: 182px;
+    margin-top: -91px;
+    margin-left: -91px;
+    transition: $bubble-time ease-in-out;
+    transition-property: height, width, margin-top, margin-left;
+  }
+
+  &.show > * {
+    > * {
+      transition: $bubble-time/2 ease-in-out;
+      transition-property: font, max-width;
+      transition-delay: $bubble-time/2;
+      max-width: $space-xxxl;
+    }
+
+    .name { font-size: $font-size-deca; }
+    .description, &.external, &.close { font-size: $font-size-centi; }
+  }
+}

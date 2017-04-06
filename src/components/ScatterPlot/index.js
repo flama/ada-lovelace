@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import ExpansibleScatterRow from '../ExpansibleScatterRow'
 import ScatterPlotTimeline from '../ScatterPlotTimeline'
+import DetailsBubble from '../DetailsBubble'
 
 import './styles.scss'
 
@@ -24,13 +25,10 @@ class ScatterPlot extends Component {
 
 
     return (
-      <div>
-        <div className="scatter-plot">
-          { topics }
-        </div>
-        <div>
-          <ScatterPlotTimeline domain={ domain } />
-        </div>
+      <div className="scatter-plot">
+        { topics }
+        <DetailsBubble />
+        <ScatterPlotTimeline domain={ domain } />
       </div>
     )
   }
