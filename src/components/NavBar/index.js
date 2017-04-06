@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-scroll';
 
 import './styles.scss'
 
@@ -11,11 +12,11 @@ class NavBar extends Component {
   render() {
     return (
       <div id="navbar">
-        <a href="#" className={ this.classesFor("home", "left") }>
+        <a href="http://flama.is" target="_blank" className={ this.classesFor("home", "left") }>
           made with ♥ by flama
         </a>
-        <a href="#" className={ this.classesFor("contributing", "right")}>contributing</a>
-        <a href="#" className={ this.classesFor("about", "right") }>about</a>
+        <Link to="share" smooth="easeInOutQuad" duration={500} className={ this.classesFor("contributing", "right")}>share</Link>
+        <Link to="about-page" smooth="easeInOutQuad" duration={500} className={ this.classesFor("about", "right") }>about us</Link>
       </div>
     )
   }

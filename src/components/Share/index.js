@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Element } from 'react-scroll'
 
 import './style.scss'
 
@@ -7,7 +8,7 @@ class Share extends Component {
   render()
   {
     return (
-      <div id="share">
+      <Element name="share" id="share">
         <div className="content">
           <h4>Share</h4>
           <p>We envision an ever-growing platform, crowdsourced by people everywhere, helping us show women who somehow have created an impact in our world!
@@ -17,7 +18,7 @@ class Share extends Component {
              <button>Twitter</button>
           </div>
         </div>
-      </div>
+      </Element>
     )
   }
 }
