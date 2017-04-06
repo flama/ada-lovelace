@@ -1,6 +1,6 @@
 import * as d3 from 'd3'
 
-const radius = 10
+const radius = 5
 
 let ballGrow = target => {
   if(target.classList.contains('faded')) return

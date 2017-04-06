@@ -65,7 +65,7 @@ class FilterableScatterPlot extends Component {
   }
 
   closeBubble = () => {
-    const radius = 10
+    const radius = 5
     let bubble = document.getElementById('details-bubble')
     let balls = document.getElementsByClassName('d3-point')
 
