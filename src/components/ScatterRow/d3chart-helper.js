@@ -116,6 +116,12 @@ class d3ChartHelper {
   _drawPoints = (el, data) => {
     let simulation = d3.forceSimulation(data)
       .force("collide", d3.forceCollide(radius + 1))
+      .on("tick", () => {
+        simulation.nodes()
+          .attr("cx", d => d.x)
+          .attr("cy", d => d.y)
+          .on("click", function(d) { openBubble(this, d.extended) })
+      })
       .stop()
 
     for(let i=0; i<120; ++i) simulation.tick()
@@ -139,13 +145,6 @@ class d3ChartHelper {
     .transition()
       .delay((d,i) => i*5)
       .attr("r", radius)
-
-    simulation.on("tick", () => {
-      cells
-        .attr("cx", d => d.x)
-        .attr("cy", d => d.y)
-        .on("click", function(d) { openBubble(this, d.extended) })
-    })
   }
 
   _scales(el, domain) {
