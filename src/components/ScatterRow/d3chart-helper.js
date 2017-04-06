@@ -1,6 +1,87 @@
 import * as d3 from 'd3'
 
-const radius = 10
+const radius = 5
+
+let ballGrow = target => {
+  if(target.classList.contains('faded')) return
+  target.setAttribute('r', radius*2.26)
+  target.classList.add('growing')
+
+  let balls = document.getElementsByClassName('d3-point')
+
+  for(let i=0; i<balls.length; ++i)
+  {
+    if(balls[i] === target) continue
+
+    balls[i].classList.add('shrinking')
+    balls[i].setAttribute('r', radius*2/3)
+  }
+
+  window.wikiminaTime = setTimeout(() => {
+    target.classList.remove('growing')
+    target.setAttribute('r', radius*2)
+  }, 160)
+}
+
+let ballShrink = target => {
+  if(window.wikiminaTime) {
+    clearTimeout(window.wikiminaTime)
+    window.wikiminaTime = undefined
+  }
+
+  let balls = document.getElementsByClassName('d3-point')
+  for(let i=0; i<balls.length; ++i)
+  {
+    balls[i].classList.remove('growing')
+    balls[i].classList.remove('shrinking')
+    if(!balls[i].classList.contains('faded'))
+      balls[i].setAttribute('r', radius)
+  }
+}
+
+let openBubble = (target, data) => {
+  let bubble = document.getElementById('details-bubble')
+  let balls = document.getElementsByClassName('d3-point')
+
+  for(let i=0; i<balls.length; ++i)
+  {
+    balls[i].setAttribute('r', radius*2/3)
+    if(balls[i] === bubble) continue
+
+    balls[i].classList.add('shrinking')
+    balls[i].classList.add('faded')
+  }
+  bubble.classList.remove('show')
+
+  setTimeout(() => {
+    let rect = target.getBoundingClientRect()
+    let plot = document.getElementsByClassName('scatter-plot').item(0).getBoundingClientRect()
+
+    let name = document.createTextNode(data.Name)
+    let nameContainer = bubble.getElementsByClassName('name').item(0)
+    clearNodes(nameContainer)
+    nameContainer.appendChild(name)
+
+    let capitalizedOccupation = data.Occupation[0].toUpperCase() + data.Occupation.slice(1)
+    let description = document.createTextNode(`${capitalizedOccupation} from ${data.Country}`)
+    let descriptionContainer = bubble.getElementsByClassName('description').item(0)
+    clearNodes(descriptionContainer)
+    descriptionContainer.appendChild(description)
+
+    let link = bubble.getElementsByClassName('external').item(0)
+    link.setAttribute('href', data.Informations)
+
+    bubble.style.top = `${rect.top - plot.top + 20}px`
+    bubble.style.left = `${rect.left - plot.left + 20}px`
+    bubble.classList.add('show')
+  }, 200)
+}
+
+function clearNodes(node) {
+  while(node.lastChild) {
+    node.removeChild(node.childNodes[0])
+  }
+}
 
 export default
 class d3ChartHelper {
@@ -22,7 +103,7 @@ class d3ChartHelper {
     this._drawPoints(el, this._format(state.data, scales))
   }
 
-  destroy(el){}
+  destroy() {}
 
   _format = (data, scales) => data.map(value => {
     return {
@@ -35,124 +116,35 @@ class d3ChartHelper {
   _drawPoints = (el, data) => {
     let simulation = d3.forceSimulation(data)
       .force("collide", d3.forceCollide(radius + 1))
+      .on("tick", () => {
+        simulation.nodes()
+          .attr("cx", d => d.x)
+          .attr("cy", d => d.y)
+          .on("click", function(d) { openBubble(this, d.extended) })
+      })
       .stop()
 
     for(let i=0; i<120; ++i) simulation.tick()
 
-    let cell = this.g.append("g")
-      .selectAll("g")
-      .data(data)
-      .enter()
-      .append("circle")
+    let cells = this.g.selectAll("circle")
+      .data(simulation.nodes())
+
+    cells.exit().transition()
+      .delay((d,i) => i*5)
+      .attr("r", 0)
+      .remove()
+
+    cells.enter().append("circle")
       .attr("class", "d3-point")
-      .attr("r", radius)
+      .attr("r", 0)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
-      .attr("onmouseenter", `window.wikiminaGrow(evt.target)`)
-      .attr("onmouseleave", `window.wikiminaShrink(evt.target)`)
-      .attr("onclick", d => `window.wikiminaOpenBubble(evt.target, ${JSON.stringify(d.extended)})`)
-
-    window.wikiminaGrow = target => {
-
-      if(target.classList.contains('faded')) return
-      target.setAttribute('r', radius*2.26)
-      target.classList.add('growing')
-
-      let balls = document.getElementsByClassName('d3-point')
-
-      for(let i=0; i<balls.length; ++i)
-      {
-        if(balls[i] === target) continue
-
-        balls[i].classList.add('shrinking')
-        balls[i].setAttribute('r', radius*2/3)
-      }
-
-      window.wikiminaTime = setTimeout(() => {
-        target.classList.remove('growing')
-        target.setAttribute('r', radius*2)
-      }, 160)
-    }
-
-    window.wikiminaShrink = target => {
-      if(window.wikiminaTime) {
-        clearTimeout(window.wikiminaTime)
-        window.wikiminaTime = undefined
-      }
-
-      let balls = document.getElementsByClassName('d3-point')
-      for(let i=0; i<balls.length; ++i)
-      {
-        balls[i].classList.remove('growing')
-        balls[i].classList.remove('shrinking')
-        if(!balls[i].classList.contains('faded'))
-          balls[i].setAttribute('r', radius)
-      }
-    }
-
-    window.wikiminaOpenBubble = (target, data) => {
-      let bubble = document.getElementById('details-bubble')
-      let balls = document.getElementsByClassName('d3-point')
-
-      for(let i=0; i<balls.length; ++i)
-      {
-        balls[i].setAttribute('r', radius*2/3)
-        if(balls[i] === bubble) continue
-
-        balls[i].classList.add('shrinking')
-        balls[i].classList.add('faded')
-      }
-      bubble.classList.remove('show')
-
-      setTimeout(() => {
-        let rect = target.getBoundingClientRect()
-        let plot = document.getElementsByClassName('scatter-plot').item(0).getBoundingClientRect()
-
-        let name = document.createTextNode(data.Name)
-        let nameContainer = bubble.getElementsByClassName('name').item(0)
-        clearNodes(nameContainer)
-        nameContainer.appendChild(name)
-
-        let capitalizedOccupation = data.Occupation[0].toUpperCase() + data.Occupation.slice(1)
-        let description = document.createTextNode(`${capitalizedOccupation} from ${data.Country}`)
-        let descriptionContainer = bubble.getElementsByClassName('description').item(0)
-        clearNodes(descriptionContainer)
-        descriptionContainer.appendChild(description)
-
-        let link = bubble.getElementsByClassName('external').item(0)
-        link.setAttribute('href', data.Informations)
-
-        bubble.style.top = `${rect.top - plot.top + 20}px`
-        bubble.style.left = `${rect.left - plot.left + 20}px`
-        bubble.classList.add('show')
-      }, 200)
-    }
-
-    window.wikiminaCloseBubble = () => {
-      let bubble = document.getElementById('details-bubble')
-      let balls = document.getElementsByClassName('d3-point')
-
-      for(let i=0; i<balls.length; ++i)
-      {
-        balls[i].classList.remove('shrinking')
-        balls[i].classList.remove('faded')
-        balls[i].setAttribute('r', radius)
-      }
-
-      bubble.classList.remove('show')
-    }
-
-    function clearNodes(node) {
-      while(node.lastChild) {
-        node.removeChild(node.childNodes[0])
-      }
-    }
-
-    simulation.on("tick", () => {
-      cell
-        .attr("cx", d => d.x)
-        .attr("cy", d => d.y)
-    })
+      .on("mouseenter", function(){ ballGrow(this) })
+      .on("mouseleave", function(){ ballShrink(this) })
+      .on("click", function(d) { openBubble(this, d.extended) })
+    .transition()
+      .delay((d,i) => i*5)
+      .attr("r", radius)
   }
 
   _scales(el, domain) {
