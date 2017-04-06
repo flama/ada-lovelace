@@ -1,8 +1,8 @@
 @import '../../config';
 
 #graph-page {
-  @include big-wrap;
-
+  @include wrap;
+  > * { @include grid(12); }
   > h3 { margin-bottom: $space-xs; }
 
   > .content {
