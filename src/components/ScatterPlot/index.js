@@ -25,7 +25,7 @@ class ScatterPlot extends Component {
 
     return (
       <div>
-        <div categorylassName="scatter-plot">
+        <div className="scatter-plot">
           { topics }
         </div>
         <div>
