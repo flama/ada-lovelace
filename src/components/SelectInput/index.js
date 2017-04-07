@@ -5,6 +5,7 @@ import './styles.scss'
 class SelectInput extends Component {
 
   handleUserInput = () => {
+    this.props.closeBubble()
     this.props.onChange(this.select.value)
   }
 
@@ -29,11 +30,13 @@ class SelectInput extends Component {
 
 SelectInput.defaultProps = {
   options: [],
-  onChange: _=>_
+  onChange: _=>_,
+  closeBubble: _=>_
 }
 
 SelectInput.propTypes = {
   onChange: React.PropTypes.func,
+  closeBubble: React.PropTypes.func,
   options: React.PropTypes.array
 }
 
