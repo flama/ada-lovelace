@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import { apiKey } from '../../alicia-keys'
 
-const regions = ['Africa', 'Latin America', 'North America', 'Asia', 'Europe', 'Oceania']
+const regions = ['Africa', 'Latin America', 'North America', 'Asia', 'Europe', 'Oceania'].sort()
 
 class DataLoader extends Component {
 
