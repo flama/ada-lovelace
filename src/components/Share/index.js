@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import { Element } from 'react-scroll'
 import { ShareButtons } from 'react-share'
-import postimage from './wikimina.png'
 
 import './style.scss'
 
@@ -25,8 +24,7 @@ class Share extends Component {
            <div className="actions">
             <FacebookShareButton url={ host }
               description={`Inspiring and helping create
-                representativeness so that more women become awesome!`}
-              picture={`${host}${postimage}`}>
+                representativeness so that more women become awesome!`}>
                 Facebook
             </FacebookShareButton>
             <TwitterShareButton url={ host }
