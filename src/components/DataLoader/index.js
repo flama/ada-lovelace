@@ -58,7 +58,6 @@ class DataLoader extends Component {
     })
     .then(this.addStatusToCategories(true))
     .then(this.categoriesToArrays)
-    .then(this.printData('final_data'))
   }
 
   printData = label => {
