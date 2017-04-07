@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { Element } from 'react-scroll'
 import { ShareButtons } from 'react-share'
-import postimage from '../../../public/home.png'
+import postimage from './wikimina.png'
 
 import './style.scss'
 
