@@ -11,7 +11,6 @@ class App extends Component {
 
   render()
   {
-    let host = "http://flama.github.io/ada-lovelace"
     return (
       <div id="app">
         <Home />
