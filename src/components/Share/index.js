@@ -15,8 +15,6 @@ class Share extends Component {
 
   render()
   {
-
-    console.log(postimage)
     return (
       <Element name="share" id="share">
         <div className="content">
