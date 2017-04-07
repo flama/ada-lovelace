@@ -5,6 +5,8 @@
   @include offsetLeft(1);
   @include offsetRight(2);
 
+  height: 15vh;
+
   > .left, > .right {
     margin-top: $space-xl;
     padding: $space-xxs;
