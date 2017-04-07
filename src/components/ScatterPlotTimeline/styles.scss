@@ -1,6 +1,8 @@
 @import '../../config';
 
 .timeline {
+  width:100%;
+
   .tick { font-size: $font-size-centi; }
   .tick > line { display: none; }
   .tick > text {

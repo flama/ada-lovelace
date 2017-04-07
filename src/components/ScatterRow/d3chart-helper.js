@@ -71,8 +71,8 @@ let openBubble = (target, data) => {
     let link = bubble.getElementsByClassName('external').item(0)
     link.setAttribute('href', data.Informations)
 
-    bubble.style.top = `${rect.top - plot.top + 20}px`
-    bubble.style.left = `${rect.left - plot.left + 20}px`
+    bubble.style.top = `${rect.top - plot.top + 5.5}px`
+    bubble.style.left = `${rect.left - plot.left + 5.5}px`
     bubble.classList.add('show')
   }, 200)
 }
