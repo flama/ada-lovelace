@@ -30,9 +30,12 @@ $base-time: 0.2s;
     display: inline-block;
     width: 100%;
 
+    pointer-events: none;
+
     .d3-point {
       fill: $selected;
       cursor: pointer;
+      pointer-events: all;
 
       // return-to-normal animation
       transition: all 0.5 * $base-time ease-in-out;
