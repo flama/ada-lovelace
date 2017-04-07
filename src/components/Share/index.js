@@ -23,8 +23,7 @@ class Share extends Component {
            Until then, you can help us by spreading the word of Wikimina :)</p>
            <div className="actions">
             <FacebookShareButton url={ host }
-              description={`Inspiring and helping create
-                representativeness so that more women become awesome!`}>
+              description={`Inspiring and helping to create representativity so more women become badasses.`}>
                 Facebook
             </FacebookShareButton>
             <TwitterShareButton url={ host }
