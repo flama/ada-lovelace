@@ -23,7 +23,8 @@
       opacity: 0.7;
     }
 
-    button {
+    button, .SocialMediaShareButton {
+      display: inline-block;
       padding-left: $space-s;
       padding-right: $space-s;
       margin-left: $space-xs;
