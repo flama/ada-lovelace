@@ -96,6 +96,7 @@ class FilterableScatterPlot extends Component {
           />
           <SelectInput options={this.props.options.continents}
             onChange={ index => this.handleUserSelect(index) }
+            closeBubble={ () => this.closeBubble() }
           />
         </div>
         <ScatterPlot
