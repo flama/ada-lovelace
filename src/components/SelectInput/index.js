@@ -19,7 +19,7 @@ class SelectInput extends Component {
       <div className="select-input">
         <select required="required" onChange={ this.handleUserInput }
           ref={ select => this.select = select }>
-          <option value={ -1 }>{ `Continents (All)` }</option>
+          <option value="-1">{ `Continents (All)` }</option>
           { options }
         </select>
       </div>

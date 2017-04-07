@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 
 import './styles.scss'
 
-const ALL = -1
+const ALL = "-1"
 
 class Categories extends Component {
 
