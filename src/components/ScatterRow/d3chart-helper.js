@@ -135,16 +135,18 @@ class d3ChartHelper {
       .remove()
 
     cells.enter().append("circle")
-      .attr("class", "d3-point")
-      .attr("r", 0)
-      .attr("cx", d => d.x)
-      .attr("cy", d => d.y)
       .on("mouseenter", function(){ ballGrow(this) })
       .on("mouseleave", function(){ ballShrink(this) })
       .on("click", function(d) { openBubble(this, d.extended) })
-    .transition()
-      .delay((d,i) => i*5)
-      .attr("r", radius)
+      .attr("class", "d3-point")
+      .attr("r", 0)
+    .merge(cells)
+      .attr("r", 0)
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y)
+      .transition()
+        .delay((d,i) => i*5)
+        .attr("r", radius)
   }
 
   _scales(el, domain) {
