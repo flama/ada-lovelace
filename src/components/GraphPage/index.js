@@ -41,6 +41,7 @@ class GraphPage extends Component {
         </div>
         <DataLoader fetchData={this.fetchData} />
         <FilterableScatterPlot dataList={this.state.dataList} options={this.state.options} />
+        <p className="information">Information: We collected the information presented from public sources and do not take responsability for the content in the external links.</p>
       </section>
     )
   }
