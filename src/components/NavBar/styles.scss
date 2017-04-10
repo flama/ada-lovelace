@@ -1,20 +1,41 @@
 @import '../../config';
 
 #navbar {
-  @include grid(10);
-  @include offsetLeft(1);
-  @include offsetRight(2);
+
+  @include large-up {
+    @include grid(10);
+    @include offsetLeft(1);
+    @include offsetRight(2);
+  }
+
+  @include medium-only {
+    @include wrap;
+  }
+
+  @include small-only {
+    @include wrap-mobile;
+  }
 
   height: 15vh;
 
   > .left, > .right {
     margin-top: $space-xl;
-    padding: $space-xxs;
     font-size: $font-size-centi;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $light-purple;
+
+    @include small-only {
+      margin-top: $space-s;
+    }
+  }
+
+  > .left, > .right > .nav-items > a {
+    padding: $space-xxs;
+    display: inline-block;
+
+    &:hover { color: #fff; }
   }
 
   > .left {
@@ -25,17 +46,107 @@
   > .right {
     display: block;
     float: right;
-    margin-left: $space-xs;
+    position: relative;
+
+    > .nav-items > a {
+      margin-left: $space-xs;
+    }
+
+    @include medium-down {
+      > .nav-items {
+        max-height: 0;
+        display: block;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        position: absolute;
+        right: 0;
+        text-align: right;
+        > a {
+          margin-bottom: $space-xxxs;
+        }
+      }
+      > .nav-burger { display: block; }
+    }
+
+    @include large-up {
+      > .nav-items {
+        display: inline-block;
+        > a { opacity: 1; }
+      }
+      > .nav-burger { display: none; }
+    }
+
+    > .nav-burger {
+      width: 2rem;
+      height: 2rem;
+      cursor: pointer;
+      position: relative;
+      top: -$space-xxs;
+
+      &:hover { color: #fff; }
+
+      &:before,
+      &:after {
+        content: '';
+        width: 20px;
+        height: 2px;
+
+        background-color: currentColor;
+
+        display: block;
+        position: absolute;
+
+        transition: all 0.3s ease;
+      }
+
+      &:before {
+        top: 10px;
+        left: 6px;
+        box-shadow: 0 6px 0 0 currentColor;
+      }
+
+      &:after {
+        top: 22px;
+        left: 6px;
+      }
+
+      &.-open {
+
+        + .nav-items {
+          opacity: 1;
+          max-height: 100vh;
+        }
+
+        &:before,
+        &:after {
+          top: 15px;
+          left: 4px;
+          width: 24px;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+          box-shadow: 0 0 0 0 transparent;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+
+    }
+
   }
 
-  > * { transition: all 0.3s ease; }
 
-  > *:hover { color: #fff; }
+
+  > * { transition: all 0.3s ease; }
 
   @include small-only {
     @include wrap-mobile;
 
-    > .left, > .right { padding: $space-xxxs; }
-    > .right { margin-left: $space-xxs; }
+    > .left, > .right  > .nav-items > a { padding: $space-xxxs; }
+    > .right > .right > .nav-items > a { margin-left: $space-xxs; }
   }
 }
