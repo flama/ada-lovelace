@@ -20,4 +20,15 @@ a {
 
 h1, h2, h3, h4 { color: #fff; }
 
-p { color: $light-purple; }
+p {
+  color: $light-purple;
+
+  > a {
+    border-bottom: 2px solid $selected;
+    padding-bottom: 2px;
+    &:hover { color: #fff; }
+
+
+  }
+
+}

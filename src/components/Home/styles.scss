@@ -1,13 +1,19 @@
 @import '../../config';
 
 #home {
-  height: 100%;
+  height: 75vh;
   width: 100vw;
   background-image: url('./home.png');
-  background-position: center;
+  background-position: center 178px;
   background-repeat: no-repeat;
   background-size: contain;
   overflow: auto;
+
+  @include large-up {
+    background-position: center;
+    height: 100%;
+  }
+
 
   .body {
     @include wrap-mobile;
@@ -43,6 +49,7 @@
         line-height: $line-height-hecto;
       }
     }
+
 
     @include large-up {
       @include grid(8);

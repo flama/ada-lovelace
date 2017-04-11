@@ -5,7 +5,11 @@
   flex-direction: column;
 
   h3 {
-    
+    @include wrap-mobile;
+    margin-bottom: $space-xs;
+    margin-top: $space-xl;
+    font-size: $font-size-hecto;
+    line-height: $line-height-hecto;
 
     @include large-up {
       @include grid(8);
@@ -15,14 +19,22 @@
   }
 
   > .content {
-    @include grid(7);
-    @include offsetLeft(2);
-    display: flex;
-    align-items: center;
-
+    @include wrap-mobile;
     > p {
       margin-bottom: $space-xl;
+      font-size: $font-size-base;
+      line-height: $line-height-base;
+
     }
+
+
+    @include large-up {
+      @include grid(7);
+      @include offsetLeft(2);
+      display: flex;
+      align-items: center;
+    }
+
   }
 
   > .wrapper {
@@ -32,6 +44,11 @@
 
     > .graph-content {
       @include wrap;
+    }
+
+    @include large-up {
+      padding-top: $space-xxl;
+      padding-bottom: $space-xxl;
     }
   }
 
@@ -44,6 +61,7 @@
       @include grid(7);
       display: block;
       margin-bottom: $space-l;
+      margin-top: 0;
     }
 
      > .legend {
@@ -65,11 +83,17 @@
           color: #fff;
         }
       }
+
+      @include small-only { display: none; }
     }
   }
 
   .information {
-    padding-left: 0.5em;
-    font-size: $font-size-centi;
+    font-size: $font-size-deci;
+    line-height: $line-height-deci;
+
+    @include large-up {
+      padding-left: 0.5em;
+    }
   }
 }
