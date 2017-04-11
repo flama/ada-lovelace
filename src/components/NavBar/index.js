@@ -34,6 +34,9 @@ class NavBar extends Component {
           <div className="nav-items">
             <Link to="share" smooth="easeInOutQuad" duration={500} className={ this.classesFor("contributing")}>share</Link>
             <Link to="about-page" smooth="easeInOutQuad" duration={500} className={ this.classesFor("about") }>about us</Link>
+            <a href="http://flama.is" target="_blank" className={ this.classesFor("home", "left") }>
+              made with ♥ by flama
+            </a>
           </div>
         </div>
       </div>
