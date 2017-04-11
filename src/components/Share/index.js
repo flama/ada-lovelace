@@ -18,7 +18,7 @@ class Share extends Component {
     return (
       <Element name="share" id="share">
         <div className="content">
-          <h4>Share</h4>
+          <h4>share</h4>
           <p>We envision an ever-growing platform, crowdsourced by people everywhere, helping us show women who somehow have created an impact in our world!
            Until then, you can help us by spreading the word of Wikimina :)</p>
            <div className="actions">

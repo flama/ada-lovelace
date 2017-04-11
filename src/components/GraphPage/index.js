@@ -31,17 +31,21 @@ class GraphPage extends Component {
           or not. We have picked a few (for now) to try and show it, by sorting them into their
           influence areas and through time.` }</p>
         </div>
-        <div className="graph-head">
-          <h4 className={ this.styleTitle(this.props.titlePosition) }>
-            Who are the wonderful women who helped shape the world?
-          </h4>
-          <div className="legend">
-            <span>Women</span>
+        <div className="wrapper">
+          <div className="graph-content">
+          <div className="graph-head">
+              <h3 className={ this.styleTitle(this.props.titlePosition) }>
+                Who are the wonderful women who helped shape the world?
+              </h3>
+              <div className="legend">
+                <span>Women</span>
+              </div>
+            </div>
+            <DataLoader fetchData={this.fetchData} />
+            <FilterableScatterPlot dataList={this.state.dataList} options={this.state.options} />
+            <p className="information">Information: We collected the information presented from public sources and do not take responsability for the content in the external links.</p>
           </div>
         </div>
-        <DataLoader fetchData={this.fetchData} />
-        <FilterableScatterPlot dataList={this.state.dataList} options={this.state.options} />
-        <p className="information">Information: We collected the information presented from public sources and do not take responsability for the content in the external links.</p>
       </section>
     )
   }

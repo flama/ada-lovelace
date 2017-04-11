@@ -1,23 +1,37 @@
 @import '../../config';
 
 #graph-page {
-  @include wrap;
   display: flex;
   flex-direction: column;
 
-  > h3 {
-    @include grid(12);
-    margin-bottom: $space-xs;
-   }
+  h3 {
+    
+
+    @include large-up {
+      @include grid(8);
+      @include offsetLeft(2);
+      margin-bottom: $space-xs;
+    }
+  }
 
   > .content {
-    @include grid(9);
-    @include offsetRight(4);
+    @include grid(7);
+    @include offsetLeft(2);
     display: flex;
     align-items: center;
 
     > p {
       margin-bottom: $space-xl;
+    }
+  }
+
+  > .wrapper {
+    padding-top: $space-xxl;
+    padding-bottom: $space-xxl;
+    background-color: rgba(#000, 0.2);
+
+    > .graph-content {
+      @include wrap;
     }
   }
 
