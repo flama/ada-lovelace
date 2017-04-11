@@ -20,7 +20,7 @@
   height: 15vh;
 
   > .left, > .right {
-    margin-top: $space-s;
+    margin-top: $space-m;
 
     @include medium-up {
       margin-top: $space-xl;
