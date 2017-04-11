@@ -20,7 +20,11 @@
   height: 15vh;
 
   > .left, > .right {
-    margin-top: $space-xl;
+    margin-top: $space-s;
+
+    @include medium-up {
+      margin-top: $space-xl;
+    }
     padding: $space-xxs;
     font-size: $font-size-centi;
     font-weight: bold;

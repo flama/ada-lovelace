@@ -1,22 +1,24 @@
 @import '../../config';
 
 #home {
-  height: 75vh;
+  height: 85vh;
   width: 100vw;
   background-image: url('./home.png');
-  background-position: center 178px;
+  background-position: center bottom;
   background-repeat: no-repeat;
   background-size: contain;
   overflow: auto;
 
-  @include large-up {
+  @include medium-up {
     background-position: center;
     height: 100%;
   }
 
 
   .body {
-    @include wrap-mobile;
+    @include small-only {
+      @include wrap-mobile;
+    }
 
     > h1 {
       margin-top: $space-xl;

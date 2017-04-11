@@ -34,7 +34,7 @@ class AboutPage extends Component {
             History has a lot of examples that have been hidden or not properly appraised. We're
             here to help change that.` }</p>
         </div>
-        <h4>{ `We believe in role models and how they can promote change and social equality.` }</h4>
+        <h3>{ `We believe in role models and how they can promote change and social equality.` }</h3>
         <div className="content">
           <p>{ `We believe that bringing these fantastic women to light will motivate others to do
             so — and also show there are no limits to what a girl can do.` }</p>

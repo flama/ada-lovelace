@@ -1,25 +1,53 @@
 @import '../../config';
 
 #about-page {
-  margin-top: $space-xxl;
+  @include small-only {
+    @include wrap-mobile;
+  }
+  padding-top: $space-xl;
+  padding-bottom: $space-m;
 
   > h2 {
     margin-bottom: $space-s;
-    @include grid(7);
-    @include offsetLeft(2);
+    font-size: $font-size-giga;
+    line-height: $line-height-giga;
   }
 
-  > h4 {
-    @include grid(7);
-    @include offsetLeft(2);
+  > h3 {
     margin-bottom: $space-s;
+    margin-top: $space-xl;
+    font-size: $font-size-hecto;
+    line-height: $line-height-hecto;
   }
 
   > .content {
-    @include grid(7);
-    @include offsetLeft(2);
     margin-bottom: $space-m;
 
     > p { margin-bottom: $space-m; }
   }
+
+  @include large-up {
+    > h2 {
+      margin-bottom: $space-s;
+      @include grid(7);
+      @include offsetLeft(2);
+    }
+
+    > h3 {
+      @include grid(7);
+      @include offsetLeft(2);
+      margin-bottom: $space-s;
+    }
+
+    > .content {
+      @include grid(7);
+      @include offsetLeft(2);
+      margin-bottom: $space-m;
+
+      > p { margin-bottom: $space-m; }
+    }
+  }
+
+
+
 }

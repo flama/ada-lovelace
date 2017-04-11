@@ -27,7 +27,6 @@
 
     }
 
-
     @include large-up {
       @include grid(7);
       @include offsetLeft(2);
