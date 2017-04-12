@@ -9,36 +9,39 @@ const domain = {
   x: [1800, 2017]
 }
 
-class ScatterPlot extends Component {
+const ScatterPlot = props => {
+  let topics = Object.keys(props.dataList).map(category => {
+    return (<ExpansibleScatterRow
+      data={ props.dataList[category] }
+      domain={ domain }
+      title={ category }
+      all={ props.all }
+      key={ category }
+    />)
+  })
 
-  render() {
-    let topics = Object.keys(this.props.dataList).map(category => {
-      return (<ExpansibleScatterRow
-        data={ this.props.dataList[category] }
-        domain={ domain }
-        title={ category }
-        all={ this.props.all }
-        key={ category }
-      />)
-    })
-
-
-    return (
-      <div className="scatter-plot">
-        <div className="topics">{ topics }</div>
-        <DetailsBubble close={ () => this.props.closeBubble() }/>
-        <div className="scatter-row">
-          <div className="title"></div>
-          <ScatterPlotTimeline className="graph" domain={ domain } />
-        </div>
+  return (
+    <div className="scatter-plot">
+      <div className="topics">{ topics }</div>
+      <DetailsBubble close={ () => props.closeBubble() }/>
+      <div className="scatter-row">
+        <div className="title"></div>
+        <ScatterPlotTimeline className="graph" domain={ domain } />
       </div>
-    )
-  }
+    </div>
+  )
+}
+
+ScatterPlot.defaultProps = {
+  dataList: {},
+  all: true,
+  closeBubble: _=>_
 }
 
 ScatterPlot.propTypes = {
   dataList: React.PropTypes.object,
-  all: React.PropTypes.bool
+  all: React.PropTypes.bool,
+  closeBubble: React.PropTypes.func
 }
 
 export default ScatterPlot

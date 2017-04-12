@@ -2,30 +2,28 @@ import React, { Component } from 'react'
 
 import './styles.scss'
 
-class SelectInput extends Component {
+const SelectInput = props => {
+  let select
 
-  handleUserInput = () => {
-    this.props.closeBubble()
-    this.props.onChange(this.select.value)
+  let handleUserInput = () => {
+    props.closeBubble()
+    props.onChange(select.value)
   }
 
-  render() {
-    let options = []
+  let options = props.options.map(option => {
+    return <option value={ option } key={ option }>{ option }</option>
+  })
 
-    this.props.options.forEach(option => {
-      options.push(<option value={ option } key={ option }>{ option }</option>)
-    })
-
-    return (
-      <div className="select-input">
-        <select required="required" onChange={ this.handleUserInput }
-          ref={ select => this.select = select }>
-          <option value="-1">{ `Continents (All)` }</option>
-          { options }
-        </select>
-      </div>
-    )
-  }
+  return (
+    <div className="select-input">
+      <select required="required"
+        onChange={ () => handleUserInput() }
+        ref={ s => select = s }>
+        <option value="-1">{ `Continents (All)` }</option>
+        { options }
+      </select>
+    </div>
+  )
 }
 
 SelectInput.defaultProps = {
