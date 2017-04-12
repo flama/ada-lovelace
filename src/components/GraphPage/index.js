@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
 
@@ -41,10 +43,17 @@ class GraphPage extends Component {
         </div>
         <DataLoader fetchData={this.fetchData} />
         <FilterableScatterPlot dataList={this.state.dataList} options={this.state.options} />
-        <p className="information">Information: We collected the information presented from public sources and do not take responsability for the content in the external links.</p>
+        <p className="information">
+          { `Information: We collected the information presented from public sources
+            and do not take responsibility for the content in the external links.` }
+        </p>
       </section>
     )
   }
+}
+
+GraphPage.propTypes = {
+  titlePosition: PropTypes.oneOf(['top', 'inline'])
 }
 
 export default GraphPage;

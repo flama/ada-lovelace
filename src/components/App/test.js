@@ -1,11 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import renderer from 'react-test-renderer'
+import Shallow from 'react-test-renderer/shallow'
+const renderer = new Shallow()
 
 import App from '../App';
 
 describe('App', () => {
-  it('tests the truth', () => {
-    expect(true).toBeTruthy()
+  it('renders correctly', () => {
+    const tree = renderer.render(<App />)
+    expect(tree).toMatchSnapshot()
   })
 })

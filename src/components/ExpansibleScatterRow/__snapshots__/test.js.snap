@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpansibleScatterRow should render categories corretly 1`] = `
+<div
+  className="expansible-scatter-row hidden"
+>
+   
+  <ScatterRow
+    data={Array []}
+    domain={
+      Object {
+        "x": Array [
+          1800,
+          2020,
+        ],
+      }
+    }
+    hidden={true}
+    title={undefined}
+  />
+   
+</div>
+`;
+
+exports[`ExpansibleScatterRow should render subcategories correctly 1`] = `
+<div
+  className="expansible-scatter-row "
+>
+   
+   
+</div>
+`;

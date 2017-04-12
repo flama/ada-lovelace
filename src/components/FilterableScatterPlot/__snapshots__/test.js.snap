@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterableScatterPlot should render correctly 1`] = `
+<div
+  className="filterable"
+>
+  <div
+    className="filters"
+  >
+    <Categories
+      all="All"
+      closeBubble={[Function]}
+      onChange={[Function]}
+      options={Array []}
+      title="Categorias"
+      titlePosition="top"
+    />
+    <SelectInput
+      closeBubble={[Function]}
+      onChange={[Function]}
+      options={Array []}
+    />
+  </div>
+  <ScatterPlot
+    all={true}
+    closeBubble={[Function]}
+    dataList={Object {}}
+  />
+</div>
+`;

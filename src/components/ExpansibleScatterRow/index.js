@@ -36,8 +36,12 @@ const ExpansibleScatterRow = props => {
 }
 
 ExpansibleScatterRow.propTypes = {
-  data: PropTypes.object,
-  domain: PropTypes.object,
+  data: PropTypes.shape({
+    active: PropTypes.bool.isRequired,
+    division: PropTypes.object.isRequired,
+    array: PropTypes.array.isRequired
+  }).isRequired,
+  domain: PropTypes.object.isRequired,
   title: PropTypes.string,
   all: PropTypes.bool
 }

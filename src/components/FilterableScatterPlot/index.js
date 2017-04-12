@@ -117,7 +117,9 @@ FilterableScatterPlot.defaultProps = {
 
 FilterableScatterPlot.propTypes = {
   dataList: PropTypes.object,
-  options: PropTypes.object
+  options: PropTypes.shape({
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired
+  }).isRequired
 }
 
 export default FilterableScatterPlot;

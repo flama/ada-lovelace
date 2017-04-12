@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the graph page should render correctly 1`] = `
+<section
+  id="graph-page"
+>
+  <h3>
+    wonderful women
+  </h3>
+  <div
+    className="content"
+  >
+    <p>
+      There's a woman behind every single change in our history — whether you know her
+                or not. We have picked a few (for now) to try and show it, by sorting them into their
+                influence areas and through time.
+    </p>
+  </div>
+  <div
+    className="graph-head"
+  >
+    <h4
+      className="title -undefined"
+    >
+      Who are the wonderful women who helped shape the world?
+    </h4>
+    <div
+      className="legend"
+    >
+      <span>
+        Women
+      </span>
+    </div>
+  </div>
+  <Unknown
+    fetchData={[Function]}
+  />
+  <FilterableScatterPlot
+    dataList={Object {}}
+    options={Object {}}
+  />
+  <p
+    className="information"
+  >
+    Information: We collected the information presented from public sources
+                and do not take responsability for the content in the external links.
+  </p>
+</section>
+`;
