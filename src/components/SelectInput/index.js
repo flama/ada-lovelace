@@ -15,7 +15,7 @@ const SelectInput = props => {
     return <option value={ option } key={ option }>{ option }</option>
   })
 
-  let element = (
+  return (
     <div className="select-input">
       <select required="required"
         onChange={ () => handleUserInput() }
@@ -25,10 +25,6 @@ const SelectInput = props => {
       </select>
     </div>
   )
-
-  console.log(element)
-
-  return element
 }
 
 SelectInput.defaultProps = {

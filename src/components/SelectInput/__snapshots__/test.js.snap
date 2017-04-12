@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectInput renders correctly 1`] = `
+<div
+  className="select-input"
+>
+  <select
+    onChange={[Function]}
+    required="required"
+  >
+    <option
+      value="-1"
+    >
+      Continents (All)
+    </option>
+  </select>
+</div>
+`;

@@ -1,3 +1,9 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import ScatterPlot from './ScatterPlot'
+import renderer from 'react-test-renderer'
+
+import ScatterPlot from '../ScatterPlot'
+
+test("the truth", () => {
+  expect(true).toBeTruthy()
+})

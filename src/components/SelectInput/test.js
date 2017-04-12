@@ -5,6 +5,8 @@ import renderer from 'react-test-renderer'
 import SelectInput from '../SelectInput'
 
 describe('SelectInput', () => {
-  const tree = renderer.create(SelectInput).toJSON()
-  expect(tree).toMatchSnapshot()
+  it('renders correctly', () => {
+    const tree = renderer.create(<SelectInput />).toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })
