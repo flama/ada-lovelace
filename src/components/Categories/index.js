@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './styles.scss'
 
@@ -59,12 +60,12 @@ Categories.defaultProps = {
 }
 
 Categories.propTypes = {
-  onChange: React.PropTypes.func,
-  closeBubble: React.PropTypes.func,
-  title: React.PropTypes.string.isRequired,
-  options: React.PropTypes.arrayOf(React.PropTypes.string),
-  all: React.PropTypes.string,
-  titlePosition: React.PropTypes.oneOf(['top', 'inline']),
+  onChange: PropTypes.func,
+  closeBubble: PropTypes.func,
+  title: PropTypes.string.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
+  all: PropTypes.string,
+  titlePosition: PropTypes.oneOf(['top', 'inline']),
 }
 
 export default Categories

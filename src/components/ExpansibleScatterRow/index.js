@@ -1,4 +1,6 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+
 import ScatterRow from '../ScatterRow'
 
 import './styles.scss'
@@ -34,10 +36,10 @@ const ExpansibleScatterRow = props => {
 }
 
 ExpansibleScatterRow.propTypes = {
-  data: React.PropTypes.object,
-  domain: React.PropTypes.object,
-  title: React.PropTypes.string,
-  all: React.PropTypes.bool
+  data: PropTypes.object,
+  domain: PropTypes.object,
+  title: PropTypes.string,
+  all: PropTypes.bool
 }
 
 export default ExpansibleScatterRow

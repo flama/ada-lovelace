@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Element } from 'react-scroll'
 import { ShareButtons } from 'react-share'
 

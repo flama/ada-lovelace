@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
 import './styles.scss'
 
@@ -14,7 +15,7 @@ const DetailsBubble = props => (
 )
 
 DetailsBubble.propTypes = {
-  close: React.PropTypes.func
+  close: PropTypes.func
 }
 
 export default DetailsBubble

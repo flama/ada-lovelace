@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import { apiKey } from '../../alicia-keys'
 
@@ -180,7 +181,7 @@ class DataLoader extends Component {
 }
 
 DataLoader.propTypes = {
-  fetchData: React.PropTypes.func
+  fetchData: PropTypes.func
 }
 
 export default DataLoader

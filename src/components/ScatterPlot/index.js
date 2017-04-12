@@ -1,4 +1,6 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
+
 import ExpansibleScatterRow from '../ExpansibleScatterRow'
 import ScatterPlotTimeline from '../ScatterPlotTimeline'
 import DetailsBubble from '../DetailsBubble'
@@ -39,9 +41,9 @@ ScatterPlot.defaultProps = {
 }
 
 ScatterPlot.propTypes = {
-  dataList: React.PropTypes.object,
-  all: React.PropTypes.bool,
-  closeBubble: React.PropTypes.func
+  dataList: PropTypes.object,
+  all: PropTypes.bool,
+  closeBubble: PropTypes.func
 }
 
 export default ScatterPlot

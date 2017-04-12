@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import ScatterPlot from '../ScatterPlot'
 import Categories from '../Categories'
 import SelectInput from '../SelectInput'
@@ -114,8 +116,8 @@ FilterableScatterPlot.defaultProps = {
 }
 
 FilterableScatterPlot.propTypes = {
-  dataList: React.PropTypes.object,
-  options: React.PropTypes.object
+  dataList: PropTypes.object,
+  options: PropTypes.object
 }
 
 export default FilterableScatterPlot;

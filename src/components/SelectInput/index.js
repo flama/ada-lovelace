@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 import './styles.scss'
 
@@ -14,7 +15,7 @@ const SelectInput = props => {
     return <option value={ option } key={ option }>{ option }</option>
   })
 
-  return (
+  let element = (
     <div className="select-input">
       <select required="required"
         onChange={ () => handleUserInput() }
@@ -24,6 +25,10 @@ const SelectInput = props => {
       </select>
     </div>
   )
+
+  console.log(element)
+
+  return element
 }
 
 SelectInput.defaultProps = {
@@ -33,9 +38,9 @@ SelectInput.defaultProps = {
 }
 
 SelectInput.propTypes = {
-  onChange: React.PropTypes.func,
-  closeBubble: React.PropTypes.func,
-  options: React.PropTypes.array
+  onChange: PropTypes.func,
+  closeBubble: PropTypes.func,
+  options: PropTypes.array
 }
 
 export default SelectInput
