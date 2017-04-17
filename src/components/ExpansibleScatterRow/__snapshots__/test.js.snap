@@ -189,16 +189,130 @@ ShallowWrapper {
   },
   "length": 1,
   "node": <div
-    className="expansible-scatter-row "
+    className="expansible-scatter-row"
 >
      
+    <ScatterRow
+        data={
+            Array [
+                1,
+                2,
+                3,
+              ]
+        }
+        domain={
+            Object {
+                "x": Array [
+                  1800,
+                  2020,
+                ],
+              }
+        }
+        hidden={true}
+        title="subdiv1"
+    />
+    <ScatterRow
+        data={
+            Array [
+                4,
+                5,
+                6,
+              ]
+        }
+        domain={
+            Object {
+                "x": Array [
+                  1800,
+                  2020,
+                ],
+              }
+        }
+        hidden={true}
+        title="subdiv2"
+    />
+    <ScatterRow
+        data={
+            Array [
+                7,
+                8,
+                9,
+              ]
+        }
+        domain={
+            Object {
+                "x": Array [
+                  1800,
+                  2020,
+                ],
+              }
+        }
+        hidden={true}
+        title="subdivtest"
+    />
      
 </div>,
   "nodes": Array [
     <div
-      className="expansible-scatter-row "
+      className="expansible-scatter-row"
 >
        
+      <ScatterRow
+            data={
+                  Array [
+                        1,
+                        2,
+                        3,
+                      ]
+            }
+            domain={
+                  Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+            }
+            hidden={true}
+            title="subdiv1"
+      />
+      <ScatterRow
+            data={
+                  Array [
+                        4,
+                        5,
+                        6,
+                      ]
+            }
+            domain={
+                  Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+            }
+            hidden={true}
+            title="subdiv2"
+      />
+      <ScatterRow
+            data={
+                  Array [
+                        7,
+                        8,
+                        9,
+                      ]
+            }
+            domain={
+                  Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+            }
+            hidden={true}
+            title="subdivtest"
+      />
        
 </div>,
   ],
@@ -213,7 +327,23 @@ ShallowWrapper {
                 Object {
                         "active": true,
                         "array": Array [],
-                        "division": Object {},
+                        "division": Object {
+                          "subdiv1": Array [
+                            1,
+                            2,
+                            3,
+                          ],
+                          "subdiv2": Array [
+                            4,
+                            5,
+                            6,
+                          ],
+                          "subdivtest": Array [
+                            7,
+                            8,
+                            9,
+                          ],
+                        },
                       }
         }
         domain={
@@ -235,7 +365,23 @@ ShallowWrapper {
           "data": Object {
             "active": true,
             "array": Array [],
-            "division": Object {},
+            "division": Object {
+              "subdiv1": Array [
+                1,
+                2,
+                3,
+              ],
+              "subdiv2": Array [
+                4,
+                5,
+                6,
+              ],
+              "subdivtest": Array [
+                7,
+                8,
+                9,
+              ],
+            },
           },
           "domain": Object {
             "x": Array [
@@ -265,16 +411,130 @@ ShallowWrapper {
       "_pendingStateQueue": null,
       "_renderedComponent": NoopInternalComponent {
         "_currentElement": <div
-          className="expansible-scatter-row "
+          className="expansible-scatter-row"
 >
            
+          <ScatterRow
+                    data={
+                              Array [
+                                        1,
+                                        2,
+                                        3,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    title="subdiv1"
+          />
+          <ScatterRow
+                    data={
+                              Array [
+                                        4,
+                                        5,
+                                        6,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    title="subdiv2"
+          />
+          <ScatterRow
+                    data={
+                              Array [
+                                        7,
+                                        8,
+                                        9,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    title="subdivtest"
+          />
            
 </div>,
         "_debugID": 4,
         "_renderedOutput": <div
-          className="expansible-scatter-row "
+          className="expansible-scatter-row"
 >
            
+          <ScatterRow
+                    data={
+                              Array [
+                                        1,
+                                        2,
+                                        3,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    title="subdiv1"
+          />
+          <ScatterRow
+                    data={
+                              Array [
+                                        4,
+                                        5,
+                                        6,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    title="subdiv2"
+          />
+          <ScatterRow
+                    data={
+                              Array [
+                                        7,
+                                        8,
+                                        9,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    title="subdivtest"
+          />
            
 </div>,
       },
@@ -293,7 +553,23 @@ ShallowWrapper {
         Object {
             "active": true,
             "array": Array [],
-            "division": Object {},
+            "division": Object {
+              "subdiv1": Array [
+                1,
+                2,
+                3,
+              ],
+              "subdiv2": Array [
+                4,
+                5,
+                6,
+              ],
+              "subdivtest": Array [
+                7,
+                8,
+                9,
+              ],
+            },
           }
     }
     domain={

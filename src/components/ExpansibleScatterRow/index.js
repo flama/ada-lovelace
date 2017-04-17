@@ -8,7 +8,7 @@ import './styles.scss'
 const ExpansibleScatterRow = props => {
 
   let classNames = () => {
-    return `expansible-scatter-row ${!props.data.active && !props.all ? 'hidden':''}`
+    return `expansible-scatter-row${!props.data.active && !props.all ? ' hidden':''}`
   }
 
   let topics, subtopics

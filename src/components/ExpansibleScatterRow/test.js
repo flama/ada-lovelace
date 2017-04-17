@@ -28,7 +28,11 @@ describe("ExpansibleScatterRow", () => {
       <ExpansibleScatterRow
         data={{
           active: true,
-          division: {},
+          division: {
+            subdiv1: [1, 2, 3],
+            subdiv2: [4, 5, 6],
+            subdivtest: [7, 8, 9]
+          },
           array: []
         }}
         domain={{ x: [1800, 2020] }}
