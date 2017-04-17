@@ -1,14 +1,29 @@
 @import '../../config';
 
 #navbar {
-  @include grid(10);
-  @include offsetLeft(1);
-  @include offsetRight(2);
+  @include wrap-mobile;
+
+  > .left, > .right { padding: $space-xxxs; }
+  > .right { margin-left: $space-xxs; }
+
+  @include medium-only {
+    @include grid(6);
+    @include offsetLeft(1);
+  }
+
+  @include large-up {
+    @include grid(10);
+    @include offsetLeft(1);
+  }
 
   height: 15vh;
 
   > .left, > .right {
-    margin-top: $space-xl;
+    margin-top: $space-m;
+
+    @include medium-up {
+      margin-top: $space-xl;
+    }
     padding: $space-xxs;
     font-size: $font-size-centi;
     font-weight: bold;
@@ -31,11 +46,4 @@
   > * { transition: all 0.3s ease; }
 
   > *:hover { color: #fff; }
-
-  @include small-only {
-    @include wrap-mobile;
-
-    > .left, > .right { padding: $space-xxxs; }
-    > .right { margin-left: $space-xxs; }
-  }
 }

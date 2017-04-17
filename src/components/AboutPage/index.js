@@ -33,12 +33,13 @@ class AboutPage extends Component {
             haven't.
             History has a lot of examples that have been hidden or not properly appraised. We're
             here to help change that.` }</p>
-          <p>{ `We believe in role models and how they can promote change and social equality.
-            And we believe that bringing these fantastic women to light will motivate others to
-            do so — and also show there are no limits to what a girl can do.` }</p>
+        </div>
+        <h3>{ `We believe in role models and how they can promote change and social equality.` }</h3>
+        <div className="content">
+          <p>{ `We believe that bringing these fantastic women to light will motivate others to do
+            so — and also show there are no limits to what a girl can do.` }</p>
           <p>{ `This is Wikimina. This is the place to see that women are increasingly making the
-            changes we want to see in the world, but also to not forget they have always been
-            there.` }</p>
+            changes we want to see in the world, but also to not forget they have always been there.` }</p>
         </div>
       </Element>
     )
