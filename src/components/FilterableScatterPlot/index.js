@@ -112,7 +112,10 @@ class FilterableScatterPlot extends Component {
 }
 
 FilterableScatterPlot.defaultProps = {
-  dataList: {}
+  dataList: {},
+  options: {
+    categories: []
+  }
 }
 
 FilterableScatterPlot.propTypes = {

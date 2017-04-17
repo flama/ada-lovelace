@@ -32,18 +32,22 @@ exports[`the graph page should render correctly 1`] = `
       </span>
     </div>
   </div>
-  <Unknown
+  <Component
     fetchData={[Function]}
   />
   <FilterableScatterPlot
     dataList={Object {}}
-    options={Object {}}
+    options={
+      Object {
+        "categories": Array [],
+      }
+    }
   />
   <p
     className="information"
   >
     Information: We collected the information presented from public sources
-                and do not take responsability for the content in the external links.
+                and do not take responsibility for the content in the external links.
   </p>
 </section>
 `;

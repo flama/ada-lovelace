@@ -1,21 +1,25 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Shallow from 'react-test-renderer/shallow'
-const renderer = new Shallow()
+import { shallow } from 'enzyme'
+import toJSON from 'enzyme-to-json'
 
 import GraphPage from '../GraphPage'
 
-jest.mock('../DataLoader', _ => {
+jest.mock('../DataLoader', () => {
   return props => {
-    console.log(props)
-    // props.fetchData()
+    props.fetchData({
+      dataList: [],
+      options: {
+        categories: ["potato"]
+      }
+    })
     return <div />
   }
 })
 
 describe("the graph page", () => {
   it("should render correctly", () => {
-    const tree = renderer.render(<GraphPage />)
-    expect(tree).toMatchSnapshot()
+    const tree = shallow(<GraphPage />)
+    expect(toJSON(tree)).toMatchSnapshot()
   })
 })

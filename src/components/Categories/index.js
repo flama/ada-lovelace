@@ -16,7 +16,7 @@ class Categories extends Component {
   }
 
   styleButton = index => {
-    return `button ${index === this.state.selected? 'selected':''}`
+    return `button${index === this.state.selected? ' selected':''}`
   }
 
   choose = selected => {
@@ -31,8 +31,8 @@ class Categories extends Component {
       return (
         <button className={ this.styleButton(index) }
           key={ option }
-          onClick={ () => this.choose(index)}
-        >
+          id={ option }
+          onClick={ () => this.choose(index)}>
           { option }
         </button>
       )
@@ -55,17 +55,14 @@ Categories.defaultProps = {
   onChange: _=>_,
   closeBubble: _=>_,
   options: [],
-  all: "All",
-  titlePosition: "inline"
+  all: "All"
 }
 
 Categories.propTypes = {
   onChange: PropTypes.func,
   closeBubble: PropTypes.func,
-  title: PropTypes.string.isRequired,
   options: PropTypes.arrayOf(PropTypes.string),
-  all: PropTypes.string,
-  titlePosition: PropTypes.oneOf(['top', 'inline']),
+  all: PropTypes.string
 }
 
 export default Categories

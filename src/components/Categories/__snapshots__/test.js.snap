@@ -10,5 +10,26 @@ exports[`Categories renders correctly 1`] = `
   >
     All
   </button>
+  <button
+    className="button"
+    id="option1"
+    onClick={[Function]}
+  >
+    option1
+  </button>
+  <button
+    className="button"
+    id="option2"
+    onClick={[Function]}
+  >
+    option2
+  </button>
+  <button
+    className="button"
+    id="testoption"
+    onClick={[Function]}
+  >
+    testoption
+  </button>
 </div>
 `;

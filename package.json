@@ -16,6 +16,8 @@
     "css-loader": "0.26.0",
     "detect-port": "1.0.1",
     "dotenv": "2.0.0",
+    "enzyme": "^2.8.2",
+    "enzyme-to-json": "^1.5.1",
     "eslint": "3.8.1",
     "eslint-config-react-app": "^0.5.0",
     "eslint-loader": "1.6.0",
@@ -31,12 +33,14 @@
     "html-webpack-plugin": "2.24.0",
     "http-proxy-middleware": "0.17.2",
     "jest": "19.0.2",
+    "jest-enzyme": "2.x",
     "json-loader": "0.5.4",
     "node-sass": "^4.5.0",
     "object-assign": "4.1.0",
     "path-exists": "2.1.0",
     "postcss-loader": "1.0.0",
     "promise": "7.1.1",
+    "react-addons-test-utils": "^15.5.1",
     "react-dev-utils": "^0.4.2",
     "recursive-readdir": "2.1.0",
     "sass-loader": "^4.1.1",
@@ -81,7 +85,9 @@
     "setupFiles": [
       "<rootDir>/config/polyfills.js"
     ],
-    "testMatch": [ "**/src/**/?(*.)(spec|test).js?(x)" ],
+    "testMatch": [
+      "**/src/**/?(*.)(spec|test).js?(x)"
+    ],
     "testPathIgnorePatterns": [
       "<rootDir>[/\\\\](build|docs|node_modules)[/\\\\]"
     ],

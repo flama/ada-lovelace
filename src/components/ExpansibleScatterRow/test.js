@@ -1,15 +1,15 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import Shallow from 'react-test-renderer/shallow'
-const renderer = new Shallow()
+import { shallow } from 'enzyme'
+import toJSON from 'enzyme-to-json'
 
 import ExpansibleScatterRow from '../ExpansibleScatterRow'
 
-// TODO: test functionality 
+// TODO: test functionality
 
 describe("ExpansibleScatterRow", () => {
   it("should render categories corretly", () => {
-    let tree = renderer.render(
+    let tree = shallow(
       <ExpansibleScatterRow
         data={{
           active: false,
@@ -22,11 +22,12 @@ describe("ExpansibleScatterRow", () => {
     expect(tree).toMatchSnapshot()
   })
 
+  // TODO: move shallow to beforeEach, use setProps to change active prop
   it("should render subcategories correctly", () => {
-    let tree = renderer.render(
+    let tree = shallow(
       <ExpansibleScatterRow
         data={{
-          active: true ,
+          active: true,
           division: {},
           array: []
         }}
