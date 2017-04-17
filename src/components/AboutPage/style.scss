@@ -37,6 +37,7 @@
       @include grid(7);
       @include offsetLeft(2);
       margin-bottom: $space-s;
+      margin-top: 0;
     }
 
     > .content {
