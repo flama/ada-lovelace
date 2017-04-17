@@ -25,7 +25,7 @@ const ScatterPlot = props => {
   return (
     <div className="scatter-plot">
       <div className="topics">{ topics }</div>
-      <DetailsBubble close={ () => props.closeBubble() }/>
+      <DetailsBubble close={ props.closeBubble }/>
       <div className="scatter-row">
         <div className="title"></div>
         <ScatterPlotTimeline className="graph" domain={ domain } />
@@ -36,14 +36,13 @@ const ScatterPlot = props => {
 
 ScatterPlot.defaultProps = {
   dataList: {},
-  all: true,
-  closeBubble: _=>_
+  all: true
 }
 
 ScatterPlot.propTypes = {
   dataList: PropTypes.object,
   all: PropTypes.bool,
-  closeBubble: PropTypes.func
+  closeBubble: PropTypes.func.isRequired
 }
 
 export default ScatterPlot
