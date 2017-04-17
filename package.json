@@ -60,7 +60,7 @@
     "gh-pages": "^0.12.0",
     "grid-framework": "^1.0.0",
     "himalaya": "^0.2.2",
-    "prop-types": "^15.5.7",
+    "prop-types": "^15.5.8",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-fetch": "0.0.9",
