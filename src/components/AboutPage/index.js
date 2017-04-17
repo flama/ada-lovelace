@@ -45,4 +45,4 @@ class AboutPage extends Component {
   }
 }
 
-export default AboutPage;
+export default AboutPage

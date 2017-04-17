@@ -7,7 +7,7 @@ import './style.scss'
 const {
   FacebookShareButton,
   TwitterShareButton
-} = ShareButtons;
+} = ShareButtons
 
 const Share = props => {
   const host = "https://flama.github.io/ada-lovelace"
@@ -35,4 +35,4 @@ const Share = props => {
   )
 }
 
-export default Share;
+export default Share

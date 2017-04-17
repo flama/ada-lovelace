@@ -1,9 +1,9 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react'
+import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 
-import App from '../App';
+import App from '../App'
 
 describe('App', () => {
   it('renders correctly', () => {

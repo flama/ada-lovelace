@@ -125,4 +125,4 @@ FilterableScatterPlot.propTypes = {
   }).isRequired
 }
 
-export default FilterableScatterPlot;
+export default FilterableScatterPlot

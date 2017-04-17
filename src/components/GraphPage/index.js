@@ -50,4 +50,4 @@ class GraphPage extends Component {
   }
 }
 
-export default GraphPage;
+export default GraphPage
