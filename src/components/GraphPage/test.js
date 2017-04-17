@@ -5,21 +5,26 @@ import toJSON from 'enzyme-to-json'
 
 import GraphPage from '../GraphPage'
 
-jest.mock('../DataLoader', () => {
-  return props => {
-    props.fetchData({
-      dataList: [],
-      options: {
-        categories: ["potato"]
-      }
-    })
-    return <div />
-  }
-})
-
 describe("the graph page", () => {
+  let graphPage
+
+  beforeEach(() => {
+    graphPage = shallow(<GraphPage />)
+  })
+
   it("should render correctly", () => {
-    const tree = shallow(<GraphPage />)
-    expect(toJSON(tree)).toMatchSnapshot()
+    expect(toJSON(graphPage)).toMatchSnapshot()
+  })
+
+  it("refreshes when inputted data", () => {
+    const options = {
+      categories: ["4", "5", "6"]
+    }
+
+    graphPage.instance().fetchData({
+      options,
+      dataList: {}
+    })
+    expect(graphPage.state("options")).toEqual(options)
   })
 })

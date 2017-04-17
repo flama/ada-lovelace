@@ -22,10 +22,6 @@ class GraphPage extends Component {
     this.setState({ dataList, options })
   }
 
-  styleTitle = position => {
-    return `title -${position}`
-  }
-
   render() {
     return (
       <section id="graph-page">
@@ -36,7 +32,7 @@ class GraphPage extends Component {
           influence areas and through time.` }</p>
         </div>
         <div className="graph-head">
-          <h4 className={ this.styleTitle(this.props.titlePosition) }>
+          <h4 className="title">
             Who are the wonderful women who helped shape the world?
           </h4>
           <div className="legend">
@@ -44,7 +40,7 @@ class GraphPage extends Component {
           </div>
         </div>
         <DataLoader fetchData={this.fetchData} />
-        <FilterableScatterPlot dataList={this.state.dataList} options={this.state.options} />
+        <FilterableScatterPlot { ...this.state } />
         <p className="information">
           { `Information: We collected the information presented from public sources
             and do not take responsibility for the content in the external links.` }
@@ -52,10 +48,6 @@ class GraphPage extends Component {
       </section>
     )
   }
-}
-
-GraphPage.propTypes = {
-  titlePosition: PropTypes.oneOf(['top', 'inline'])
 }
 
 export default GraphPage;

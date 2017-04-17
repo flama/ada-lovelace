@@ -16,7 +16,7 @@ fetch = url => new Promise((resolve, reject) => {
 
 describe("DataLoader", () => {
   it("should render correctly", () => {
-    let dataLoader = shallow(<DataLoader />)
+    let dataLoader = shallow(<DataLoader fetchData={ _=>_ }/>)
     expect(toJSON(dataLoader)).toMatchSnapshot()
   })
 })

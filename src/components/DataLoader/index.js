@@ -12,7 +12,9 @@ class DataLoader extends Component {
   }
 
   componentWillMount() {
-    this.request().then(data => this.props.fetchData(data))
+    this.request()
+      .then(data => this.props.fetchData(data))
+      .catch(error => console.error(error))
   }
 
   request = () => {

@@ -20,7 +20,7 @@ exports[`the graph page should render correctly 1`] = `
     className="graph-head"
   >
     <h4
-      className="title -undefined"
+      className="title"
     >
       Who are the wonderful women who helped shape the world?
     </h4>
@@ -32,7 +32,7 @@ exports[`the graph page should render correctly 1`] = `
       </span>
     </div>
   </div>
-  <Component
+  <DataLoader
     fetchData={[Function]}
   />
   <FilterableScatterPlot
