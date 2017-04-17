@@ -84,7 +84,7 @@ class FilterableScatterPlot extends Component {
       balls[i].setAttribute('r', radius)
     }
 
-    bubble.classList.remove('show')
+    bubble && bubble.classList.remove('show')
   }
 
   render() {
@@ -94,11 +94,11 @@ class FilterableScatterPlot extends Component {
           <Categories
             title="Categorias" titlePosition="top" options={this.props.options.categories}
             onChange={ index => this.handleCategoryChange(index) }
-            closeBubble={ () => this.closeBubble() }
+            closeBubble={ this.closeBubble }
           />
           <SelectInput options={this.props.options.continents}
             onChange={ index => this.handleUserSelect(index) }
-            closeBubble={ () => this.closeBubble() }
+            closeBubble={ this.closeBubble }
           />
         </div>
         <ScatterPlot

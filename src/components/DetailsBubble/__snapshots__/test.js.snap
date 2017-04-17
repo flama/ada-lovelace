@@ -8,7 +8,7 @@ exports[`DetailsBubble renders correctly 1`] = `
     className="close"
     onClick={[Function]}
   >
-    Close
+     Close 
   </a>
   <div
     className="content"
@@ -24,7 +24,7 @@ exports[`DetailsBubble renders correctly 1`] = `
     className="external"
     target="_blank"
   >
-    More info
+     More info 
   </a>
 </div>
 `;
