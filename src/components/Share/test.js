@@ -1,10 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import renderer from 'react-test-renderer'
+import { shallow } from 'enzyme'
+import toJSON from 'enzyme-to-json'
 
 import Share from '../Share'
 
-// TODO: test share functionality
-test("the truth", () => {
-  expect(true).toBeTruthy()
+describe("the share section", () => {
+  let share
+
+  beforeEach(() => {
+    share = shallow(<Share />)
+  })
+
+  it("renders correctly", () => {
+    expect(toJSON(share)).toMatchSnapshot()
+  })
 })
