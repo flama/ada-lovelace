@@ -7,13 +7,13 @@ h1, h2, h3, h4 { font-weight: bold; }
 p { font-weight: lighter; }
 
 h1 {
-  font-size: $font-size-tera;
-  line-height: $line-height-tera;
+  font-size: $font-size-exa;
+  line-height: $line-height-exa;
 }
 
 h2 {
-  font-size: $font-size-giga;
-  line-height: $line-height-giga;
+  font-size: $font-size-peta;
+  line-height: $line-height-peta;
 }
 
 h3 {
@@ -21,13 +21,7 @@ h3 {
   line-height: $line-height-mega;
 }
 
-h4 {
-  font-size: $font-size-kilo;
-  line-height: $line-height-kilo;
-}
-
 p {
-  font-size: $font-size-base;
-  line-height: $line-height-base;
+  font-size: $font-size-deca;
+  line-height: $line-height-deca;
 }
-
