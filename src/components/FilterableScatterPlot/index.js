@@ -104,7 +104,7 @@ class FilterableScatterPlot extends Component {
         <ScatterPlot
           dataList={ this.selectCategory(this.filterContinent(this.props.dataList)) }
           all={ this.state.activeRow === ALL }
-          closeBubble={ () => this.closeBubble() }
+          closeBubble={ this.closeBubble }
         />
       </div>
     )
