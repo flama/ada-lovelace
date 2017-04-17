@@ -12,7 +12,6 @@
     @include large-up {
       @include grid(8);
       @include offsetLeft(2);
-      @include offsetRight(2);
     }
 
     padding-top: $space-l;

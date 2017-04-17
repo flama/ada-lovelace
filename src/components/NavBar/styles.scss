@@ -14,7 +14,6 @@
   @include large-up {
     @include grid(10);
     @include offsetLeft(1);
-    @include offsetRight(2);
   }
 
   height: 15vh;
