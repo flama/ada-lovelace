@@ -41,6 +41,7 @@ class Categories extends Component {
     return (
       <div className="categories">
         <button className={ this.styleButton(ALL) }
+          id="-1"
           onClick={ () => this.choose(ALL) }
         >
           { this.props.all }

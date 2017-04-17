@@ -6,6 +6,7 @@ exports[`Categories renders correctly 1`] = `
 >
   <button
     className="button selected"
+    id="-1"
     onClick={[Function]}
   >
     All

@@ -25,4 +25,10 @@ describe('Categories', () => {
     categories.find('button#option2').simulate('click')
     expect(categories.find('button#option2').hasClass('selected')).toBeTruthy()
   })
+
+  it('changes back to All when we click on it', () => {
+    categories.find('button#option2').simulate('click')
+    categories.find('button#-1').simulate('click')
+    expect(categories.find('button#-1').hasClass('selected')).toBeTruthy()
+  })
 })
