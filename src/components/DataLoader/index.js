@@ -18,6 +18,7 @@ class DataLoader extends Component {
   }
 
   request = () => {
+    let time = Date.now()
     return Promise.all([
       fetch(this.createUrl())
         .then(response => response.json())
@@ -50,7 +51,7 @@ class DataLoader extends Component {
         organized[categoryName] = {}
 
         subcategories.forEach(subcategory => {
-          organized[categoryName][subcategory] = data[subcategory]
+          organized[categoryName][subcategory] = Array.from(data[subcategory] || [])
         })
       })
 
@@ -108,7 +109,7 @@ class DataLoader extends Component {
 
       tagNames.forEach(filter => {
         if(woman[`Filtro ${filter}`])
-        tags.push(woman[`Filtro ${filter}`])
+          tags.push(woman[`Filtro ${filter}`])
       })
 
       woman.tags = tags
@@ -131,9 +132,12 @@ class DataLoader extends Component {
   organizeByTag = women => women.reduce((aggrupped, woman) => {
     woman.tags.forEach(tag => {
       if(typeof aggrupped[tag] !== "undefined")
-        aggrupped[tag].push(woman)
+      {
+        console.log(aggrupped[tag], woman, aggrupped[tag].has(woman))
+        aggrupped[tag].add(woman)
+      }
       else
-        aggrupped[tag] = [ woman ]
+        aggrupped[tag] = new Set([ woman ])
     })
     return aggrupped
   }, {})
