@@ -66,6 +66,7 @@ const formattedCategories = {
 }
 
 fetch = url => new Promise((resolve, reject) => {
+  if(url === "breakme!") reject("An error has occurred")
   if(/Subcategories/.test(url)) // if we're requesting categories
   {
     resolve({
@@ -117,5 +118,21 @@ describe("DataLoader", () => {
   it("transforms BC to negative", () => {
     return dataLoader.instance().request()
       .then(data => expect(data.dataList.liquids.array[1].Born).toEqual(Amanda.Born))
+  })
+
+  it("prints error on console", done => {
+    const originalConsole = console.error
+    console.error = jest.fn()
+
+    dataLoader.instance().createUrl = () => "breakme!"
+
+    dataLoader.shallow()
+
+    dataLoader.instance().request()
+    .catch(error => {
+      expect(console.error).toHaveBeenCalledTimes(2)
+      console.error = originalConsole
+      done()
+    })
   })
 })

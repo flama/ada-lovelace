@@ -40,6 +40,7 @@ class DataLoader extends Component {
         .then(ranges => ranges.map(range => range.values))
         .then(data => data[0])
         .then(data => data.map(datum => datum.map(atom => atom.trim())))
+        .catch(error => console.error(error))
     ])
     .then(([ data, categories ]) => {
       let organized = {}
@@ -61,13 +62,6 @@ class DataLoader extends Component {
     })
     .then(this.addStatusToCategories(true))
     .then(this.categoriesToArrays)
-  }
-
-  printData = label => {
-    return data => {
-      console.log(`[${label}]:`, data)
-      return data
-    }
   }
 
   segregateColsFromSheets = tables => {
