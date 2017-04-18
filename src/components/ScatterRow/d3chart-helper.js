@@ -1,92 +1,14 @@
 import * as d3 from 'd3'
+import Ball from './ball-manipulator'
 
 const radius = 5
-
-let ballGrow = target => {
-  if(target.classList.contains('faded')) return
-  target.setAttribute('r', radius*2.26)
-  target.classList.add('growing')
-
-  let balls = document.getElementsByClassName('d3-point')
-
-  for(let i=0; i<balls.length; ++i)
-  {
-    if(balls[i] === target) continue
-
-    balls[i].classList.add('shrinking')
-    balls[i].setAttribute('r', radius*2/3)
-  }
-
-  window.wikiminaTime = setTimeout(() => {
-    target.classList.remove('growing')
-    target.setAttribute('r', radius*2)
-  }, 160)
-}
-
-let ballShrink = target => {
-  if(window.wikiminaTime) {
-    clearTimeout(window.wikiminaTime)
-    window.wikiminaTime = undefined
-  }
-
-  let balls = document.getElementsByClassName('d3-point')
-  for(let i=0; i<balls.length; ++i)
-  {
-    balls[i].classList.remove('growing')
-    balls[i].classList.remove('shrinking')
-    if(!balls[i].classList.contains('faded'))
-      balls[i].setAttribute('r', radius)
-  }
-}
-
-let openBubble = (target, data) => {
-  let bubble = document.getElementById('details-bubble')
-  let balls = document.getElementsByClassName('d3-point')
-
-  for(let i=0; i<balls.length; ++i)
-  {
-    balls[i].setAttribute('r', radius*2/3)
-    if(balls[i] === bubble) continue
-
-    balls[i].classList.add('shrinking')
-    balls[i].classList.add('faded')
-  }
-  bubble.classList.remove('show')
-
-  setTimeout(() => {
-    let rect = target.getBoundingClientRect()
-    let plot = document.getElementsByClassName('scatter-plot').item(0).getBoundingClientRect()
-
-    let name = document.createTextNode(data.Name)
-    let nameContainer = bubble.getElementsByClassName('name').item(0)
-    clearNodes(nameContainer)
-    nameContainer.appendChild(name)
-
-    let capitalizedOccupation = data.Occupation[0].toUpperCase() + data.Occupation.slice(1)
-    let description = document.createTextNode(`${capitalizedOccupation} from ${data.Country}`)
-    let descriptionContainer = bubble.getElementsByClassName('description').item(0)
-    clearNodes(descriptionContainer)
-    descriptionContainer.appendChild(description)
-
-    let link = bubble.getElementsByClassName('external').item(0)
-    link.setAttribute('href', data.Informations)
-
-    bubble.style.top = `${rect.top - plot.top + 5.5}px`
-    bubble.style.left = `${rect.left - plot.left + 5.5}px`
-    bubble.classList.add('show')
-  }, 200)
-}
-
-function clearNodes(node) {
-  while(node.lastChild) {
-    node.removeChild(node.childNodes[0])
-  }
-}
 
 export default
 class d3ChartHelper {
 
-  constructor(el, props, state) {
+  constructor(el, props, state, deps) {
+    this.balls = deps || Ball
+
     let svg = d3.select(el).append('svg')
       .attr('class', 'd3 scatter-row-svg')
       .attr('width', props.width)
@@ -94,6 +16,8 @@ class d3ChartHelper {
 
     this.g = svg.append('g')
       .attr('class', 'd3-points')
+
+    this.t = state.test?0:1
 
     this.update(el, state)
   }
@@ -114,14 +38,9 @@ class d3ChartHelper {
   })
 
   _drawPoints = (el, data) => {
+    let balls = this.balls
     let simulation = d3.forceSimulation(data)
       .force("collide", d3.forceCollide(radius + 1))
-      .on("tick", () => {
-        simulation.nodes()
-          .attr("cx", d => d.x)
-          .attr("cy", d => d.y)
-          .on("click", function(d) { openBubble(this, d.extended) })
-      })
       .stop()
 
     for(let i=0; i<120; ++i) simulation.tick()
@@ -130,14 +49,15 @@ class d3ChartHelper {
       .data(simulation.nodes())
 
     cells.exit().transition()
-      .delay((d,i) => i*5)
+      .duration(250*this.t)
+      .delay((d,i) => i*5*this.t)
       .attr("r", 0)
       .remove()
 
     cells.enter().append("circle")
-      .on("mouseenter", function(){ ballGrow(this) })
-      .on("mouseleave", function(){ ballShrink(this) })
-      .on("click", function(d) { openBubble(this, d.extended) })
+      .on("mouseenter", function(){ balls.grow(this) })
+      .on("mouseleave", function(){ balls.shrink(this) })
+      .on("click", function(d) { balls.open(this, d.extended) })
       .attr("class", "d3-point")
       .attr("r", 0)
     .merge(cells)
@@ -145,7 +65,8 @@ class d3ChartHelper {
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
       .transition()
-        .delay((d,i) => i*5)
+        .duration(250*this.t)
+        .delay((d,i) => i*5*this.t)
         .attr("r", radius)
   }
 
