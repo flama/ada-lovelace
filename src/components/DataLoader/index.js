@@ -11,14 +11,13 @@ class DataLoader extends Component {
     return <div />
   }
 
-  componentWillMount() {
+  componentDidMount() {
     this.request()
       .then(data => this.props.fetchData(data))
       .catch(error => console.error(error))
   }
 
   request = () => {
-    let time = Date.now()
     return Promise.all([
       fetch(this.createUrl())
         .then(response => response.json())
@@ -31,8 +30,8 @@ class DataLoader extends Component {
         .then(this.removeEmptyWomen)
         .then(this.sheetToObject)
         .then(this.convertFiltersToTags)
-        .then(this.removeWomenThatAreNotBorn)
         .then(this.transformBCToNegative)
+        .then(this.removeWomenThatAreNotBorn)
         .then(this.organizeByTag)
         .catch(error => console.error(error)),
       fetch(this.createUrl({ categories: true }))
@@ -117,29 +116,23 @@ class DataLoader extends Component {
     })
   }
 
-  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born) && woman.Born)
-
   transformBCToNegative = women => women.map(woman => {
     let [year, bc] = woman.Born.split(" ")
     year = parseInt(year, 10)
-    if(typeof bc !== "undefined")
-    year = -year
+
+    if(typeof bc !== "undefined") year = -year
 
     woman.Born = year
     return woman
   })
 
-  organizeByTag = women => women.reduce((aggrupped, woman) => {
+  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born) && woman.Born)
+
+  organizeByTag = women => women.reduce((acc, woman) => {
     woman.tags.forEach(tag => {
-      if(typeof aggrupped[tag] !== "undefined")
-      {
-        console.log(aggrupped[tag], woman, aggrupped[tag].has(woman))
-        aggrupped[tag].add(woman)
-      }
-      else
-        aggrupped[tag] = new Set([ woman ])
+      acc[tag] = (acc[tag] || new Set()).add(woman)
     })
-    return aggrupped
+    return acc
   }, {})
 
   addStatusToCategories = status => {
@@ -159,14 +152,8 @@ class DataLoader extends Component {
     Object.keys(dataList).forEach(categoryName => {
       let subcategories = dataList[categoryName].division
 
-      dataList[categoryName].array = Object.keys(subcategories)
-        .reduce((accumulator, subcategoryName) => {
-          let subcategory = subcategories[subcategoryName]
-
-          if(typeof subcategory === "undefined") return accumulator
-
-          return accumulator.concat(subcategory || [])
-        }, [])
+      dataList[categoryName].array = Array.from(Object.keys(subcategories)
+        .reduce((acc, subcatName) => new Set([...acc, ...subcategories[subcatName]]), new Set()))
     })
 
     return ({ dataList, options })

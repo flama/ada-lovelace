@@ -4,17 +4,8 @@ import DataLoader from '../DataLoader'
 import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 
-const fakedata = [
-  ['Name', 'Born', 'Continent',
-    'Filtro 1', 'Filtro 2', 'Filtro 3', 'Filtro 4', 'Filtro 5'],
-  ['Amanda', '1988', 'Africa',
-    'soda', 'acid', 'tomato', 'orange', 'clothes'],
-  ['Natália', '1999', 'North America',
-    'danish', 'water', 'brizz', 'potato', 'milk']
-]
-
 let Amanda = {
-  Name: 'Amanda', Born: 1988, Continent: 'Africa',
+  Name: 'Amanda', Born: -1988, Continent: 'Africa',
   'Filtro 1': 'soda', 'Filtro 2': 'acid',
   'Filtro 3': 'tomato', 'Filtro 4': 'orange', 'Filtro 5': 'clothes',
   tags: ['soda', 'acid', 'tomato', 'orange', 'clothes']
@@ -26,6 +17,15 @@ let Natalia = {
   'Filtro 4': 'potato', 'Filtro 5': 'milk',
   tags: ['danish', 'water', 'brizz', 'potato', 'milk']
 }
+
+const fakedata = [
+  ['Name', 'Born', 'Continent',
+    'Filtro 1', 'Filtro 2', 'Filtro 3', 'Filtro 4', 'Filtro 5'],
+  ['Amanda', '1988 BC', 'Africa',
+    'soda', 'acid', 'tomato', 'orange', 'clothes'],
+  ['Natália', '1999', 'North America',
+    'danish', 'water', 'brizz', 'potato', 'milk']
+]
 
 const fakecategories = [
   ['fruits', 'pineapples', 'orange', 'tomato'],
@@ -102,8 +102,20 @@ describe("DataLoader", () => {
       .then(data => {
         expect(Object.keys(data.dataList).length).toEqual(fakecategories.length)
 
+        fakecategories.forEach(category => {
+          let categoryData = data.dataList[category[0]]
+          expect(categoryData).not.toBeUndefined()
+
+          expect(categoryData.division).toEqual(formattedCategories[category[0]])
+          expect(categoryData.array).toEqual(formattedArrays[category[0]])
+        })
+
         return data
       })
-      .then(data => console.log(data))
+  })
+
+  it("transforms BC to negative", () => {
+    return dataLoader.instance().request()
+      .then(data => expect(data.dataList.liquids.array[1].Born).toEqual(Amanda.Born))
   })
 })
