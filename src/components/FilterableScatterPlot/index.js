@@ -8,6 +8,7 @@ import SelectInput from '../SelectInput'
 import './style.scss'
 
 const ALL = "-1"
+const radius = 5
 
 class FilterableScatterPlot extends Component {
 
@@ -54,6 +55,7 @@ class FilterableScatterPlot extends Component {
       })
     })
 
+
     return {...data, ...finalData}
   }
 
@@ -73,7 +75,6 @@ class FilterableScatterPlot extends Component {
   }
 
   closeBubble = () => {
-    const radius = 5
     let bubble = document.getElementById('details-bubble')
     let balls = document.getElementsByClassName('d3-point')
 

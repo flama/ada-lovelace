@@ -97,7 +97,7 @@ describe('d3chartHelper', () => {
 describe('ballManipulator', () => {
   jest.useFakeTimers()
 
-  
+  // TODO: write tests over ballManipulator
 })
 
 describe('ScatterRow', () => {
