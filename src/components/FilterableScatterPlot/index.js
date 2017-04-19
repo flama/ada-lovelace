@@ -73,15 +73,28 @@ class FilterableScatterPlot extends Component {
     return {...data, ...finalData}
   }
 
-  closeBubble = () => {
+  closeBubble = ev => {
+    let contain = (el, list) => {
+      if(!el) return true
+      for(let i=0; i<list.length; ++i) {
+        if(el === list.item(i)) return true
+      }
+      return false
+    }
+
+    ev = ev || {}
     let bubble = document.getElementById('details-bubble')
     let balls = document.getElementsByClassName('d3-point')
 
-    for(let i=0; i<balls.length; ++i)
+    // checks if ball is being clicked
+    if(!contain(ev.target, balls))
     {
-      balls[i].classList.remove('shrinking')
-      balls[i].classList.remove('faded')
-      balls[i].setAttribute('r', radius)
+      for(let i=0; i<balls.length; ++i)
+      {
+        balls[i].classList.remove('shrinking')
+        balls[i].classList.remove('faded')
+        balls[i].setAttribute('r', radius)
+      }
     }
 
     bubble && bubble.classList.remove('show')

@@ -3,6 +3,7 @@
 exports[`ScatterPlot renders correctly 1`] = `
 <div
   className="scatter-plot"
+  onClick={[Function]}
 >
   <div
     className="topics"
