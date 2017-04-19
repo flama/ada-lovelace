@@ -584,7 +584,7 @@ ShallowWrapper {
 }
 `;
 
-exports[`ExpansibleScatterRow shouldn't render more than 5 items in the same 11 year period 1`] = `
+exports[`ExpansibleScatterRow shouldn't render more than 20 items in the same 11 year period 1`] = `
 ShallowWrapper {
   "complexSelector": ComplexSelector {
     "buildPredicate": [Function],
@@ -599,6 +599,75 @@ ShallowWrapper {
     <ScatterRow
         data={
             Array [
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
                 Object {
                   "Born": 1990,
                 },
@@ -637,6 +706,75 @@ ShallowWrapper {
       <ScatterRow
             data={
                   Array [
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
                         Object {
                           "Born": 1990,
                         },
@@ -700,9 +838,135 @@ ShallowWrapper {
                           Object {
                             "Born": 1990,
                           },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
                         ],
                         "division": Object {
                           "subdiv": Array [
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
                             Object {
                               "Born": 1990,
                             },
@@ -768,9 +1032,135 @@ ShallowWrapper {
               Object {
                 "Born": 1990,
               },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
             ],
             "division": Object {
               "subdiv": Array [
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
                 Object {
                   "Born": 1990,
                 },
@@ -844,6 +1234,75 @@ ShallowWrapper {
                                         Object {
                                           "Born": 1990,
                                         },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
                                       ]
                     }
                     domain={
@@ -867,6 +1326,75 @@ ShallowWrapper {
           <ScatterRow
                     data={
                               Array [
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
                                         Object {
                                           "Born": 1990,
                                         },
@@ -934,9 +1462,135 @@ ShallowWrapper {
               Object {
                 "Born": 1990,
               },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
             ],
             "division": Object {
               "subdiv": Array [
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
                 Object {
                   "Born": 1990,
                 },

@@ -42,15 +42,21 @@ describe("ExpansibleScatterRow", () => {
     expect(expansible).toMatchSnapshot()
   })
 
-  it("shouldn't render more than 5 items in the same 11 year period", () => {
+  it("shouldn't render more than 20 items in the same 11 year period", () => {
     let datum = { Born: 1990 }
     expansible.setProps({
       data: {
         active: false,
         division: {
-          subdiv: [datum, datum, datum, datum, datum, datum, datum]
+          subdiv: [datum, datum, datum, datum, datum, datum, datum,
+          datum, datum, datum, datum, datum, datum, datum,
+          datum, datum, datum, datum, datum, datum, datum,
+          datum, datum, datum, datum, datum, datum, datum]
         },
-        array: [datum, datum, datum, datum, datum, datum, datum]
+        array: [datum, datum, datum, datum, datum, datum, datum,
+          datum, datum, datum, datum, datum, datum, datum,
+          datum, datum, datum, datum, datum, datum, datum,
+          datum, datum, datum, datum, datum, datum, datum]
       }, domain
     })
     expect(expansible).toMatchSnapshot()
