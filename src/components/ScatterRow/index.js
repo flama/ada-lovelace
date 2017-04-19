@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 
-import d3chartHelper from './d3chart-helper'
+import d3chartHelper from './helper/d3chart'
 
 import './styles.scss'
 
