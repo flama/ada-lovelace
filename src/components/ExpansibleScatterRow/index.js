@@ -6,9 +6,30 @@ import ScatterRow from '../ScatterRow'
 import './styles.scss'
 
 const ExpansibleScatterRow = props => {
-
   let classNames = () => {
     return `expansible-scatter-row${!props.data.active && !props.all ? ' hidden':''}`
+  }
+
+  let limit = data => {
+    let finalData = []
+    let periods = {}
+
+    data.forEach(datum => {
+      let index = parseInt((datum.Born - props.domain.x[0])/20, 10)
+      if(index < 0) return
+
+      if(periods[index]) {
+        if(periods[index].length < 5) {
+          periods[index].push(datum)
+          finalData.push(datum)
+        }
+      } else {
+        periods[index] = [ datum ]
+        finalData.push(datum)
+      }
+    })
+
+    return finalData
   }
 
   let topics, subtopics
@@ -25,7 +46,7 @@ const ExpansibleScatterRow = props => {
     })
   } else {
     topics = (<ScatterRow
-      data={ props.data.array }
+      data={ limit(props.data.array) }
       domain={ props.domain }
       title={ props.title }
       hidden={ !props.all }
