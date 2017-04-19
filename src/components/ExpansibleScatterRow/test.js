@@ -5,11 +5,11 @@ import toJSON from 'enzyme-to-json'
 
 import ExpansibleScatterRow from '../ExpansibleScatterRow'
 
-// TODO: test functionality
-
 describe("ExpansibleScatterRow", () => {
-  it("should render categories corretly", () => {
-    let tree = shallow(
+  let expansible
+
+  beforeEach(() => {
+    expansible = shallow(
       <ExpansibleScatterRow
         data={{
           active: false,
@@ -19,25 +19,24 @@ describe("ExpansibleScatterRow", () => {
         domain={{ x: [1800, 2020] }}
       />
     )
-    expect(tree).toMatchSnapshot()
   })
 
-  // TODO: move shallow to beforeEach, use setProps to change active prop
+  it("should render categories corretly", () => {
+    expect(expansible).toMatchSnapshot()
+  })
+
   it("should render subcategories correctly", () => {
-    let tree = shallow(
-      <ExpansibleScatterRow
-        data={{
-          active: true,
-          division: {
-            subdiv1: [1, 2, 3],
-            subdiv2: [4, 5, 6],
-            subdivtest: [7, 8, 9]
-          },
-          array: []
-        }}
-        domain={{ x: [1800, 2020] }}
-      />
-    )
-    expect(tree).toMatchSnapshot()
+    expansible.setProps({
+      data: {
+        active: true,
+        division: {
+          subdiv1: [1, 2, 3],
+          subdiv2: [4, 5, 6],
+          subdivtest: [7, 8, 9]
+        },
+        array: []
+      }, domain: { x: [1800, 2020] }
+    })
+    expect(expansible).toMatchSnapshot()
   })
 })

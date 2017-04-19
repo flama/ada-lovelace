@@ -55,7 +55,6 @@ class FilterableScatterPlot extends Component {
       })
     })
 
-
     return {...data, ...finalData}
   }
 
