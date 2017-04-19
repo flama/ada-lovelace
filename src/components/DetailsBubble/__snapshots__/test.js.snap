@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DetailsBubble renders correctly 1`] = `
+<div
+  id="details-bubble"
+>
+  <a
+    className="close"
+    onClick={[Function]}
+  >
+     Close 
+  </a>
+  <div
+    className="content"
+  >
+    <h3
+      className="name"
+    />
+    <p
+      className="description"
+    />
+  </div>
+  <a
+    className="external"
+    target="_blank"
+  >
+     More info 
+  </a>
+</div>
+`;

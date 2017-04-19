@@ -1,0 +1,978 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
+<FilterableScatterPlot
+  dataList={
+    Object {
+      "category1": Object {
+        "active": false,
+        "array": Array [
+          Object {
+            "Continent": "potato",
+          },
+          Object {
+            "Continent": "size",
+          },
+          Object {
+            "Continent": "salad",
+          },
+          Object {
+            "Continent": "potato",
+          },
+          Object {
+            "Continent": "size",
+          },
+        ],
+        "division": Object {
+          "subdiv1": Array [
+            Object {
+              "Continent": "potato",
+            },
+            Object {
+              "Continent": "size",
+            },
+            Object {
+              "Continent": "salad",
+            },
+          ],
+          "subdiv2": Array [
+            Object {
+              "Continent": "potato",
+            },
+            Object {
+              "Continent": "size",
+            },
+          ],
+        },
+      },
+    }
+  }
+  options={
+    Object {
+      "categories": Array [
+        "category1",
+      ],
+    }
+  }
+>
+  <div
+    className="filterable"
+  >
+    <div
+      className="filters"
+    >
+      <Categories
+        all="All"
+        closeBubble={[Function]}
+        onChange={[Function]}
+        options={
+          Array [
+            "category1",
+          ]
+        }
+        title="Categorias"
+        titlePosition="top"
+      >
+        <div
+          className="categories"
+        >
+          <button
+            className="button"
+            id="-1"
+            onClick={[Function]}
+          >
+            All
+          </button>
+          <button
+            className="button selected"
+            id="category1"
+            onClick={[Function]}
+          >
+            category1
+          </button>
+        </div>
+      </Categories>
+      <SelectInput
+        closeBubble={[Function]}
+        onChange={[Function]}
+        options={Array []}
+      >
+        <div
+          className="select-input"
+        >
+          <select
+            onChange={[Function]}
+            required="required"
+          >
+            <option
+              value="-1"
+            >
+              Continents (All)
+            </option>
+          </select>
+        </div>
+      </SelectInput>
+    </div>
+    <ScatterPlot
+      all={false}
+      closeBubble={[Function]}
+      dataList={
+        Object {
+          "category1": Object {
+            "active": true,
+            "array": Array [
+              Object {
+                "Continent": "potato",
+              },
+              Object {
+                "Continent": "size",
+              },
+              Object {
+                "Continent": "salad",
+              },
+              Object {
+                "Continent": "potato",
+              },
+              Object {
+                "Continent": "size",
+              },
+            ],
+            "division": Object {
+              "subdiv1": Array [
+                Object {
+                  "Continent": "potato",
+                },
+                Object {
+                  "Continent": "size",
+                },
+                Object {
+                  "Continent": "salad",
+                },
+              ],
+              "subdiv2": Array [
+                Object {
+                  "Continent": "potato",
+                },
+                Object {
+                  "Continent": "size",
+                },
+              ],
+            },
+          },
+        }
+      }
+    >
+      <div
+        className="scatter-plot"
+        onClick={[Function]}
+      >
+        <div
+          className="topics"
+        >
+          <ExpansibleScatterRow
+            all={false}
+            data={
+              Object {
+                "active": true,
+                "array": Array [
+                  Object {
+                    "Continent": "potato",
+                  },
+                  Object {
+                    "Continent": "size",
+                  },
+                  Object {
+                    "Continent": "salad",
+                  },
+                  Object {
+                    "Continent": "potato",
+                  },
+                  Object {
+                    "Continent": "size",
+                  },
+                ],
+                "division": Object {
+                  "subdiv1": Array [
+                    Object {
+                      "Continent": "potato",
+                    },
+                    Object {
+                      "Continent": "size",
+                    },
+                    Object {
+                      "Continent": "salad",
+                    },
+                  ],
+                  "subdiv2": Array [
+                    Object {
+                      "Continent": "potato",
+                    },
+                    Object {
+                      "Continent": "size",
+                    },
+                  ],
+                },
+              }
+            }
+            domain={
+              Object {
+                "x": Array [
+                  1800,
+                  2017,
+                ],
+              }
+            }
+            title="category1"
+          >
+            <div
+              className="expansible-scatter-row"
+            >
+               
+              <ScatterRow
+                data={
+                  Array [
+                    Object {
+                      "Continent": "potato",
+                    },
+                    Object {
+                      "Continent": "size",
+                    },
+                    Object {
+                      "Continent": "salad",
+                    },
+                  ]
+                }
+                domain={
+                  Object {
+                    "x": Array [
+                      1800,
+                      2017,
+                    ],
+                  }
+                }
+                hidden={true}
+                title="subdiv1"
+              >
+                <div
+                  className="scatter-row hidden"
+                >
+                  <div
+                    className="title"
+                  >
+                    <h2>
+                      subdiv1
+                    </h2>
+                  </div>
+                  <div
+                    className="graph"
+                  />
+                </div>
+              </ScatterRow>
+              <ScatterRow
+                data={
+                  Array [
+                    Object {
+                      "Continent": "potato",
+                    },
+                    Object {
+                      "Continent": "size",
+                    },
+                  ]
+                }
+                domain={
+                  Object {
+                    "x": Array [
+                      1800,
+                      2017,
+                    ],
+                  }
+                }
+                hidden={true}
+                title="subdiv2"
+              >
+                <div
+                  className="scatter-row hidden"
+                >
+                  <div
+                    className="title"
+                  >
+                    <h2>
+                      subdiv2
+                    </h2>
+                  </div>
+                  <div
+                    className="graph"
+                  />
+                </div>
+              </ScatterRow>
+               
+            </div>
+          </ExpansibleScatterRow>
+        </div>
+        <DetailsBubble
+          close={[Function]}
+        >
+          <div
+            id="details-bubble"
+          >
+            <a
+              className="close"
+              onClick={[Function]}
+            >
+               Close 
+            </a>
+            <div
+              className="content"
+            >
+              <h3
+                className="name"
+              />
+              <p
+                className="description"
+              />
+            </div>
+            <a
+              className="external"
+              target="_blank"
+            >
+               More info 
+            </a>
+          </div>
+        </DetailsBubble>
+        <div
+          className="scatter-row"
+        >
+          <div
+            className="title"
+          />
+          <GraphTimeline
+            className="graph"
+            domain={
+              Object {
+                "x": Array [
+                  1800,
+                  2017,
+                ],
+              }
+            }
+          >
+            <div
+              className="timeline"
+            />
+          </GraphTimeline>
+        </div>
+      </div>
+    </ScatterPlot>
+  </div>
+</FilterableScatterPlot>
+`;
+
+exports[`FilterableScatterPlot properly refreshes on change of continent 1`] = `
+<FilterableScatterPlot
+  dataList={
+    Object {
+      "category1": Object {
+        "active": false,
+        "array": Array [
+          Object {
+            "Continent": "potato",
+          },
+          Object {
+            "Continent": "size",
+          },
+          Object {
+            "Continent": "salad",
+          },
+          Object {
+            "Continent": "potato",
+          },
+          Object {
+            "Continent": "size",
+          },
+        ],
+        "division": Object {
+          "subdiv1": Array [
+            Object {
+              "Continent": "potato",
+            },
+            Object {
+              "Continent": "size",
+            },
+            Object {
+              "Continent": "salad",
+            },
+          ],
+          "subdiv2": Array [
+            Object {
+              "Continent": "potato",
+            },
+            Object {
+              "Continent": "size",
+            },
+          ],
+        },
+      },
+    }
+  }
+  options={
+    Object {
+      "categories": Array [
+        "category1",
+      ],
+    }
+  }
+>
+  <div
+    className="filterable"
+  >
+    <div
+      className="filters"
+    >
+      <Categories
+        all="All"
+        closeBubble={[Function]}
+        onChange={[Function]}
+        options={
+          Array [
+            "category1",
+          ]
+        }
+        title="Categorias"
+        titlePosition="top"
+      >
+        <div
+          className="categories"
+        >
+          <button
+            className="button selected"
+            id="-1"
+            onClick={[Function]}
+          >
+            All
+          </button>
+          <button
+            className="button"
+            id="category1"
+            onClick={[Function]}
+          >
+            category1
+          </button>
+        </div>
+      </Categories>
+      <SelectInput
+        closeBubble={[Function]}
+        onChange={[Function]}
+        options={Array []}
+      >
+        <div
+          className="select-input"
+        >
+          <select
+            onChange={[Function]}
+            required="required"
+          >
+            <option
+              value="-1"
+            >
+              Continents (All)
+            </option>
+          </select>
+        </div>
+      </SelectInput>
+    </div>
+    <ScatterPlot
+      all={true}
+      closeBubble={[Function]}
+      dataList={
+        Object {
+          "category1": Object {
+            "active": false,
+            "array": Array [
+              Object {
+                "Continent": "salad",
+              },
+            ],
+            "division": Object {
+              "subdiv1": Array [
+                Object {
+                  "Continent": "salad",
+                },
+              ],
+              "subdiv2": Array [],
+            },
+          },
+        }
+      }
+    >
+      <div
+        className="scatter-plot"
+        onClick={[Function]}
+      >
+        <div
+          className="topics"
+        >
+          <ExpansibleScatterRow
+            all={true}
+            data={
+              Object {
+                "active": false,
+                "array": Array [
+                  Object {
+                    "Continent": "salad",
+                  },
+                ],
+                "division": Object {
+                  "subdiv1": Array [
+                    Object {
+                      "Continent": "salad",
+                    },
+                  ],
+                  "subdiv2": Array [],
+                },
+              }
+            }
+            domain={
+              Object {
+                "x": Array [
+                  1800,
+                  2017,
+                ],
+              }
+            }
+            title="category1"
+          >
+            <div
+              className="expansible-scatter-row"
+            >
+               
+              <ScatterRow
+                data={
+                  Array [
+                    Object {
+                      "Continent": "salad",
+                    },
+                  ]
+                }
+                domain={
+                  Object {
+                    "x": Array [
+                      1800,
+                      2017,
+                    ],
+                  }
+                }
+                hidden={false}
+                title="category1"
+              >
+                <div
+                  className="scatter-row "
+                >
+                  <div
+                    className="title"
+                  >
+                    <h2>
+                      category1
+                    </h2>
+                  </div>
+                  <div
+                    className="graph"
+                  />
+                </div>
+              </ScatterRow>
+               
+            </div>
+          </ExpansibleScatterRow>
+        </div>
+        <DetailsBubble
+          close={[Function]}
+        >
+          <div
+            id="details-bubble"
+          >
+            <a
+              className="close"
+              onClick={[Function]}
+            >
+               Close 
+            </a>
+            <div
+              className="content"
+            >
+              <h3
+                className="name"
+              />
+              <p
+                className="description"
+              />
+            </div>
+            <a
+              className="external"
+              target="_blank"
+            >
+               More info 
+            </a>
+          </div>
+        </DetailsBubble>
+        <div
+          className="scatter-row"
+        >
+          <div
+            className="title"
+          />
+          <GraphTimeline
+            className="graph"
+            domain={
+              Object {
+                "x": Array [
+                  1800,
+                  2017,
+                ],
+              }
+            }
+          >
+            <div
+              className="timeline"
+            />
+          </GraphTimeline>
+        </div>
+      </div>
+    </ScatterPlot>
+  </div>
+</FilterableScatterPlot>
+`;
+
+exports[`FilterableScatterPlot should render correctly 1`] = `
+<FilterableScatterPlot
+  dataList={
+    Object {
+      "category1": Object {
+        "active": false,
+        "array": Array [
+          Object {
+            "Continent": "potato",
+          },
+          Object {
+            "Continent": "size",
+          },
+          Object {
+            "Continent": "salad",
+          },
+          Object {
+            "Continent": "potato",
+          },
+          Object {
+            "Continent": "size",
+          },
+        ],
+        "division": Object {
+          "subdiv1": Array [
+            Object {
+              "Continent": "potato",
+            },
+            Object {
+              "Continent": "size",
+            },
+            Object {
+              "Continent": "salad",
+            },
+          ],
+          "subdiv2": Array [
+            Object {
+              "Continent": "potato",
+            },
+            Object {
+              "Continent": "size",
+            },
+          ],
+        },
+      },
+    }
+  }
+  options={
+    Object {
+      "categories": Array [
+        "category1",
+      ],
+    }
+  }
+>
+  <div
+    className="filterable"
+  >
+    <div
+      className="filters"
+    >
+      <Categories
+        all="All"
+        closeBubble={[Function]}
+        onChange={[Function]}
+        options={
+          Array [
+            "category1",
+          ]
+        }
+        title="Categorias"
+        titlePosition="top"
+      >
+        <div
+          className="categories"
+        >
+          <button
+            className="button selected"
+            id="-1"
+            onClick={[Function]}
+          >
+            All
+          </button>
+          <button
+            className="button"
+            id="category1"
+            onClick={[Function]}
+          >
+            category1
+          </button>
+        </div>
+      </Categories>
+      <SelectInput
+        closeBubble={[Function]}
+        onChange={[Function]}
+        options={Array []}
+      >
+        <div
+          className="select-input"
+        >
+          <select
+            onChange={[Function]}
+            required="required"
+          >
+            <option
+              value="-1"
+            >
+              Continents (All)
+            </option>
+          </select>
+        </div>
+      </SelectInput>
+    </div>
+    <ScatterPlot
+      all={true}
+      closeBubble={[Function]}
+      dataList={
+        Object {
+          "category1": Object {
+            "active": false,
+            "array": Array [
+              Object {
+                "Continent": "potato",
+              },
+              Object {
+                "Continent": "size",
+              },
+              Object {
+                "Continent": "salad",
+              },
+              Object {
+                "Continent": "potato",
+              },
+              Object {
+                "Continent": "size",
+              },
+            ],
+            "division": Object {
+              "subdiv1": Array [
+                Object {
+                  "Continent": "potato",
+                },
+                Object {
+                  "Continent": "size",
+                },
+                Object {
+                  "Continent": "salad",
+                },
+              ],
+              "subdiv2": Array [
+                Object {
+                  "Continent": "potato",
+                },
+                Object {
+                  "Continent": "size",
+                },
+              ],
+            },
+          },
+        }
+      }
+    >
+      <div
+        className="scatter-plot"
+        onClick={[Function]}
+      >
+        <div
+          className="topics"
+        >
+          <ExpansibleScatterRow
+            all={true}
+            data={
+              Object {
+                "active": false,
+                "array": Array [
+                  Object {
+                    "Continent": "potato",
+                  },
+                  Object {
+                    "Continent": "size",
+                  },
+                  Object {
+                    "Continent": "salad",
+                  },
+                  Object {
+                    "Continent": "potato",
+                  },
+                  Object {
+                    "Continent": "size",
+                  },
+                ],
+                "division": Object {
+                  "subdiv1": Array [
+                    Object {
+                      "Continent": "potato",
+                    },
+                    Object {
+                      "Continent": "size",
+                    },
+                    Object {
+                      "Continent": "salad",
+                    },
+                  ],
+                  "subdiv2": Array [
+                    Object {
+                      "Continent": "potato",
+                    },
+                    Object {
+                      "Continent": "size",
+                    },
+                  ],
+                },
+              }
+            }
+            domain={
+              Object {
+                "x": Array [
+                  1800,
+                  2017,
+                ],
+              }
+            }
+            title="category1"
+          >
+            <div
+              className="expansible-scatter-row"
+            >
+               
+              <ScatterRow
+                data={
+                  Array [
+                    Object {
+                      "Continent": "potato",
+                    },
+                    Object {
+                      "Continent": "size",
+                    },
+                    Object {
+                      "Continent": "salad",
+                    },
+                    Object {
+                      "Continent": "potato",
+                    },
+                    Object {
+                      "Continent": "size",
+                    },
+                  ]
+                }
+                domain={
+                  Object {
+                    "x": Array [
+                      1800,
+                      2017,
+                    ],
+                  }
+                }
+                hidden={false}
+                title="category1"
+              >
+                <div
+                  className="scatter-row "
+                >
+                  <div
+                    className="title"
+                  >
+                    <h2>
+                      category1
+                    </h2>
+                  </div>
+                  <div
+                    className="graph"
+                  />
+                </div>
+              </ScatterRow>
+               
+            </div>
+          </ExpansibleScatterRow>
+        </div>
+        <DetailsBubble
+          close={[Function]}
+        >
+          <div
+            id="details-bubble"
+          >
+            <a
+              className="close"
+              onClick={[Function]}
+            >
+               Close 
+            </a>
+            <div
+              className="content"
+            >
+              <h3
+                className="name"
+              />
+              <p
+                className="description"
+              />
+            </div>
+            <a
+              className="external"
+              target="_blank"
+            >
+               More info 
+            </a>
+          </div>
+        </DetailsBubble>
+        <div
+          className="scatter-row"
+        >
+          <div
+            className="title"
+          />
+          <GraphTimeline
+            className="graph"
+            domain={
+              Object {
+                "x": Array [
+                  1800,
+                  2017,
+                ],
+              }
+            }
+          >
+            <div
+              className="timeline"
+            />
+          </GraphTimeline>
+        </div>
+      </div>
+    </ScatterPlot>
+  </div>
+</FilterableScatterPlot>
+`;

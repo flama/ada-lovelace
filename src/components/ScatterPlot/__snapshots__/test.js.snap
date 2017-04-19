@@ -1,0 +1,33 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ScatterPlot renders correctly 1`] = `
+<div
+  className="scatter-plot"
+  onClick={[Function]}
+>
+  <div
+    className="topics"
+  />
+  <DetailsBubble
+    close={[Function]}
+  />
+  <div
+    className="scatter-row"
+  >
+    <div
+      className="title"
+    />
+    <GraphTimeline
+      className="graph"
+      domain={
+        Object {
+          "x": Array [
+            1800,
+            2017,
+          ],
+        }
+      }
+    />
+  </div>
+</div>
+`;
