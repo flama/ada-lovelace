@@ -5,6 +5,8 @@ import toJSON from 'enzyme-to-json'
 
 import ExpansibleScatterRow from '../ExpansibleScatterRow'
 
+const domain = { x: [1800, 2020] }
+
 describe("ExpansibleScatterRow", () => {
   let expansible
 
@@ -16,7 +18,7 @@ describe("ExpansibleScatterRow", () => {
           division: {},
           array: []
         }}
-        domain={{ x: [1800, 2020] }}
+        domain={ domain }
       />
     )
   })
@@ -35,7 +37,21 @@ describe("ExpansibleScatterRow", () => {
           subdivtest: [7, 8, 9]
         },
         array: []
-      }, domain: { x: [1800, 2020] }
+      }, domain
+    })
+    expect(expansible).toMatchSnapshot()
+  })
+
+  it("shouldn't render more than 5 items in the same 11 year period", () => {
+    let datum = { Born: 1990 }
+    expansible.setProps({
+      data: {
+        active: false,
+        division: {
+          subdiv: [datum, datum, datum, datum, datum, datum, datum]
+        },
+        array: [datum, datum, datum, datum, datum, datum, datum]
+      }, domain
     })
     expect(expansible).toMatchSnapshot()
   })

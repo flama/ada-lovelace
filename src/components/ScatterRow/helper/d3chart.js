@@ -82,7 +82,7 @@ class d3ChartHelper {
 
     let y = d3.scaleLinear()
       .range([height, 0])
-      .domain([-.75, 1.75])
+      .domain([-1, 2])
 
     return { x, y }
   }
