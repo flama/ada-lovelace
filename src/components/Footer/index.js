@@ -1,21 +1,15 @@
-import React, { Component } from 'react'
+import React from 'react'
 
 import './style.scss'
 
-class Footer extends Component {
+const Footer = props => (
+  <div id="footer">
+    <div className="content">
+      <a href="http://flama.is" target="_blank" className="link">
+        made with ♥ by flama
+      </a>
+    </div>
+  </div>
+)
 
-  render()
-  {
-    return (
-      <div id="footer">
-        <div className="content">
-          <a href="http://flama.is" target="_blank" className="link">
-            made with ♥ by flama
-          </a>
-        </div>
-      </div>
-    )
-  }
-}
-
-export default Footer;
+export default Footer

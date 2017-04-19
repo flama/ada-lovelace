@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
+
 import ScatterPlot from '../ScatterPlot'
 import Categories from '../Categories'
 import SelectInput from '../SelectInput'
@@ -6,6 +8,7 @@ import SelectInput from '../SelectInput'
 import './style.scss'
 
 const ALL = "-1"
+const radius = 5
 
 class FilterableScatterPlot extends Component {
 
@@ -71,7 +74,6 @@ class FilterableScatterPlot extends Component {
   }
 
   closeBubble = () => {
-    const radius = 5
     let bubble = document.getElementById('details-bubble')
     let balls = document.getElementsByClassName('d3-point')
 
@@ -82,7 +84,7 @@ class FilterableScatterPlot extends Component {
       balls[i].setAttribute('r', radius)
     }
 
-    bubble.classList.remove('show')
+    bubble && bubble.classList.remove('show')
   }
 
   render() {
@@ -92,17 +94,17 @@ class FilterableScatterPlot extends Component {
           <Categories
             title="Categorias" titlePosition="top" options={this.props.options.categories}
             onChange={ index => this.handleCategoryChange(index) }
-            closeBubble={ () => this.closeBubble() }
+            closeBubble={ this.closeBubble }
           />
           <SelectInput options={this.props.options.continents}
             onChange={ index => this.handleUserSelect(index) }
-            closeBubble={ () => this.closeBubble() }
+            closeBubble={ this.closeBubble }
           />
         </div>
         <ScatterPlot
           dataList={ this.selectCategory(this.filterContinent(this.props.dataList)) }
           all={ this.state.activeRow === ALL }
-          closeBubble={ () => this.closeBubble() }
+          closeBubble={ this.closeBubble }
         />
       </div>
     )
@@ -110,12 +112,17 @@ class FilterableScatterPlot extends Component {
 }
 
 FilterableScatterPlot.defaultProps = {
-  dataList: {}
+  dataList: {},
+  options: {
+    categories: []
+  }
 }
 
 FilterableScatterPlot.propTypes = {
-  dataList: React.PropTypes.object,
-  options: React.PropTypes.object
+  dataList: PropTypes.object,
+  options: PropTypes.shape({
+    categories: PropTypes.arrayOf(PropTypes.string).isRequired
+  }).isRequired
 }
 
-export default FilterableScatterPlot;
+export default FilterableScatterPlot

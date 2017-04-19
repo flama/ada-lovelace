@@ -9,7 +9,7 @@ class d3TimelineHelper {
       .attr('height', '60px')
       .attr('background', '#000')
 
-    this._draw(svg, this._scaleX(el, state.domain));
+    this._draw(svg, this._scaleX(el, state.domain))
   }
 
   _scaleX(el, domain) {
@@ -23,6 +23,6 @@ class d3TimelineHelper {
 
   _draw(svg, x) {
     svg.append("g")
-      .call(d3.axisBottom(x).tickSizeOuter(0).ticks(25).tickPadding(12));
+      .call(d3.axisBottom(x).tickSizeOuter(0).ticks(25).tickPadding(12))
   }
 }

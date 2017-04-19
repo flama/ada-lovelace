@@ -1,4 +1,4 @@
-import React, { Component } from 'react'
+import React from 'react'
 import { Element } from 'react-scroll'
 import { ShareButtons } from 'react-share'
 
@@ -7,36 +7,36 @@ import './style.scss'
 const {
   FacebookShareButton,
   TwitterShareButton
-} = ShareButtons;
+} = ShareButtons
 
+const Share = props => {
+  const host = "https://flama.github.io/ada-lovelace"
 
-class Share extends Component {
-
-  render()
-  {
-    let host = "https://flama.github.io/ada-lovelace"
-    return (
-      <Element name="share" id="share">
-        <div className="content">
-          <h3>share</h3>
-          <p>We envision an ever-growing platform, crowdsourced by people everywhere, helping us show women who somehow have created an impact in our world!
-           Until then, you can help us by spreading the word of Wikimina :)</p>
-           <div className="actions">
-            <FacebookShareButton url={ host }
-              description={`Inspiring and helping to create representativity so more women become badasses.`}>
-                Facebook
-            </FacebookShareButton>
-            <TwitterShareButton url={ host }
+  return (
+    <Element name="share" id="share">
+      <div className="content">
+        <h3>Share</h3>
+        <p>
+          { `We envision an ever-growing platform, crowdsourced by people everywhere, helping us show women who somehow have created an impact in our world!
+         Until then, you can help us by spreading the word of Wikimina :)` }
+        </p>
+        <div className="actions">
+          <FacebookShareButton url={ host }
+            description={
+              `Inspiring and helping to create representativity so more women become badasses.`
+            }>
+            Facebook
+          </FacebookShareButton>
+          <TwitterShareButton url={ host }
             title="Wikimina"
             via="studioflama"
             hashtags={['wikimina', 'grrlpower', 'whyhistorymatters', 'empoweringwomen']} >
-              Twitter
-            </TwitterShareButton>
-          </div>
+            Twitter
+          </TwitterShareButton>
         </div>
-      </Element>
-    )
-  }
+      </div>
+    </Element>
+  )
 }
 
-export default Share;
+export default Share

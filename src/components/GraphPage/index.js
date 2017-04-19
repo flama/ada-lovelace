@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+
 import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
 
@@ -10,16 +11,14 @@ class GraphPage extends Component {
 
     this.state = {
       dataList: {},
-      options: {}
+      options: {
+        categories: []
+      }
     }
   }
 
   fetchData = ({ dataList, options }) => {
     this.setState({ dataList, options })
-  }
-
-  styleTitle = position => {
-    return `title -${position}`
   }
 
   render() {
@@ -31,26 +30,23 @@ class GraphPage extends Component {
           We have picked a few to try and show it, by sorting them by their influence fields and through
           time. Take a look and get surprised by how much girl power history can reveal!` }</p>
         </div>
-        <div className="wrapper">
-          <div className="graph-content">
-          <div className="graph-head">
-              <h3 className={ this.styleTitle(this.props.titlePosition) }>
-                Who are the wonderful women who helped shape the world?
-              </h3>
-              <div className="legend">
-                <span>Women</span>
-              </div>
-            </div>
-            <DataLoader fetchData={this.fetchData} />
-            <FilterableScatterPlot dataList={this.state.dataList} options={this.state.options} />
-            <p className="information">{ `Information: We collected the information presented from public
-            sources like <a href="https://www.wikipedia.org/" target="_blank">Wikipedia</a> and do not take
-            responsability for the content in the external links.` }</p>
+        <div className="graph-head">
+          <h3 className="title">
+            Who are the wonderful women who helped shape the world?
+          </h3>
+          <div className="legend">
+            <span>Women</span>
           </div>
         </div>
+        <DataLoader fetchData={this.fetchData} />
+        <FilterableScatterPlot { ...this.state } />
+        <p className="information">
+          { `Information: We collected the information presented from public sources
+            and do not take responsibility for the content in the external links.` }
+        </p>
       </section>
     )
   }
 }
 
-export default GraphPage;
+export default GraphPage
