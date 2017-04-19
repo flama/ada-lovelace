@@ -164,6 +164,7 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
     >
       <div
         className="scatter-plot"
+        onClick={[Function]}
       >
         <div
           className="topics"
@@ -505,6 +506,7 @@ exports[`FilterableScatterPlot properly refreshes on change of continent 1`] = `
     >
       <div
         className="scatter-plot"
+        onClick={[Function]}
       >
         <div
           className="topics"
@@ -803,6 +805,7 @@ exports[`FilterableScatterPlot should render correctly 1`] = `
     >
       <div
         className="scatter-plot"
+        onClick={[Function]}
       >
         <div
           className="topics"

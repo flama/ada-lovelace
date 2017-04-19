@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 
@@ -7,6 +6,7 @@ import ScatterPlot from '../ScatterPlot'
 
 describe("ScatterPlot", () => {
   let scatterPlot
+  let closeBubble
 
   let generateCategory = active => {
     return {
@@ -20,7 +20,8 @@ describe("ScatterPlot", () => {
   }
 
   beforeEach(() => {
-    scatterPlot = shallow(<ScatterPlot closeBubble={ _=>_ }/>)
+    closeBubble = jest.fn()
+    scatterPlot = shallow(<ScatterPlot closeBubble={ closeBubble }/>)
   })
 
   it('renders correctly', () => {
@@ -35,5 +36,10 @@ describe("ScatterPlot", () => {
         categorytest: generateCategory(true)
       }
     })
+  })
+
+  it('closesBubble when clicked', () => {
+    scatterPlot.simulate('click')
+    expect(closeBubble).toHaveBeenCalled()
   })
 })

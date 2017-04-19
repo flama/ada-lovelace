@@ -23,7 +23,7 @@ const ScatterPlot = props => {
   })
 
   return (
-    <div className="scatter-plot">
+    <div className="scatter-plot" onClick={ props.closeBubble }>
       <div className="topics">{ topics }</div>
       <DetailsBubble close={ props.closeBubble }/>
       <div className="scatter-row">
