@@ -28,7 +28,7 @@ const Ball = {
     }, 160)
   },
 
-  shrink(target) {
+  shrink() {
     if(window.wikiminaTime) {
       clearTimeout(window.wikiminaTime)
       window.wikiminaTime = undefined
@@ -51,7 +51,6 @@ const Ball = {
     for(let i=0; i<balls.length; ++i)
     {
       balls[i].setAttribute('r', radius*2/3)
-      if(balls[i] === bubble) continue
 
       balls[i].classList.add('shrinking')
       balls[i].classList.add('faded')

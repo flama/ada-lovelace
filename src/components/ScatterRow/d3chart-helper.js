@@ -56,7 +56,7 @@ class d3ChartHelper {
 
     cells.enter().append("circle")
       .on("mouseenter", function(){ balls.grow(this) })
-      .on("mouseleave", function(){ balls.shrink(this) })
+      .on("mouseleave", function(){ balls.shrink() })
       .on("click", function(d) { balls.open(this, d.extended) })
       .attr("class", "d3-point")
       .attr("r", 0)

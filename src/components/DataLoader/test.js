@@ -120,7 +120,7 @@ describe("DataLoader", () => {
       .then(data => expect(data.dataList.liquids.array[1].Born).toEqual(Amanda.Born))
   })
 
-  it("prints error on console", done => {
+  it("prints error on console", () => {
     const originalConsole = console.error
     console.error = jest.fn()
 
@@ -128,11 +128,10 @@ describe("DataLoader", () => {
 
     dataLoader.shallow()
 
-    dataLoader.instance().request()
-    .catch(error => {
-      expect(console.error).toHaveBeenCalledTimes(2)
-      console.error = originalConsole
-      done()
-    })
+    return dataLoader.instance().request()
+      .catch(error => {
+        expect(console.error).toHaveBeenCalledTimes(2)
+        console.error = originalConsole
+      })
   })
 })
