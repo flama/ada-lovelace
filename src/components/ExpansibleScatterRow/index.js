@@ -19,7 +19,7 @@ const ExpansibleScatterRow = props => {
       if(index < 0) return
 
       if(periods[index]) {
-        if(periods[index].length < 10) {
+        if(periods[index].length < 30) {
           periods[index].push(datum)
           finalData.push(datum)
         }
