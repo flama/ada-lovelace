@@ -8,8 +8,6 @@
     @include wrap-mobile;
     margin-bottom: $space-xs;
     margin-top: $space-xl;
-    font-size: $font-size-kilo;
-    line-height: $line-height-kilo;
 
     @include large-up {
       @include grid(8);
