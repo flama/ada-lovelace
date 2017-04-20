@@ -6,22 +6,22 @@ body {
 h1, h2, h3, h4 { font-weight: bold; }
 
 h1 {
-  font-size: $font-size-exa;
-  line-height: $line-height-exa;
+  font-size: $font-size-tera;
+  line-height: $line-height-tera;
 }
 
 h2 {
-  font-size: $font-size-peta;
-  line-height: $line-height-peta;
+  font-size: $font-size-giga;
+  line-height: $line-height-giga;
 }
 
 h3 {
-  font-size: $font-size-mega;
+  font-size: $font-size-kilo;
   line-height: $line-height-kilo;
 }
 
 p {
   font-weight: lighter;
-  font-size: $font-size-deca;
+  font-size: $font-size-base;
   line-height: $line-height-base;
 }
