@@ -30,20 +30,24 @@ class GraphPage extends Component {
           We have picked a few to try and show it, by sorting them by their influence fields and through
           time. Take a look and get surprised by how much girl power history can reveal!` }</p>
         </div>
-        <div className="graph-head">
-          <h3 className="title">
-            Who are the wonderful women who helped shape the world?
-          </h3>
-          <div className="legend">
-            <span>Women</span>
+        <div className="wrapper">
+          <div className="graph-content">
+            <div className="graph-head">
+              <h3 className="title">
+                Who are the wonderful women who helped shape the world?
+              </h3>
+              <div className="legend">
+                <span>Women</span>
+              </div>
+            </div>
+            <DataLoader fetchData={this.fetchData} />
+            <FilterableScatterPlot { ...this.state } />
+            <p className="information">
+              { `Information: We collected the information presented from public sources
+                and do not take responsibility for the content in the external links.` }
+            </p>
           </div>
         </div>
-        <DataLoader fetchData={this.fetchData} />
-        <FilterableScatterPlot { ...this.state } />
-        <p className="information">
-          { `Information: We collected the information presented from public sources
-            and do not take responsibility for the content in the external links.` }
-        </p>
       </section>
     )
   }

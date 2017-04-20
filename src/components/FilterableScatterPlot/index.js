@@ -82,9 +82,21 @@ class FilterableScatterPlot extends Component {
       return false
     }
 
+    let isChildOf = (bastard, father) => {
+      console.log(bastard, father.childNodes)
+      if(bastard === father) return true
+
+      let isChild = false
+      father.childNodes.forEach(child => isChildOf(bastard, child)? isChild = true :0)
+      return isChild
+    }
+
     ev = ev || {}
     let bubble = document.getElementById('details-bubble')
+    let links = bubble.getElementsByClassName('close')
     let balls = document.getElementsByClassName('d3-point')
+
+    if(!contain(ev.target, links) && isChildOf(ev.target, bubble)) return
 
     // checks if ball is being clicked
     if(!contain(ev.target, balls))
