@@ -24,7 +24,10 @@
 
     &:first-child { margin-left: 0; }
 
-    &:hover { color: #fff; }
+    &:hover {
+      color: #fff;
+      background-color: rgba(#fff, 0.11);
+    }
 
     &.selected {
       border-color: transparent;

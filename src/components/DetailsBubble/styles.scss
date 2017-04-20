@@ -28,6 +28,14 @@ $bubble-time: 0.3s;
     flex-grow: 0.25;
     font-size: 0;
 
+    &:hover {
+      color: white;
+    }
+
+    &.external:hover:after {
+      background-image: url('./open.white.svg?name=HoverIcon')
+    }
+
     &.external:after {
       height: $space-xxs;
       width: $space-xxs;
