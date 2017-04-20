@@ -8,8 +8,8 @@
     @include wrap-mobile;
     margin-bottom: $space-xs;
     margin-top: $space-xl;
-    font-size: $font-size-hecto;
-    line-height: $line-height-hecto;
+    font-size: $font-size-mega;
+    line-height: $line-height-kilo;
 
     @include large-up {
       @include grid(8);
@@ -20,11 +20,11 @@
 
   > .content {
     @include wrap-mobile;
+
     > p {
       margin-bottom: $space-xl;
-      font-size: $font-size-base;
+      font-size: $font-size-deca;
       line-height: $line-height-base;
-
     }
 
     @include large-up {

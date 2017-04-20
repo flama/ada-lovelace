@@ -13,17 +13,15 @@ $base-time: 0.2s;
     display: inline-block;
     height: 100%;
     width: 12vw;
+    margin-top: $space-xxxs;
     align-self: flex-start;
-    margin-top: $space-xs;
 
     padding-right: 1em;
     padding-left: 0.5em;
 
-    margin-bottom: -10vh;
-
     h2 {
       font-size: $font-size-deci;
-      line-height: $line-height-deci;
+      line-height: $line-height-centi;
       font-weight: normal;
     }
   }

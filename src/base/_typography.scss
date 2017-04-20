@@ -4,7 +4,6 @@ body {
 }
 
 h1, h2, h3, h4 { font-weight: bold; }
-p { font-weight: lighter; }
 
 h1 {
   font-size: $font-size-exa;
@@ -18,10 +17,11 @@ h2 {
 
 h3 {
   font-size: $font-size-mega;
-  line-height: $line-height-mega;
+  line-height: $line-height-kilo;
 }
 
 p {
+  font-weight: lighter;
   font-size: $font-size-deca;
-  line-height: $line-height-deca;
+  line-height: $line-height-base;
 }

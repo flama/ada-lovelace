@@ -3,7 +3,10 @@
 .timeline {
   width:100%;
 
-  .tick { font-size: $font-size-centi; }
+  .tick {
+    font-size: $font-size-deci;
+    line-height: $line-height-centi;
+  }
   .tick > line { display: none; }
   .tick > text {
     fill: $color-ghost;
