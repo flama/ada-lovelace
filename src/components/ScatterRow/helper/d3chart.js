@@ -18,6 +18,7 @@ class d3ChartHelper {
       .attr('class', 'd3-points')
 
     this.t = state.test?0:1
+    this.id = state.id
 
     this.update(el, state)
   }
@@ -47,6 +48,7 @@ class d3ChartHelper {
 
     let cells = this.g.selectAll("circle")
       .data(simulation.nodes())
+    let id = this.id
 
     cells.exit().transition()
       .duration(250*this.t)
@@ -55,10 +57,21 @@ class d3ChartHelper {
       .remove()
 
     cells.enter().append("circle")
+      .attr("r", radius*2/3)
+      .attr("class", "d3-point-stroke")
+      .attr("id", function(d){ return `stroke-${id}/${d.index}` })
+      .attr("fill", "transparent")
+    .merge(cells)
+      .attr("r", radius*2/3)
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y)
+
+    cells.enter().append("circle")
       .on("mouseenter", function(){ balls.grow(this) })
       .on("mouseleave", function(){ balls.shrink() })
       .on("click", function(d) { balls.open(this, d.extended) })
       .attr("class", "d3-point")
+      .attr("id", function(d) { return `ball-${id}/${d.index}` })
       .attr("r", 0)
     .merge(cells)
       .attr("r", 0)
