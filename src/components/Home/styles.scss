@@ -14,7 +14,6 @@
     height: 100%;
   }
 
-
   .body {
     @include small-only {
       @include wrap-mobile;
@@ -25,6 +24,11 @@
       font-size: $font-size-mega;
       line-height: $line-height-mega;
       color: #fff;
+
+      @include small-only {
+        font-size: $font-size-mega;
+        line-height: $line-height-mega;
+      }
     }
 
     > p {

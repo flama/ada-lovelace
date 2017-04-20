@@ -13,6 +13,11 @@ h1 {
 h2 {
   font-size: $font-size-giga;
   line-height: $line-height-giga;
+
+  @include small-only {
+    font-size: $font-size-mobile-header;
+    line-height: $line-height-mobile-header;
+  }
 }
 
 h3 {
@@ -24,4 +29,9 @@ p {
   font-weight: lighter;
   font-size: $font-size-base;
   line-height: $line-height-base;
+
+  @include small-only {
+    font-size: $font-size-mobile-body;
+    line-height: $line-height-deci;
+  }
 }
