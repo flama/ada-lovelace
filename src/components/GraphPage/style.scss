@@ -33,16 +33,60 @@
       display: flex;
       align-items: center;
     }
-
   }
 
   > .wrapper {
     padding-top: $space-xxl;
     padding-bottom: $space-xxl;
-    background-color: rgba(#000, 0.2);
+    background-color: mix($feminist-purple, rgba(#000, 0.5));
+    position: relative;
 
     > .graph-content {
       @include wrap;
+
+      @include small-only {
+        > *:not(.graph-head) { display: none; }
+
+        .graph-head.legend {
+          display: none;
+        }
+      }
+    }
+
+    > .graph-mobile {
+      @include wrap-mobile;
+      @include medium-up {
+        display: none;
+      }
+
+      img {
+        width: 100%;
+      }
+
+      .gradient {
+        position: absolute;
+        z-index: 2;
+        bottom: 0;
+        height: 100%;
+        width: 200vw;
+        margin-left: -20%;
+        background-image:
+          linear-gradient(0deg, mix($feminist-purple, rgba(#000, 0.4)) 65%, transparent);
+        background-blend-mode: darken;
+      }
+
+      .comingsoon {
+        position: relative;
+        z-index: 3;
+
+        p {
+          margin-top: 5vh;
+          .bigger {
+            font-weight: bold;
+            font-size: $font-size-hecto;
+          }
+        }
+      }
     }
 
     @include large-up {
