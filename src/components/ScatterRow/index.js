@@ -32,7 +32,8 @@ ScatterRow.propTypes = {
   data: PropTypes.array,
   domain: PropTypes.object.isRequired,
   hidden: PropTypes.bool,
-  title: PropTypes.string
+  title: PropTypes.string,
+  id: PropTypes.string.isRequired
 }
 
 export default ScatterRow

@@ -10,8 +10,8 @@
     @include clearfix;
 
     @include large-up {
-      @include grid(8);
-      @include offsetLeft(2);
+      @include grid(7);
+      @include offsetLeft(3);
     }
 
     padding-top: $space-l;
@@ -19,81 +19,17 @@
 
     > h3 {
       margin-bottom: $space-xxs;
-      font-size: $font-size-kilo;
-      line-height: $line-height-kilo;
-
-      @include large-up {
-        font-size: $font-size-hecto;
-        line-height: $line-height-hecto;
-      }
     }
 
     > p {
       margin-bottom: $space-m;
-      font-size: $font-size-base;
-      line-height: $line-height-base;
       color: #fff;
       opacity: 0.3;
-
-      @include large-up {
-        margin-bottom: $space-s;
-        font-size: $font-size-deci;
-        line-height: $line-height-deci;
-      }
     }
 
     button, .SocialMediaShareButton {
       display: inline-block;
-      text-align: center;
-      padding-top: $space-xxs;
-      padding-bottom: $space-xxs;
-
-      @include medium-up {
-        padding-left: $space-s;
-        padding-right: $space-s;
-        padding-top: 0;
-        padding-bottom: 0;
-        margin-left: $space-xs;
-      }
-
-      border-style: solid;
-      border-width: 1px;
-      border-color: $light-purple;
-      border-radius: $space-xxxs;
-
-      font-size: $font-size-centi;
-      line-height: $line-height-base;
-      letter-spacing: 0.44px;
-      color: $light-purple;
-      background-color: transparent;
-      cursor: pointer;
-
-      transition: all 0.3s ease;
-
-      &:first-child { margin-left: 0; }
-
-      @include small-only {
-        &:nth-child(1) {
-          width: 48%;
-          float: left;
-        }
-
-        &:nth-child(2) {
-          width: 48%;
-          float: right;
-        }
-      }
-
-      &:hover {
-        color: #fff;
-        background-color: rgba(#fff, 0.11);
-      }
-
-      &.selected {
-        border-color: transparent;
-        background-color: $selected;
-        color: #fff;
-      }
+      @include button;
     }
 
   }

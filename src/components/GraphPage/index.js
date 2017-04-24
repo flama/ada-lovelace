@@ -3,6 +3,8 @@ import React, { Component } from 'react'
 import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
 
+import mobilePreview from './wikimina-preview.png'
+
 import './style.scss'
 
 class GraphPage extends Component {
@@ -34,7 +36,7 @@ class GraphPage extends Component {
           <div className="graph-content">
             <div className="graph-head">
               <h3 className="title">
-                Who are the wonderful women who helped shape the world?
+                who are the wonderful women who helped shape the world?
               </h3>
               <div className="legend">
                 <span>Women</span>
@@ -43,9 +45,25 @@ class GraphPage extends Component {
             <DataLoader fetchData={this.fetchData} />
             <FilterableScatterPlot { ...this.state } />
             <p className="information">
-              { `Information: We collected the information presented from public sources
-                and do not take responsibility for the content in the external links.` }
+              { `Information: We collected the information presented from public sources like `}
+              <a href="http://wikipedia.org" target="_blank">Wikipedia</a>
+              { ` and do not take responsibility for the content in the external links.` }
             </p>
+          </div>
+          <div className="graph-mobile">
+            <img src={ mobilePreview } role="presentation" />
+            <div className="gradient" />
+            <div className="comingsoon">
+              <p>
+                <span className="bigger">{ "Coming soon! " }</span>
+                { `We are working on Wikimina Mobile.`}
+              </p>
+              <p>
+                { `In the meantime you can access our desktop version for
+                  the full experience through the address `}
+                <a href="flama.github.io/ada-lovelace">{ `flama.github.io/ada-lovalace` }</a>
+              </p>
+            </div>
           </div>
         </div>
       </section>

@@ -1,54 +1,44 @@
 @import '../../config';
 
 #about-page {
-  @include small-only {
-    @include wrap-mobile;
-  }
   padding-top: $space-xl;
   padding-bottom: $space-m;
 
-  > h2 {
-    margin-bottom: $space-s;
-    font-size: $font-size-giga;
-    line-height: $line-height-giga;
-  }
+  > h2 { margin-bottom: $space-s; }
 
   > h3 {
     margin-bottom: $space-s;
     margin-top: $space-xl;
-    font-size: $font-size-hecto;
-    line-height: $line-height-hecto;
   }
 
   > .content {
     margin-bottom: $space-m;
 
-    > p { margin-bottom: $space-m; }
+    > p {
+      color: $text-purple;
+      margin-bottom: $space-m;
+    }
   }
 
   @include large-up {
+    @include grid(6);
+    @include offsetLeft(3);
+
     > h2 {
       margin-bottom: $space-s;
-      @include grid(7);
-      @include offsetLeft(2);
     }
 
     > h3 {
-      @include grid(7);
-      @include offsetLeft(2);
       margin-bottom: $space-s;
       margin-top: 0;
     }
 
     > .content {
-      @include grid(7);
-      @include offsetLeft(2);
       margin-bottom: $space-m;
 
       > p { margin-bottom: $space-m; }
     }
   }
 
-
-
+  @include wrap-mobile;
 }

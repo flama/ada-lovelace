@@ -7,21 +7,21 @@ $base-time: 0.2s;
   align-items: center;
   flex-grow: 1;
 
+  &:not(.timeline) { @include dots($light-purple, 6px); }
+
   .title {
     display: inline-block;
     height: 100%;
     width: 12vw;
+    margin-top: $space-xxxs;
     align-self: flex-start;
-    margin-top: $space-xs;
 
     padding-right: 1em;
     padding-left: 0.5em;
 
-    margin-bottom: -10vh;
-
     h2 {
       font-size: $font-size-deci;
-      line-height: $line-height-deci;
+      line-height: $line-height-roomy;
       font-weight: normal;
     }
   }
@@ -60,6 +60,18 @@ $base-time: 0.2s;
 
       &.faded {
         fill: $faded-purple;
+      }
+    }
+
+    .d3-point-stroke {
+      stroke: $selected;
+      stroke-width: 0;
+
+      &.growing {
+        transition: all 3 * $base-time ease-in-out;
+        transition-delay: 2 * $base-time;
+        stroke-width: 2px;
+        stroke-opacity: 0;
       }
     }
   }

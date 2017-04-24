@@ -20,6 +20,7 @@ describe('ScatterRow', () => {
       <ScatterRow title="potatoes"
         data={ state.data }
         domain={ state.domain }
+        id="obert"
       />
     )
   })
