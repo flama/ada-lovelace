@@ -121,7 +121,7 @@ class DataLoader extends Component {
     return woman
   })
 
-  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born) && woman.Born)
+  removeWomenThatAreNotBorn = women => women.filter(woman => woman.Born)
 
   organizeByTag = women => women.reduce((acc, woman) => {
     woman.tags.forEach(tag => {
