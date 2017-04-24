@@ -7,6 +7,8 @@ $base-time: 0.2s;
   align-items: center;
   flex-grow: 1;
 
+  &:not(.timeline) { @include dots($light-purple, 6px); }
+
   .title {
     display: inline-block;
     height: 100%;

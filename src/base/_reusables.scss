@@ -61,7 +61,7 @@
 }
 
 // Dotted border mixin by @poopsplat: http://codepen.io/poopsplat/pen/xEIty?editors=1100
-@mixin dots($color, $spacing, $position: bottom) {
+@mixin dots($color, $spacing, $position: top) {
   background-position: $position;
   background-repeat: repeat-x;
   background-size: $spacing 1px;

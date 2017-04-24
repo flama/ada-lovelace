@@ -26,7 +26,7 @@ const ScatterPlot = props => {
     <div className="scatter-plot" onClick={ props.closeBubble }>
       <div className="topics">{ topics }</div>
       <DetailsBubble close={ props.closeBubble }/>
-      <div className="scatter-row">
+      <div className="scatter-row timeline">
         <div className="title"></div>
         <ScatterPlotTimeline className="graph" domain={ domain } />
       </div>
