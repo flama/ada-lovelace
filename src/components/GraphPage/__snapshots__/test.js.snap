@@ -17,37 +17,51 @@ exports[`the graph page should render correctly 1`] = `
     </p>
   </div>
   <div
-    className="graph-head"
+    className="wrapper"
   >
-    <h3
-      className="title"
-    >
-      Who are the wonderful women who helped shape the world?
-    </h3>
     <div
-      className="legend"
+      className="graph-content"
     >
-      <span>
-        Women
-      </span>
+      <div
+        className="graph-head"
+      >
+        <h3
+          className="title"
+        >
+          Who are the wonderful women who helped shape the world?
+        </h3>
+        <div
+          className="legend"
+        >
+          <span>
+            Women
+          </span>
+        </div>
+      </div>
+      <DataLoader
+        fetchData={[Function]}
+      />
+      <FilterableScatterPlot
+        dataList={Object {}}
+        options={
+          Object {
+            "categories": Array [],
+          }
+        }
+      />
+      <p
+        className="information"
+      >
+        Information: We collected the information presented from public sources like 
+        <a
+          href="http://wikipedia.org"
+          target="_blank"
+        >
+          Wikipedia
+        </a>
+         and do not take responsibility for the content in the external links.
+      </p>
     </div>
   </div>
-  <DataLoader
-    fetchData={[Function]}
-  />
-  <FilterableScatterPlot
-    dataList={Object {}}
-    options={
-      Object {
-        "categories": Array [],
-      }
-    }
-  />
-  <p
-    className="information"
-  >
-    Information: We collected the information presented from public sources
-                and do not take responsibility for the content in the external links.
-  </p>
 </section>
 `;

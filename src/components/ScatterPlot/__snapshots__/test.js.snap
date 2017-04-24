@@ -12,7 +12,7 @@ exports[`ScatterPlot renders correctly 1`] = `
     close={[Function]}
   />
   <div
-    className="scatter-row"
+    className="scatter-row timeline"
   >
     <div
       className="title"

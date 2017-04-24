@@ -68,7 +68,7 @@ $bubble-time: 0.3s;
     }
 
     .description {
-      line-height: $line-height-mili;
+      line-height: $line-height-description;
       color: $feminist-purple;
     }
   }
@@ -90,7 +90,7 @@ $bubble-time: 0.3s;
       max-width: $space-xxxl;
     }
 
-    .name { font-size: $font-size-deca; }
+    .name { font-size: $font-size-base; }
     .description, &.external, &.close { font-size: $font-size-centi; }
   }
 }
