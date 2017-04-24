@@ -9,7 +9,7 @@ exports[`the share section renders correctly 1`] = `
     className="content"
   >
     <h3>
-      Share
+      share
     </h3>
     <p>
       We envision an ever-growing platform, crowdsourced by people everywhere, helping us show women who somehow have created an impact in our world!

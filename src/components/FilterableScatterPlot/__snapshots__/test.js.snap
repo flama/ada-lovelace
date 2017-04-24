@@ -340,7 +340,7 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
           </div>
         </DetailsBubble>
         <div
-          className="scatter-row"
+          className="scatter-row timeline"
         >
           <div
             className="title"
@@ -614,7 +614,7 @@ exports[`FilterableScatterPlot properly refreshes on change of continent 1`] = `
           </div>
         </DetailsBubble>
         <div
-          className="scatter-row"
+          className="scatter-row timeline"
         >
           <div
             className="title"
@@ -950,7 +950,7 @@ exports[`FilterableScatterPlot should render correctly 1`] = `
           </div>
         </DetailsBubble>
         <div
-          className="scatter-row"
+          className="scatter-row timeline"
         >
           <div
             className="title"
