@@ -14,7 +14,10 @@ describe("FilterableScatterPlot", () => {
       const continents = ["potato", "size", "salad"]
       // create an array of `size` length
       return Array.apply(null, Array(size)).map((_, i) => {
-        return { Continent: continents[i % 3] }
+        return {
+          Continent: continents[i % 3],
+          Informations: "x".repeat(size*i)
+        }
       })
     }
 

@@ -2,37 +2,5 @@
 
 .categories {
   margin-bottom: $space-m;
-
-  .button {
-    padding-left: $space-xs;
-    padding-right: $space-xs;
-    margin-left: $space-xxs;
-
-    border-style: solid;
-    border-width: 1px;
-    border-color: $light-purple;
-    border-radius: $space-xxxs;
-
-    font-size: $font-size-centi;
-    line-height: 1.5em;
-    letter-spacing: 0.44px;
-    color: $light-purple;
-    background-color: transparent;
-    cursor: pointer;
-
-    transition: all 0.3s ease;
-
-    &:first-child { margin-left: 0; }
-
-    &:hover {
-      color: #fff;
-      background-color: rgba(#fff, 0.11);
-    }
-
-    &.selected {
-      border-color: transparent;
-      background-color: $selected;
-      color: #fff;
-    }
-  }
+  .button { @include button; }
 }

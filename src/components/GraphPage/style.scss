@@ -8,8 +8,6 @@
     @include wrap-mobile;
     margin-bottom: $space-xs;
     margin-top: $space-xl;
-    font-size: $font-size-hecto;
-    line-height: $line-height-hecto;
 
     @include large-up {
       @include grid(8);
@@ -20,11 +18,15 @@
 
   > .content {
     @include wrap-mobile;
+
     > p {
       margin-bottom: $space-xl;
       font-size: $font-size-base;
       line-height: $line-height-base;
 
+      @include small-only {
+        line-height: $line-height-roomy;
+      }
     }
 
     @include large-up {
@@ -102,6 +104,14 @@
 
     .title {
       @include grid(7);
+
+      @include small-only {
+        font-size: $font-size-deca;
+        line-height: $line-height-roomy;
+        margin-left: 22px;
+        margin-right: 22px;
+      }
+
       display: block;
       margin-bottom: $space-l;
       margin-top: 0;

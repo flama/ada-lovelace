@@ -13,6 +13,7 @@ const Ball = {
     target.classList.add('growing')
 
     let balls = document.getElementsByClassName('d3-point')
+    let stroke = document.getElementById(`stroke-${target.id.split('-')[1]}`)
 
     for(let i=0; i<balls.length; ++i)
     {
@@ -22,16 +23,35 @@ const Ball = {
       balls[i].setAttribute('r', radius*2/3)
     }
 
-    window.wikiminaTime = setTimeout(() => {
+    this.wikiminaTime = setTimeout(() => {
       target.classList.remove('growing')
       target.setAttribute('r', radius*2)
+      stroke.classList.add('growing')
+      stroke.setAttribute('r', radius*4)
     }, 160)
+
+    this.wikiminaStrokeTime = setTimeout(() => {
+      stroke.classList.remove('growing')
+      stroke.setAttribute('r', radius*2/3)
+    })
   },
 
   shrink() {
-    if(window.wikiminaTime) {
-      clearTimeout(window.wikiminaTime)
-      window.wikiminaTime = undefined
+    if(this.wikiminaTime) {
+      clearTimeout(this.wikiminaTime)
+      let strokes = document.getElementsByClassName('d3-point-stroke')
+
+      for(let i=0; i<strokes.length; ++i) {
+        strokes.item(i).classList.remove('growing')
+        strokes.item(i).setAttribute('r', 0)
+      }
+      this.wikiminaTime = undefined
+    }
+
+    if(this.wikiminaStrokeTime) {
+
+      clearTimeout(this.wikiminaStrokeTime)
+      this.wikiminaStrokeTime = undefined
     }
 
     let balls = document.getElementsByClassName('d3-point')

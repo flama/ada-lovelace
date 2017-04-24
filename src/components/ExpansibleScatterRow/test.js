@@ -19,6 +19,7 @@ describe("ExpansibleScatterRow", () => {
           array: []
         }}
         domain={ domain }
+        title="obert"
       />
     )
   })
