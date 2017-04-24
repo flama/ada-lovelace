@@ -62,6 +62,37 @@ exports[`the graph page should render correctly 1`] = `
          and do not take responsibility for the content in the external links.
       </p>
     </div>
+    <div
+      className="graph-mobile"
+    >
+      <img
+        src="wikimina-preview.png"
+      />
+      <div
+        className="gradient"
+      />
+      <div
+        className="comingsoon"
+      >
+        <p>
+          <span
+            className="bigger"
+          >
+            Coming soon! 
+          </span>
+          We are working on Wikimina Mobile.
+        </p>
+        <p>
+          In the meantime you can access our desktop version for
+                            the full experience through the address 
+          <a
+            href="flama.github.io/ada-lovelace"
+          >
+            flama.github.io/ada-lovalace
+          </a>
+        </p>
+      </div>
+    </div>
   </div>
 </section>
 `;
