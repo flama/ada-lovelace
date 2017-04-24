@@ -10,8 +10,8 @@
     margin-top: $space-xl;
 
     @include large-up {
-      @include grid(8);
-      @include offsetLeft(2);
+      @include grid(6);
+      @include offsetLeft(3);
       margin-bottom: $space-xs;
     }
   }
@@ -30,8 +30,8 @@
     }
 
     @include large-up {
-      @include grid(7);
-      @include offsetLeft(2);
+      @include grid(6);
+      @include offsetLeft(3);
       display: flex;
       align-items: center;
     }

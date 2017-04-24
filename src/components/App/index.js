@@ -9,11 +9,11 @@ import './App.scss'
 
 const App = props => (
   <div id="app">
-  <Home />
-  <GraphPage />
-  <AboutPage />
-  <Share />
-  <Footer />
+    <Home />
+    <GraphPage />
+    <AboutPage />
+    <Share />
+    <Footer />
   </div>
 )
 
