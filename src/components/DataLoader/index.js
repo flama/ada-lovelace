@@ -30,6 +30,7 @@ class DataLoader extends Component {
         .then(this.removeEmptyWomen)
         .then(this.sheetToObject)
         .then(this.convertFiltersToTags)
+        .then(this.removeWomenThatAreNotBorn)
         .then(this.transformBCToNegative)
         .then(this.removeWomenThatAreNotBorn)
         .then(this.organizeByTag)
@@ -120,7 +121,7 @@ class DataLoader extends Component {
     return woman
   })
 
-  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born) && woman.Born)
+  removeWomenThatAreNotBorn = women => women.filter(woman => woman.Born)
 
   organizeByTag = women => women.reduce((acc, woman) => {
     woman.tags.forEach(tag => {

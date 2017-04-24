@@ -58,8 +58,7 @@ describe('d3chartHelper', () => {
   })
 
   describe('updates', () => {
-    // TODO: figure why this test fails
-    xit('properly adapts internal state to given data', () => {
+    it('properly adapts internal state to given data', () => {
       chart.update(body, { domain: state.domain, data: [
         { Born: 1910, Informations: 'q31321', id: 'potato-3/potato' },
         { Born: 2019, Informations: 'q129321sj' , id: 'potato-4/potato'}
