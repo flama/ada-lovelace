@@ -8,10 +8,10 @@
   > .content {
     @include wrap-mobile;
     @include clearfix;
-    
+
     @include large-up {
-      @include grid(8);
-      @include offsetLeft(2);
+      @include grid(7);
+      @include offsetLeft(3);
     }
 
     padding-top: $space-l;

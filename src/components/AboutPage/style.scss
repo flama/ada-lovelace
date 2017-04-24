@@ -21,22 +21,19 @@
   }
 
   @include large-up {
+    @include grid(6);
+    @include offsetLeft(3);
+
     > h2 {
       margin-bottom: $space-s;
-      @include grid(7);
-      @include offsetLeft(2);
     }
 
     > h3 {
-      @include grid(7);
-      @include offsetLeft(2);
       margin-bottom: $space-s;
       margin-top: 0;
     }
 
     > .content {
-      @include grid(7);
-      @include offsetLeft(2);
       margin-bottom: $space-m;
 
       > p { margin-bottom: $space-m; }

@@ -36,7 +36,7 @@ class GraphPage extends Component {
           <div className="graph-content">
             <div className="graph-head">
               <h3 className="title">
-                Who are the wonderful women who helped shape the world?
+                who are the wonderful women who helped shape the world?
               </h3>
               <div className="legend">
                 <span>Women</span>
