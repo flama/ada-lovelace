@@ -31,7 +31,6 @@ class d3ChartHelper {
   destroy() {}
 
   _format = (data, scales) => data.map(value => {
-    console.log(value)
     return {
       x: scales.x(value.Born),
       y: scales.y(value.Informations.length % 10),

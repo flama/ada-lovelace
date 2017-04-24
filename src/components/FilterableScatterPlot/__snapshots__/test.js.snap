@@ -9,38 +9,48 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
         "array": Array [
           Object {
             "Continent": "potato",
+            "Informations": "",
           },
           Object {
             "Continent": "size",
+            "Informations": "xxxxx",
           },
           Object {
             "Continent": "salad",
+            "Informations": "xxxxxxxxxx",
           },
           Object {
             "Continent": "potato",
+            "Informations": "xxxxxxxxxxxxxxx",
           },
           Object {
             "Continent": "size",
+            "Informations": "xxxxxxxxxxxxxxxxxxxx",
           },
         ],
         "division": Object {
           "subdiv1": Array [
             Object {
               "Continent": "potato",
+              "Informations": "",
             },
             Object {
               "Continent": "size",
+              "Informations": "xxx",
             },
             Object {
               "Continent": "salad",
+              "Informations": "xxxxxx",
             },
           ],
           "subdiv2": Array [
             Object {
               "Continent": "potato",
+              "Informations": "",
             },
             Object {
               "Continent": "size",
+              "Informations": "xx",
             },
           ],
         },
@@ -123,38 +133,48 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
             "array": Array [
               Object {
                 "Continent": "potato",
+                "Informations": "",
               },
               Object {
                 "Continent": "size",
+                "Informations": "xxxxx",
               },
               Object {
                 "Continent": "salad",
+                "Informations": "xxxxxxxxxx",
               },
               Object {
                 "Continent": "potato",
+                "Informations": "xxxxxxxxxxxxxxx",
               },
               Object {
                 "Continent": "size",
+                "Informations": "xxxxxxxxxxxxxxxxxxxx",
               },
             ],
             "division": Object {
               "subdiv1": Array [
                 Object {
                   "Continent": "potato",
+                  "Informations": "",
                 },
                 Object {
                   "Continent": "size",
+                  "Informations": "xxx",
                 },
                 Object {
                   "Continent": "salad",
+                  "Informations": "xxxxxx",
                 },
               ],
               "subdiv2": Array [
                 Object {
                   "Continent": "potato",
+                  "Informations": "",
                 },
                 Object {
                   "Continent": "size",
+                  "Informations": "xx",
                 },
               ],
             },
@@ -177,38 +197,48 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
                 "array": Array [
                   Object {
                     "Continent": "potato",
+                    "Informations": "",
                   },
                   Object {
                     "Continent": "size",
+                    "Informations": "xxxxx",
                   },
                   Object {
                     "Continent": "salad",
+                    "Informations": "xxxxxxxxxx",
                   },
                   Object {
                     "Continent": "potato",
+                    "Informations": "xxxxxxxxxxxxxxx",
                   },
                   Object {
                     "Continent": "size",
+                    "Informations": "xxxxxxxxxxxxxxxxxxxx",
                   },
                 ],
                 "division": Object {
                   "subdiv1": Array [
                     Object {
                       "Continent": "potato",
+                      "Informations": "",
                     },
                     Object {
                       "Continent": "size",
+                      "Informations": "xxx",
                     },
                     Object {
                       "Continent": "salad",
+                      "Informations": "xxxxxx",
                     },
                   ],
                   "subdiv2": Array [
                     Object {
                       "Continent": "potato",
+                      "Informations": "",
                     },
                     Object {
                       "Continent": "size",
+                      "Informations": "xx",
                     },
                   ],
                 },
@@ -233,12 +263,15 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
                   Array [
                     Object {
                       "Continent": "potato",
+                      "Informations": "",
                     },
                     Object {
                       "Continent": "size",
+                      "Informations": "xxx",
                     },
                     Object {
                       "Continent": "salad",
+                      "Informations": "xxxxxx",
                     },
                   ]
                 }
@@ -251,6 +284,7 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
                   }
                 }
                 hidden={true}
+                id="subdiv1"
                 title="subdiv1"
               >
                 <div
@@ -273,9 +307,11 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
                   Array [
                     Object {
                       "Continent": "potato",
+                      "Informations": "",
                     },
                     Object {
                       "Continent": "size",
+                      "Informations": "xx",
                     },
                   ]
                 }
@@ -288,6 +324,7 @@ exports[`FilterableScatterPlot properly refreshes on change of category 1`] = `
                   }
                 }
                 hidden={true}
+                id="subdiv2"
                 title="subdiv2"
               >
                 <div
@@ -376,38 +413,48 @@ exports[`FilterableScatterPlot properly refreshes on change of continent 1`] = `
         "array": Array [
           Object {
             "Continent": "potato",
+            "Informations": "",
           },
           Object {
             "Continent": "size",
+            "Informations": "xxxxx",
           },
           Object {
             "Continent": "salad",
+            "Informations": "xxxxxxxxxx",
           },
           Object {
             "Continent": "potato",
+            "Informations": "xxxxxxxxxxxxxxx",
           },
           Object {
             "Continent": "size",
+            "Informations": "xxxxxxxxxxxxxxxxxxxx",
           },
         ],
         "division": Object {
           "subdiv1": Array [
             Object {
               "Continent": "potato",
+              "Informations": "",
             },
             Object {
               "Continent": "size",
+              "Informations": "xxx",
             },
             Object {
               "Continent": "salad",
+              "Informations": "xxxxxx",
             },
           ],
           "subdiv2": Array [
             Object {
               "Continent": "potato",
+              "Informations": "",
             },
             Object {
               "Continent": "size",
+              "Informations": "xx",
             },
           ],
         },
@@ -490,12 +537,14 @@ exports[`FilterableScatterPlot properly refreshes on change of continent 1`] = `
             "array": Array [
               Object {
                 "Continent": "salad",
+                "Informations": "xxxxxxxxxx",
               },
             ],
             "division": Object {
               "subdiv1": Array [
                 Object {
                   "Continent": "salad",
+                  "Informations": "xxxxxx",
                 },
               ],
               "subdiv2": Array [],
@@ -519,12 +568,14 @@ exports[`FilterableScatterPlot properly refreshes on change of continent 1`] = `
                 "array": Array [
                   Object {
                     "Continent": "salad",
+                    "Informations": "xxxxxxxxxx",
                   },
                 ],
                 "division": Object {
                   "subdiv1": Array [
                     Object {
                       "Continent": "salad",
+                      "Informations": "xxxxxx",
                     },
                   ],
                   "subdiv2": Array [],
@@ -550,6 +601,7 @@ exports[`FilterableScatterPlot properly refreshes on change of continent 1`] = `
                   Array [
                     Object {
                       "Continent": "salad",
+                      "Informations": "xxxxxxxxxx",
                     },
                   ]
                 }
@@ -562,6 +614,7 @@ exports[`FilterableScatterPlot properly refreshes on change of continent 1`] = `
                   }
                 }
                 hidden={false}
+                id="category1"
                 title="category1"
               >
                 <div
@@ -650,38 +703,48 @@ exports[`FilterableScatterPlot should render correctly 1`] = `
         "array": Array [
           Object {
             "Continent": "potato",
+            "Informations": "",
           },
           Object {
             "Continent": "size",
+            "Informations": "xxxxx",
           },
           Object {
             "Continent": "salad",
+            "Informations": "xxxxxxxxxx",
           },
           Object {
             "Continent": "potato",
+            "Informations": "xxxxxxxxxxxxxxx",
           },
           Object {
             "Continent": "size",
+            "Informations": "xxxxxxxxxxxxxxxxxxxx",
           },
         ],
         "division": Object {
           "subdiv1": Array [
             Object {
               "Continent": "potato",
+              "Informations": "",
             },
             Object {
               "Continent": "size",
+              "Informations": "xxx",
             },
             Object {
               "Continent": "salad",
+              "Informations": "xxxxxx",
             },
           ],
           "subdiv2": Array [
             Object {
               "Continent": "potato",
+              "Informations": "",
             },
             Object {
               "Continent": "size",
+              "Informations": "xx",
             },
           ],
         },
@@ -764,38 +827,48 @@ exports[`FilterableScatterPlot should render correctly 1`] = `
             "array": Array [
               Object {
                 "Continent": "potato",
+                "Informations": "",
               },
               Object {
                 "Continent": "size",
+                "Informations": "xxxxx",
               },
               Object {
                 "Continent": "salad",
+                "Informations": "xxxxxxxxxx",
               },
               Object {
                 "Continent": "potato",
+                "Informations": "xxxxxxxxxxxxxxx",
               },
               Object {
                 "Continent": "size",
+                "Informations": "xxxxxxxxxxxxxxxxxxxx",
               },
             ],
             "division": Object {
               "subdiv1": Array [
                 Object {
                   "Continent": "potato",
+                  "Informations": "",
                 },
                 Object {
                   "Continent": "size",
+                  "Informations": "xxx",
                 },
                 Object {
                   "Continent": "salad",
+                  "Informations": "xxxxxx",
                 },
               ],
               "subdiv2": Array [
                 Object {
                   "Continent": "potato",
+                  "Informations": "",
                 },
                 Object {
                   "Continent": "size",
+                  "Informations": "xx",
                 },
               ],
             },
@@ -818,38 +891,48 @@ exports[`FilterableScatterPlot should render correctly 1`] = `
                 "array": Array [
                   Object {
                     "Continent": "potato",
+                    "Informations": "",
                   },
                   Object {
                     "Continent": "size",
+                    "Informations": "xxxxx",
                   },
                   Object {
                     "Continent": "salad",
+                    "Informations": "xxxxxxxxxx",
                   },
                   Object {
                     "Continent": "potato",
+                    "Informations": "xxxxxxxxxxxxxxx",
                   },
                   Object {
                     "Continent": "size",
+                    "Informations": "xxxxxxxxxxxxxxxxxxxx",
                   },
                 ],
                 "division": Object {
                   "subdiv1": Array [
                     Object {
                       "Continent": "potato",
+                      "Informations": "",
                     },
                     Object {
                       "Continent": "size",
+                      "Informations": "xxx",
                     },
                     Object {
                       "Continent": "salad",
+                      "Informations": "xxxxxx",
                     },
                   ],
                   "subdiv2": Array [
                     Object {
                       "Continent": "potato",
+                      "Informations": "",
                     },
                     Object {
                       "Continent": "size",
+                      "Informations": "xx",
                     },
                   ],
                 },
@@ -874,18 +957,23 @@ exports[`FilterableScatterPlot should render correctly 1`] = `
                   Array [
                     Object {
                       "Continent": "potato",
+                      "Informations": "",
                     },
                     Object {
                       "Continent": "size",
+                      "Informations": "xxxxx",
                     },
                     Object {
                       "Continent": "salad",
+                      "Informations": "xxxxxxxxxx",
                     },
                     Object {
                       "Continent": "potato",
+                      "Informations": "xxxxxxxxxxxxxxx",
                     },
                     Object {
                       "Continent": "size",
+                      "Informations": "xxxxxxxxxxxxxxxxxxxx",
                     },
                   ]
                 }
@@ -898,6 +986,7 @@ exports[`FilterableScatterPlot should render correctly 1`] = `
                   }
                 }
                 hidden={false}
+                id="category1"
                 title="category1"
               >
                 <div
