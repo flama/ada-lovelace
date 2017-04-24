@@ -30,6 +30,7 @@ class DataLoader extends Component {
         .then(this.removeEmptyWomen)
         .then(this.sheetToObject)
         .then(this.convertFiltersToTags)
+        .then(this.removeWomenThatAreNotBorn)
         .then(this.transformBCToNegative)
         .then(this.removeWomenThatAreNotBorn)
         .then(this.organizeByTag)

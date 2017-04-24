@@ -46,39 +46,42 @@ class d3ChartHelper {
       .stop()
 
     for(let i=0; i<120; ++i) simulation.tick()
-
-    let cells = this.g.selectAll("circle")
-      .data(simulation.nodes())
     let id = this.id
 
-    let strokes = cells.enter().append("circle")
+    let strokes = this.g.selectAll(".d3-point-stroke")
+      .data(simulation.nodes())
+
     strokes.exit().remove()
 
-    strokes
+    strokes.enter()
+      .append("circle")
       .attr("r", radius*2/3)
       .attr("class", "d3-point-stroke")
       .attr("id", d => `stroke-${id}/${d.index}`)
       .attr("fill", "transparent")
-    .merge(cells)
+    .merge(strokes)
       .attr("r", radius*2/3)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
 
-    let points = cells.enter().append("circle")
+    let points = this.g.selectAll(".d3-point")
+      .data(simulation.nodes())
+
     points.exit().transition()
       .duration(250*this.t)
       .delay((d,i) => i*5*this.t)
       .attr("r", 0)
       .remove()
 
-    points
+    points.enter()
+      .append("circle")
       .on("mouseenter", function(){ balls.grow(this) })
       .on("mouseleave", () => balls.shrink())
       .on("click", function(d) { balls.open(this, d.extended) })
       .attr("class", "d3-point")
       .attr("id", d => `ball-${id}/${d.index}`)
       .attr("r", 0)
-    .merge(cells)
+    .merge(points)
       .attr("r", 0)
       .attr("cx", d => d.x)
       .attr("cy", d => d.y)
