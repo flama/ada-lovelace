@@ -1,6 +1,6 @@
 {
-  "main.js": "static/js/main.6701b5b3.js",
-  "main.js.map": "static/js/main.6701b5b3.js.map",
+  "main.js": "static/js/main.a8eb1077.js",
+  "main.js.map": "static/js/main.a8eb1077.js.map",
   "public/fonts/CircularStd-Bold.eot": "public/fonts/CircularStd-Bold.eot",
   "public/fonts/CircularStd-Bold.svg": "public/fonts/CircularStd-Bold.svg",
   "public/fonts/CircularStd-Bold.ttf": "public/fonts/CircularStd-Bold.ttf",
@@ -13,5 +13,6 @@
   "static/media/CircularStd-Bold.svg": "static/media/CircularStd-Bold.a741cf15.svg",
   "static/media/CircularStd-Book.svg": "static/media/CircularStd-Book.2bb66540.svg",
   "static/media/CircularStd-Medium.svg": "static/media/CircularStd-Medium.e2a02f4c.svg",
-  "static/media/home.png": "static/media/home.c98d8142.png"
+  "static/media/home.png": "static/media/home.c98d8142.png",
+  "static/media/wikimina-preview.png": "static/media/wikimina-preview.122f399c.png"
 }
