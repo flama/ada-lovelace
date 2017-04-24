@@ -42,6 +42,7 @@ const ExpansibleScatterRow = props => {
         title={ subcategory }
         hidden={ true }
         key={ subcategory }
+        id={ subcategory }
       />)
     })
   } else {
@@ -50,6 +51,7 @@ const ExpansibleScatterRow = props => {
       domain={ props.domain }
       title={ props.title }
       hidden={ !props.all }
+      id={ props.title }
     />)
   }
 

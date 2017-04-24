@@ -18,6 +18,7 @@ class d3ChartHelper {
       .attr('class', 'd3-points')
 
     this.t = state.test?0:1
+    this.id = state.id
 
     this.update(el, state)
   }
@@ -32,13 +33,14 @@ class d3ChartHelper {
   _format = (data, scales) => data.map(value => {
     return {
       x: scales.x(value.Born),
-      y: scales.y(Math.random()),
+      y: scales.y(value.Informations.length % 10),
       extended: value
     }
   })
 
   _drawPoints = (el, data) => {
     let balls = this.balls
+
     let simulation = d3.forceSimulation(data)
       .force("collide", d3.forceCollide(radius + 1))
       .stop()
@@ -47,18 +49,34 @@ class d3ChartHelper {
 
     let cells = this.g.selectAll("circle")
       .data(simulation.nodes())
+    let id = this.id
 
-    cells.exit().transition()
+    let strokes = cells.enter().append("circle")
+    strokes.exit().remove()
+
+    strokes
+      .attr("r", radius*2/3)
+      .attr("class", "d3-point-stroke")
+      .attr("id", d => `stroke-${id}/${d.index}`)
+      .attr("fill", "transparent")
+    .merge(cells)
+      .attr("r", radius*2/3)
+      .attr("cx", d => d.x)
+      .attr("cy", d => d.y)
+
+    let points = cells.enter().append("circle")
+    points.exit().transition()
       .duration(250*this.t)
       .delay((d,i) => i*5*this.t)
       .attr("r", 0)
       .remove()
 
-    cells.enter().append("circle")
+    points
       .on("mouseenter", function(){ balls.grow(this) })
-      .on("mouseleave", function(){ balls.shrink() })
+      .on("mouseleave", () => balls.shrink())
       .on("click", function(d) { balls.open(this, d.extended) })
       .attr("class", "d3-point")
+      .attr("id", d => `ball-${id}/${d.index}`)
       .attr("r", 0)
     .merge(cells)
       .attr("r", 0)
@@ -82,7 +100,7 @@ class d3ChartHelper {
 
     let y = d3.scaleLinear()
       .range([height, 0])
-      .domain([-1, 2])
+      .domain([-15, 25])
 
     return { x, y }
   }

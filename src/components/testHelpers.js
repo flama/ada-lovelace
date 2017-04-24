@@ -20,7 +20,8 @@ export function fakeElement() {
       .mockReturnValue({
         item: () => ret
       }),
-    style: {}
+    style: {},
+    id: 'potato-teste/teste'
   }
   return ret
 }

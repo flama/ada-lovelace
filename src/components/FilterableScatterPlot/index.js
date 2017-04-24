@@ -83,7 +83,6 @@ class FilterableScatterPlot extends Component {
     }
 
     let isChildOf = (bastard, father) => {
-      console.log(bastard, father.childNodes)
       if(bastard === father) return true
 
       let isChild = false

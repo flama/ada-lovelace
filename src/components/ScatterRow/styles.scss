@@ -62,5 +62,17 @@ $base-time: 0.2s;
         fill: $faded-purple;
       }
     }
+
+    .d3-point-stroke {
+      stroke: $selected;
+      stroke-width: 0;
+
+      &.growing {
+        transition: all 3 * $base-time ease-in-out;
+        transition-delay: 2 * $base-time;
+        stroke-width: 2px;
+        stroke-opacity: 0;
+      }
+    }
   }
 }
