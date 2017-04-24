@@ -51,7 +51,7 @@ class GraphPage extends Component {
             </p>
           </div>
           <div className="graph-mobile">
-            <img src={ mobilePreview } />
+            <img src={ mobilePreview } role="presentation" />
             <div className="gradient" />
             <div className="comingsoon">
               <p>
