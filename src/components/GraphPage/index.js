@@ -43,8 +43,9 @@ class GraphPage extends Component {
             <DataLoader fetchData={this.fetchData} />
             <FilterableScatterPlot { ...this.state } />
             <p className="information">
-              { `Information: We collected the information presented from public sources
-                and do not take responsibility for the content in the external links.` }
+              { `Information: We collected the information presented from public sources like `}
+              <a href="http://wikipedia.org" target="_blank">Wikipedia</a>
+              { ` and do not take responsibility for the content in the external links.` }
             </p>
           </div>
         </div>

@@ -18,8 +18,7 @@
 }
 
 @mixin clearfix {
-  &::before,
-  &::after {
+  &::before, &::after {
     content: ' ';
     display: table;
   }
@@ -55,9 +54,11 @@
 
 @mixin wrap-mobile {
   margin: 0 auto;
-  max-width: calc(100% - 40px);
+  max-width: calc(100% - 48px);
   position: relative;
-  width: calc(65% + 200px);
+  width: calc(100% - 48px);
+  margin-right: 24px;
+  margin-left: 24px;
 }
 
 // Dotted border mixin by @poopsplat: http://codepen.io/poopsplat/pen/xEIty?editors=1100
@@ -65,5 +66,40 @@
   background-position: $position;
   background-repeat: repeat-x;
   background-size: $spacing 1px;
-  background-image: linear-gradient(to right, $color 10%, rgba(255, 255, 255, 0) 0%);
+  background-image: linear-gradient(to right, $color 10%, rgba(#fff, 0) 0%);
+}
+
+@mixin button() {
+  padding-top: $space-micro;
+  padding-bottom: $space-tiny;
+  padding-left: $space-xs;
+  padding-right: $space-xs;
+  margin-left: $space-xxs;
+
+  border-style: solid;
+  border-width: 1px;
+  border-color: $light-purple;
+  border-radius: $space-xxxs;
+
+  font-size: $font-size-deci;
+  line-height: $line-height-button;
+  letter-spacing: 0.44px;
+  color: $light-purple;
+  background-color: transparent;
+  cursor: pointer;
+
+  transition: all 0.3s ease;
+
+  &:first-child { margin-left: 0; }
+
+  &:hover {
+    color: #fff;
+    background-color: rgba(#fff, 0.11);
+  }
+
+  &.selected {
+    border-color: transparent;
+    background-color: $selected;
+    color: #fff;
+  }
 }

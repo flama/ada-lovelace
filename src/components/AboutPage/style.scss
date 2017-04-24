@@ -1,29 +1,23 @@
 @import '../../config';
 
 #about-page {
-  @include small-only {
-    @include wrap-mobile;
-  }
   padding-top: $space-xl;
   padding-bottom: $space-m;
 
-  > h2 {
-    margin-bottom: $space-s;
-    font-size: $font-size-giga;
-    line-height: $line-height-giga;
-  }
+  > h2 { margin-bottom: $space-s; }
 
   > h3 {
     margin-bottom: $space-s;
     margin-top: $space-xl;
-    font-size: $font-size-hecto;
-    line-height: $line-height-hecto;
   }
 
   > .content {
     margin-bottom: $space-m;
 
-    > p { margin-bottom: $space-m; }
+    > p {
+      color: $text-purple;
+      margin-bottom: $space-m;
+    }
   }
 
   @include large-up {
@@ -49,6 +43,5 @@
     }
   }
 
-
-
+  @include wrap-mobile;
 }

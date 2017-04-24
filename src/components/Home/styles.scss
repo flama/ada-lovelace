@@ -14,7 +14,6 @@
     height: 100%;
   }
 
-
   .body {
     @include small-only {
       @include wrap-mobile;
@@ -22,13 +21,18 @@
 
     > h1 {
       margin-top: $space-xl;
-      font-size: $font-size-tera;
-      line-height: $line-height-tera;
+      font-size: $font-size-mega;
+      line-height: $line-height-mega;
       color: #fff;
+
+      @include small-only {
+        font-size: $font-size-mega;
+        line-height: $line-height-mega;
+      }
     }
 
     > p {
-      font-size: $font-size-deca;
+      font-size: $font-size-home;
       line-height: $line-height-deca;
       font-weight: lighter;
       color: #fff;
@@ -42,13 +46,13 @@
 
       > h1 {
         margin-top: $space-xxxl;
-        font-size: $font-size-exa;
-        line-height: $line-height-exa;
+        font-size: $font-size-tera;
+        line-height: $line-height-tera;
       }
 
       > p {
-        font-size: $font-size-hecto;
-        line-height: $line-height-hecto;
+        font-size: $font-size-deca;
+        line-height: $line-height-deca;
       }
     }
 
@@ -61,13 +65,13 @@
 
       > h1 {
         margin-top: $space-xxxl;
-        font-size: $font-size-exa;
-        line-height: $line-height-exa;
+        font-size: $font-size-tera;
+        line-height: $line-height-tera;
       }
 
       > p {
-        font-size: $font-size-hecto;
-        line-height: $line-height-hecto;
+        font-size: $font-size-deca;
+        line-height: $line-height-deca;
       }
     }
   }
