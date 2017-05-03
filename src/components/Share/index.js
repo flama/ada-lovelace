@@ -10,7 +10,7 @@ const {
 } = ShareButtons
 
 const Share = props => {
-  const host = "https://flama.github.io/ada-lovelace"
+  const host = "https://wikimina.flama.is"
 
   return (
     <Element name="share" id="share">

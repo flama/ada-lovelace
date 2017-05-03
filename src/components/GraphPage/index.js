@@ -61,7 +61,7 @@ class GraphPage extends Component {
               <p>
                 { `In the meantime you can access our desktop version for
                   the full experience through the address `}
-                <a href="flama.github.io/ada-lovelace">{ `flama.github.io/ada-lovalace` }</a>
+                <a href="wikimina.flama.is">{ `flama.github.io/ada-lovalace` }</a>
               </p>
             </div>
           </div>

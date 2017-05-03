@@ -20,7 +20,7 @@ exports[`the share section renders correctly 1`] = `
     >
       <CreatedButton
         description="Inspiring and helping to create representativity so more women become badasses."
-        url="https://flama.github.io/ada-lovelace"
+        url="https://wikimina.flama.is"
         windowHeight={400}
         windowWidth={550}
       >
@@ -36,7 +36,7 @@ exports[`the share section renders correctly 1`] = `
           ]
         }
         title="Wikimina"
-        url="https://flama.github.io/ada-lovelace"
+        url="https://wikimina.flama.is"
         via="studioflama"
         windowHeight={400}
         windowWidth={550}
