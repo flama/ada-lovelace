@@ -65,7 +65,7 @@ class GraphPage extends Component {
               <p>
                 { `In the meantime you can access our desktop version for
                   the full experience through the address `}
-                <a href="wikimina.flama.is">{ `wikimina.flama.is` }</a>
+                <a href="http://wikimina.flama.is">{ `wikimina.flama.is` }</a>
               </p>
             </div>
           </div>
