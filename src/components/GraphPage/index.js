@@ -28,9 +28,13 @@ class GraphPage extends Component {
       <section id="graph-page">
         <h3>wonderful women</h3>
         <div className="content">
-          <p>{ `There's a woman behind every single change in our history — whether we know her or not.
-          We have picked a few to try and show it, by sorting them by their influence fields and through
-          time. Take a look and get surprised by how much girl power history can reveal!` }</p>
+          <p>{
+            `There's a woman behind every single change in our history — whether we know her
+            or not.
+            We have picked a few to try and show it, by sorting them by their influence fields
+            and through time. Take a look and get surprised by how much girl power history can
+            reveal!`
+          }</p>
         </div>
         <div className="wrapper">
           <div className="graph-content">
@@ -61,7 +65,7 @@ class GraphPage extends Component {
               <p>
                 { `In the meantime you can access our desktop version for
                   the full experience through the address `}
-                <a href="wikimina.flama.is">{ `flama.github.io/ada-lovalace` }</a>
+                <a href="wikimina.flama.is">{ `wikimina.flama.is` }</a>
               </p>
             </div>
           </div>
