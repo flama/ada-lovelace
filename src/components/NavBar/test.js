@@ -19,4 +19,11 @@ describe('the NavBar', () => {
     navbar.setProps({ open: true })
     expect(navbar.find('.nav-burger').hasClass('-open')).toBeTruthy()
   })
+
+  it('calls toggleMenu prop when nav-burger is clicked', () => {
+    let toggleMenu = jest.fn()
+    navbar.setProps({ toggleMenu })
+    navbar.find('.nav-burger').simulate('click')
+    expect(toggleMenu).toHaveBeenCalled()
+  })
 })
