@@ -39,6 +39,7 @@
     }
 
     @include medium-only {
+      @include wrap-mobile;
       height: 85vh;
 
       > h1 {
