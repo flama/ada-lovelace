@@ -11,17 +11,29 @@ exports[`the NavBar renders correctly 1`] = `
   >
     made with ♥ by flama
   </a>
-  <a
+  <div
     className="right"
-    onClick={[Function]}
   >
-    share
-  </a>
-  <a
-    className="right"
-    onClick={[Function]}
-  >
-    about us
-  </a>
+    <div
+      className="nav-burger"
+      onClick={[Function]}
+    />
+    <div
+      className="nav-items"
+    >
+      <a
+        className="right"
+        onClick={[Function]}
+      >
+        share
+      </a>
+      <a
+        className="right"
+        onClick={[Function]}
+      >
+        about us
+      </a>
+    </div>
+  </div>
 </div>
 `;

@@ -2,9 +2,13 @@
 
 exports[`App renders correctly 1`] = `
 <div
+  className=""
   id="app"
 >
-  <Home />
+  <Home
+    open={false}
+    toggleMenu={[Function]}
+  />
   <GraphPage />
   <AboutPage />
   <Share />
