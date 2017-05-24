@@ -2,6 +2,7 @@
 
 #navbar {
   @include wrap-mobile;
+  padding-top: $space-l;
 
   > .left, > .right { padding: $space-xxxs; }
   > .right { margin-left: $space-xxs; }
@@ -18,21 +19,12 @@
   height: 15vh;
 
   > .left, > .right {
-    margin-top: $space-m;
-
-    @include medium-up {
-      margin-top: $space-xl;
-    }
     padding: $space-xxs;
     font-size: $font-size-centi;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $light-purple;
-
-    @include small-only {
-      margin-top: $space-s;
-    }
   }
 
   > .left, > .right > .nav-items > a {
@@ -112,11 +104,11 @@
     }
 
     > .nav-burger {
-      width: 2rem;
-      height: 2rem;
+      width: 3rem;
+      height: 3rem;
       cursor: pointer;
       position: relative;
-      top: -$space-xxs;
+      top: -$space-s;
 
       &:hover { color: #fff; }
 
@@ -135,20 +127,20 @@
       }
 
       &:before {
-        top: 10px;
-        left: 6px;
-        box-shadow: 0 6px 0 0 currentColor;
+        top: 17px;
+        left: 13px;
+        box-shadow: 0 12px 0 0 currentColor;
       }
 
       &:after {
-        top: 22px;
-        left: 6px;
+        top: 23px;
+        left: 13px;
       }
 
       &.-open {
         position: fixed;
-        top: $space-xs;
-        right: $space-s - 4;
+        top: $space-m;
+        right: $space-m;
         z-index: 999;
 
         + .nav-items {
@@ -158,8 +150,8 @@
 
         &:before,
         &:after {
-          top: 15px;
-          left: 4px;
+          top: 23px;
+          left: 11px;
           width: 24px;
         }
 
