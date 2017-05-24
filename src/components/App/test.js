@@ -22,4 +22,9 @@ describe('App', () => {
     app.instance().toggleMenu()
     expect(app.state("open")).toBeFalsy()
   })
+
+  it('adds .-open to #app when toggled', () => {
+    app.instance().toggleMenu()
+    expect(app.find('#app').hasClass('-open')).toBeTruthy()
+  })
 })

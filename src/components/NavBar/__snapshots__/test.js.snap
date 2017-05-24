@@ -21,18 +21,24 @@ exports[`the NavBar renders correctly 1`] = `
     <div
       className="nav-items"
     >
-      <a
+      <_
         className="right"
-        onClick={[Function]}
+        duration={500}
+        offset={0}
+        smooth="easeInOutQuad"
+        to="share"
       >
         share
-      </a>
-      <a
+      </_>
+      <_
         className="right"
-        onClick={[Function]}
+        duration={500}
+        offset={0}
+        smooth="easeInOutQuad"
+        to="about-page"
       >
         about us
-      </a>
+      </_>
     </div>
   </div>
 </div>
