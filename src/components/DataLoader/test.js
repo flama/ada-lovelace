@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import DataLoader from '../DataLoader'
 import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'

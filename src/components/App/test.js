@@ -1,13 +1,25 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 
 import App from '../App'
 
 describe('App', () => {
+  let app
+
+  beforeEach(() => {
+    app = shallow(<App />)
+  })
+
   it('renders correctly', () => {
-    const tree = shallow(<App />)
-    expect(toJSON(tree)).toMatchSnapshot()
+    expect(toJSON(app)).toMatchSnapshot()
+  })
+
+  it('correctly toggles state when requested', () => {
+    expect(app.state("open")).toBeFalsy()
+    app.instance().toggleMenu()
+    expect(app.state("open")).toBeTruthy()
+    app.instance().toggleMenu()
+    expect(app.state("open")).toBeFalsy()
   })
 })
