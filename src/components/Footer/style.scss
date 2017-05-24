@@ -4,10 +4,22 @@
   width: 100%;
 
   > .content {
-    @include grid(2);
-    @include offsetLeft(1);
-    padding-top: $space-xs;
-    padding-bottom: $space-xs;
+    @include wrap-mobile;
+    padding-top: $space-m;
+    padding-bottom: $space-m;
+
+    @include medium-only {
+      @include wrap-mobile;
+      padding-top: $space-xs;
+      padding-bottom: $space-xs;
+    }
+
+    @include large-up {
+      @include grid(2);
+      @include offsetLeft(1);
+      padding-top: $space-xs;
+      padding-bottom: $space-xs;
+    }
 
     > .link {
       font-size: $font-size-centi;

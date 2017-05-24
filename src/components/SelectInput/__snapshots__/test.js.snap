@@ -1,0 +1,68 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelectInput calls callbacks when option changes 1`] = `
+<SelectInput
+  closeBubble={[Function]}
+  onChange={[Function]}
+  options={
+    Array [
+      1,
+      2,
+      3,
+    ]
+  }
+>
+  <div
+    className="select-input"
+  >
+    <select
+      onChange={[Function]}
+      required="required"
+    >
+      <option
+        value="-1"
+      >
+        Continents (All)
+      </option>
+      <option
+        value={1}
+      >
+        1
+      </option>
+      <option
+        value={2}
+      >
+        2
+      </option>
+      <option
+        value={3}
+      >
+        3
+      </option>
+    </select>
+  </div>
+</SelectInput>
+`;
+
+exports[`SelectInput renders correctly 1`] = `
+<SelectInput
+  closeBubble={[Function]}
+  onChange={[Function]}
+  options={Array []}
+>
+  <div
+    className="select-input"
+  >
+    <select
+      onChange={[Function]}
+      required="required"
+    >
+      <option
+        value="-1"
+      >
+        Continents (All)
+      </option>
+    </select>
+  </div>
+</SelectInput>
+`;

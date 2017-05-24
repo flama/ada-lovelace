@@ -28,6 +28,14 @@ $bubble-time: 0.3s;
     flex-grow: 0.25;
     font-size: 0;
 
+    &:hover {
+      color: white;
+    }
+
+    &.external:hover:after {
+      background-image: url('./open.white.svg?name=HoverIcon')
+    }
+
     &.external:after {
       height: $space-xxs;
       width: $space-xxs;
@@ -55,12 +63,12 @@ $bubble-time: 0.3s;
     }
 
     .name {
-      line-height: $line-height-octo;
+      line-height: $line-height-deci;
       font-weight: lighter;
     }
 
     .description {
-      line-height: $line-height-mili;
+      line-height: $line-height-description;
       color: $feminist-purple;
     }
   }
@@ -82,7 +90,7 @@ $bubble-time: 0.3s;
       max-width: $space-xxxl;
     }
 
-    .name { font-size: $font-size-deca; }
+    .name { font-size: $font-size-base; }
     .description, &.external, &.close { font-size: $font-size-centi; }
   }
 }

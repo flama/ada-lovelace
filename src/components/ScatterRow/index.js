@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
-import d3chartHelper from './d3chart-helper'
+import PropTypes from 'prop-types'
+
+import d3chartHelper from './helper/d3chart'
 
 import './styles.scss'
 
@@ -27,10 +29,11 @@ class ScatterRow extends Component {
 }
 
 ScatterRow.propTypes = {
-  data: React.PropTypes.array,
-  domain: React.PropTypes.object.isRequired,
-  hidden: React.PropTypes.bool,
-  title: React.PropTypes.string
+  data: PropTypes.array,
+  domain: PropTypes.object.isRequired,
+  hidden: PropTypes.bool,
+  title: PropTypes.string,
+  id: PropTypes.string.isRequired
 }
 
 export default ScatterRow

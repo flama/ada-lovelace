@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the NavBar renders correctly 1`] = `
+<div
+  id="navbar"
+>
+  <a
+    className="left"
+    href="http://flama.is"
+    target="_blank"
+  >
+    made with ♥ by flama
+  </a>
+  <a
+    className="right"
+    onClick={[Function]}
+  >
+    share
+  </a>
+  <a
+    className="right"
+    onClick={[Function]}
+  >
+    about us
+  </a>
+</div>
+`;

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import './styles.scss'
 
@@ -15,7 +16,7 @@ class Categories extends Component {
   }
 
   styleButton = index => {
-    return `button ${index === this.state.selected? 'selected':''}`
+    return `button${index === this.state.selected? ' selected':''}`
   }
 
   choose = selected => {
@@ -30,8 +31,8 @@ class Categories extends Component {
       return (
         <button className={ this.styleButton(index) }
           key={ option }
-          onClick={ () => this.choose(index)}
-        >
+          id={ option }
+          onClick={ () => this.choose(index)}>
           { option }
         </button>
       )
@@ -40,6 +41,7 @@ class Categories extends Component {
     return (
       <div className="categories">
         <button className={ this.styleButton(ALL) }
+          id="-1"
           onClick={ () => this.choose(ALL) }
         >
           { this.props.all }
@@ -54,17 +56,14 @@ Categories.defaultProps = {
   onChange: _=>_,
   closeBubble: _=>_,
   options: [],
-  all: "All",
-  titlePosition: "inline"
+  all: "All"
 }
 
 Categories.propTypes = {
-  onChange: React.PropTypes.func,
-  closeBubble: React.PropTypes.func,
-  title: React.PropTypes.string.isRequired,
-  options: React.PropTypes.arrayOf(React.PropTypes.string),
-  all: React.PropTypes.string,
-  titlePosition: React.PropTypes.oneOf(['top', 'inline']),
+  onChange: PropTypes.func,
+  closeBubble: PropTypes.func,
+  options: PropTypes.arrayOf(PropTypes.string),
+  all: PropTypes.string
 }
 
 export default Categories

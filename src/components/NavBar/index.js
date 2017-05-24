@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { Link } from 'react-scroll';
+import { Link } from 'react-scroll'
 
 import './styles.scss'
 

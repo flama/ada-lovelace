@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home renders correctly 1`] = `
+<section
+  id="home"
+>
+  <div
+    id="navbar"
+  >
+    <a
+      className="left"
+      href="http://flama.is"
+      target="_blank"
+    >
+      made with ♥ by flama
+    </a>
+    <a
+      className="right"
+      onClick={[Function]}
+    >
+      share
+    </a>
+    <a
+      className="right"
+      onClick={[Function]}
+    >
+      about us
+    </a>
+  </div>
+  <div
+    className="body"
+  >
+    <h1>
+      wikimina
+    </h1>
+    <p>
+      Both men and women have crafted the world as we know it.
+              Now, just for a minute, take a quick look around. Think about your work or your hobbies.
+              How many women are a reference in those fields?
+    </p>
+  </div>
+</section>
+`;

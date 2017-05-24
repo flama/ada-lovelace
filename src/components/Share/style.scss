@@ -6,52 +6,30 @@
   background-color: rgba(#000, 0.2);
 
   > .content {
-    @include grid(8);
-    @include offsetLeft(2);
-    @include offsetRight(2);
+    @include wrap-mobile;
+    @include clearfix;
+
+    @include large-up {
+      @include grid(7);
+      @include offsetLeft(3);
+    }
 
     padding-top: $space-l;
     padding-bottom: $space-l;
 
-    > h4 { margin-bottom: $space-xxs; }
+    > h3 {
+      margin-bottom: $space-xxs;
+    }
 
     > p {
-      margin-bottom: $space-xs;
-      font-size: $font-size-deci;
-      line-height: $line-height-deci;
+      margin-bottom: $space-m;
       color: #fff;
-      opacity: 0.7;
+      opacity: 0.3;
     }
 
     button, .SocialMediaShareButton {
       display: inline-block;
-      padding-left: $space-s;
-      padding-right: $space-s;
-      margin-left: $space-xs;
-
-      border-style: solid;
-      border-width: 1px;
-      border-color: $light-purple;
-      border-radius: $space-xxxs;
-
-      font-size: $font-size-centi;
-      line-height: $line-height-base;
-      letter-spacing: 0.44px;
-      color: $light-purple;
-      background-color: transparent;
-      cursor: pointer;
-
-      transition: all 0.3s ease;
-
-      &:first-child { margin-left: 0; }
-
-      &:hover { color: #fff; }
-
-      &.selected {
-        border-color: transparent;
-        background-color: $selected;
-        color: #fff;
-      }
+      @include button;
     }
 
   }

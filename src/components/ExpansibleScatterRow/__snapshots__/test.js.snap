@@ -1,0 +1,1658 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ExpansibleScatterRow should render categories corretly 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="expansible-scatter-row hidden"
+>
+     
+    <ScatterRow
+        data={Array []}
+        domain={
+            Object {
+                "x": Array [
+                  1800,
+                  2020,
+                ],
+              }
+        }
+        hidden={true}
+        id="obert"
+        title="obert"
+    />
+     
+</div>,
+  "nodes": Array [
+    <div
+      className="expansible-scatter-row hidden"
+>
+       
+      <ScatterRow
+            data={Array []}
+            domain={
+                  Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+            }
+            hidden={true}
+            id="obert"
+            title="obert"
+      />
+       
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 2,
+      "_context": Object {},
+      "_currentElement": <ExpansibleScatterRow
+        data={
+                Object {
+                        "active": false,
+                        "array": Array [],
+                        "division": Object {},
+                      }
+        }
+        domain={
+                Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+        }
+        title="obert"
+/>,
+      "_debugID": 1,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": StatelessComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "data": Object {
+            "active": false,
+            "array": Array [],
+            "division": Object {},
+          },
+          "domain": Object {
+            "x": Array [
+              1800,
+              2020,
+            ],
+          },
+          "title": "obert",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 1,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="expansible-scatter-row hidden"
+>
+           
+          <ScatterRow
+                    data={Array []}
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="obert"
+                    title="obert"
+          />
+           
+</div>,
+        "_debugID": 2,
+        "_renderedOutput": <div
+          className="expansible-scatter-row hidden"
+>
+           
+          <ScatterRow
+                    data={Array []}
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="obert"
+                    title="obert"
+          />
+           
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <ExpansibleScatterRow
+    data={
+        Object {
+            "active": false,
+            "array": Array [],
+            "division": Object {},
+          }
+    }
+    domain={
+        Object {
+            "x": Array [
+              1800,
+              2020,
+            ],
+          }
+    }
+    title="obert"
+/>,
+}
+`;
+
+exports[`ExpansibleScatterRow should render subcategories correctly 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="expansible-scatter-row"
+>
+     
+    <ScatterRow
+        data={
+            Array [
+                1,
+                2,
+                3,
+              ]
+        }
+        domain={
+            Object {
+                "x": Array [
+                  1800,
+                  2020,
+                ],
+              }
+        }
+        hidden={true}
+        id="subdiv1"
+        title="subdiv1"
+    />
+    <ScatterRow
+        data={
+            Array [
+                4,
+                5,
+                6,
+              ]
+        }
+        domain={
+            Object {
+                "x": Array [
+                  1800,
+                  2020,
+                ],
+              }
+        }
+        hidden={true}
+        id="subdiv2"
+        title="subdiv2"
+    />
+    <ScatterRow
+        data={
+            Array [
+                7,
+                8,
+                9,
+              ]
+        }
+        domain={
+            Object {
+                "x": Array [
+                  1800,
+                  2020,
+                ],
+              }
+        }
+        hidden={true}
+        id="subdivtest"
+        title="subdivtest"
+    />
+     
+</div>,
+  "nodes": Array [
+    <div
+      className="expansible-scatter-row"
+>
+       
+      <ScatterRow
+            data={
+                  Array [
+                        1,
+                        2,
+                        3,
+                      ]
+            }
+            domain={
+                  Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+            }
+            hidden={true}
+            id="subdiv1"
+            title="subdiv1"
+      />
+      <ScatterRow
+            data={
+                  Array [
+                        4,
+                        5,
+                        6,
+                      ]
+            }
+            domain={
+                  Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+            }
+            hidden={true}
+            id="subdiv2"
+            title="subdiv2"
+      />
+      <ScatterRow
+            data={
+                  Array [
+                        7,
+                        8,
+                        9,
+                      ]
+            }
+            domain={
+                  Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+            }
+            hidden={true}
+            id="subdivtest"
+            title="subdivtest"
+      />
+       
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 2,
+      "_context": Object {},
+      "_currentElement": <ExpansibleScatterRow
+        data={
+                Object {
+                        "active": true,
+                        "array": Array [],
+                        "division": Object {
+                          "subdiv1": Array [
+                            1,
+                            2,
+                            3,
+                          ],
+                          "subdiv2": Array [
+                            4,
+                            5,
+                            6,
+                          ],
+                          "subdivtest": Array [
+                            7,
+                            8,
+                            9,
+                          ],
+                        },
+                      }
+        }
+        domain={
+                Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+        }
+        title="obert"
+/>,
+      "_debugID": 3,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": StatelessComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "data": Object {
+            "active": true,
+            "array": Array [],
+            "division": Object {
+              "subdiv1": Array [
+                1,
+                2,
+                3,
+              ],
+              "subdiv2": Array [
+                4,
+                5,
+                6,
+              ],
+              "subdivtest": Array [
+                7,
+                8,
+                9,
+              ],
+            },
+          },
+          "domain": Object {
+            "x": Array [
+              1800,
+              2020,
+            ],
+          },
+          "title": "obert",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 2,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="expansible-scatter-row"
+>
+           
+          <ScatterRow
+                    data={
+                              Array [
+                                        1,
+                                        2,
+                                        3,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="subdiv1"
+                    title="subdiv1"
+          />
+          <ScatterRow
+                    data={
+                              Array [
+                                        4,
+                                        5,
+                                        6,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="subdiv2"
+                    title="subdiv2"
+          />
+          <ScatterRow
+                    data={
+                              Array [
+                                        7,
+                                        8,
+                                        9,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="subdivtest"
+                    title="subdivtest"
+          />
+           
+</div>,
+        "_debugID": 4,
+        "_renderedOutput": <div
+          className="expansible-scatter-row"
+>
+           
+          <ScatterRow
+                    data={
+                              Array [
+                                        1,
+                                        2,
+                                        3,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="subdiv1"
+                    title="subdiv1"
+          />
+          <ScatterRow
+                    data={
+                              Array [
+                                        4,
+                                        5,
+                                        6,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="subdiv2"
+                    title="subdiv2"
+          />
+          <ScatterRow
+                    data={
+                              Array [
+                                        7,
+                                        8,
+                                        9,
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="subdivtest"
+                    title="subdivtest"
+          />
+           
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <ExpansibleScatterRow
+    data={
+        Object {
+            "active": true,
+            "array": Array [],
+            "division": Object {
+              "subdiv1": Array [
+                1,
+                2,
+                3,
+              ],
+              "subdiv2": Array [
+                4,
+                5,
+                6,
+              ],
+              "subdivtest": Array [
+                7,
+                8,
+                9,
+              ],
+            },
+          }
+    }
+    domain={
+        Object {
+            "x": Array [
+              1800,
+              2020,
+            ],
+          }
+    }
+    title="obert"
+/>,
+}
+`;
+
+exports[`ExpansibleScatterRow shouldn't render more than 20 items in the same 11 year period 1`] = `
+ShallowWrapper {
+  "complexSelector": ComplexSelector {
+    "buildPredicate": [Function],
+    "childrenOfNode": [Function],
+    "findWhereUnwrapped": [Function],
+  },
+  "length": 1,
+  "node": <div
+    className="expansible-scatter-row hidden"
+>
+     
+    <ScatterRow
+        data={
+            Array [
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+              ]
+        }
+        domain={
+            Object {
+                "x": Array [
+                  1800,
+                  2020,
+                ],
+              }
+        }
+        hidden={true}
+        id="obert"
+        title="obert"
+    />
+     
+</div>,
+  "nodes": Array [
+    <div
+      className="expansible-scatter-row hidden"
+>
+       
+      <ScatterRow
+            data={
+                  Array [
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                        Object {
+                          "Born": 1990,
+                        },
+                      ]
+            }
+            domain={
+                  Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+            }
+            hidden={true}
+            id="obert"
+            title="obert"
+      />
+       
+</div>,
+  ],
+  "options": Object {},
+  "renderer": ReactShallowRenderer {
+    "_instance": ShallowComponentWrapper {
+      "_calledComponentWillUnmount": false,
+      "_compositeType": 2,
+      "_context": Object {},
+      "_currentElement": <ExpansibleScatterRow
+        data={
+                Object {
+                        "active": false,
+                        "array": Array [
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                          Object {
+                            "Born": 1990,
+                          },
+                        ],
+                        "division": Object {
+                          "subdiv": Array [
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                            Object {
+                              "Born": 1990,
+                            },
+                          ],
+                        },
+                      }
+        }
+        domain={
+                Object {
+                        "x": Array [
+                          1800,
+                          2020,
+                        ],
+                      }
+        }
+        title="obert"
+/>,
+      "_debugID": 5,
+      "_hostContainerInfo": null,
+      "_hostParent": null,
+      "_instance": StatelessComponent {
+        "_reactInternalInstance": [Circular],
+        "context": Object {},
+        "props": Object {
+          "data": Object {
+            "active": false,
+            "array": Array [
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+            ],
+            "division": Object {
+              "subdiv": Array [
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+              ],
+            },
+          },
+          "domain": Object {
+            "x": Array [
+              1800,
+              2020,
+            ],
+          },
+          "title": "obert",
+        },
+        "refs": Object {},
+        "state": null,
+        "updater": Object {
+          "enqueueCallback": [Function],
+          "enqueueCallbackInternal": [Function],
+          "enqueueElementInternal": [Function],
+          "enqueueForceUpdate": [Function],
+          "enqueueReplaceState": [Function],
+          "enqueueSetState": [Function],
+          "isMounted": [Function],
+          "validateCallback": [Function],
+        },
+      },
+      "_mountOrder": 3,
+      "_pendingCallbacks": null,
+      "_pendingElement": null,
+      "_pendingForceUpdate": false,
+      "_pendingReplaceState": false,
+      "_pendingStateQueue": null,
+      "_renderedComponent": NoopInternalComponent {
+        "_currentElement": <div
+          className="expansible-scatter-row hidden"
+>
+           
+          <ScatterRow
+                    data={
+                              Array [
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="obert"
+                    title="obert"
+          />
+           
+</div>,
+        "_debugID": 6,
+        "_renderedOutput": <div
+          className="expansible-scatter-row hidden"
+>
+           
+          <ScatterRow
+                    data={
+                              Array [
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                        Object {
+                                          "Born": 1990,
+                                        },
+                                      ]
+                    }
+                    domain={
+                              Object {
+                                        "x": Array [
+                                          1800,
+                                          2020,
+                                        ],
+                                      }
+                    }
+                    hidden={true}
+                    id="obert"
+                    title="obert"
+          />
+           
+</div>,
+      },
+      "_renderedNodeType": 0,
+      "_rootNodeID": 0,
+      "_topLevelWrapper": null,
+      "_updateBatchNumber": null,
+      "_warnedAboutRefsInRender": false,
+    },
+    "getRenderOutput": [Function],
+    "render": [Function],
+  },
+  "root": [Circular],
+  "unrendered": <ExpansibleScatterRow
+    data={
+        Object {
+            "active": false,
+            "array": Array [
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+              Object {
+                "Born": 1990,
+              },
+            ],
+            "division": Object {
+              "subdiv": Array [
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+                Object {
+                  "Born": 1990,
+                },
+              ],
+            },
+          }
+    }
+    domain={
+        Object {
+            "x": Array [
+              1800,
+              2020,
+            ],
+          }
+    }
+    title="obert"
+/>,
+}
+`;

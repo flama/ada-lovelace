@@ -1,6 +1,9 @@
 import React, { Component } from 'react'
+
 import FilterableScatterPlot from '../FilterableScatterPlot'
 import DataLoader from '../DataLoader'
+
+import mobilePreview from './wikimina-preview.png'
 
 import './style.scss'
 
@@ -10,7 +13,9 @@ class GraphPage extends Component {
 
     this.state = {
       dataList: {},
-      options: {}
+      options: {
+        categories: []
+      }
     }
   }
 
@@ -18,33 +23,56 @@ class GraphPage extends Component {
     this.setState({ dataList, options })
   }
 
-  styleTitle = position => {
-    return `title -${position}`
-  }
-
   render() {
     return (
       <section id="graph-page">
         <h3>wonderful women</h3>
         <div className="content">
-          <p>{ `There's a woman behind every single change in our history — whether you know her
-          or not. We have picked a few (for now) to try and show it, by sorting them into their
-          influence areas and through time.` }</p>
+          <p>{
+            `There's a woman behind every single change in our history — whether we know her
+            or not.
+            We have picked a few to try and show it, by sorting them by their influence fields
+            and through time. Take a look and get surprised by how much girl power history can
+            reveal!`
+          }</p>
         </div>
-        <div className="graph-head">
-          <h4 className={ this.styleTitle(this.props.titlePosition) }>
-            Who are the wonderful women who helped shape the world?
-          </h4>
-          <div className="legend">
-            <span>Women</span>
+        <div className="wrapper">
+          <div className="graph-content">
+            <div className="graph-head">
+              <h3 className="title">
+                who are the wonderful women who helped shape the world?
+              </h3>
+              <div className="legend">
+                <span>Women</span>
+              </div>
+            </div>
+            <DataLoader fetchData={this.fetchData} />
+            <FilterableScatterPlot { ...this.state } />
+            <p className="information">
+              { `Information: We collected the information presented from public sources like `}
+              <a href="http://wikipedia.org" target="_blank">Wikipedia</a>
+              { ` and do not take responsibility for the content in the external links.` }
+            </p>
+          </div>
+          <div className="graph-mobile">
+            <img src={ mobilePreview } role="presentation" />
+            <div className="gradient" />
+            <div className="comingsoon">
+              <p>
+                <span className="bigger">{ "Coming soon! " }</span>
+                { `We are working on Wikimina Mobile.`}
+              </p>
+              <p>
+                { `In the meantime you can access our desktop version for
+                  the full experience through the address `}
+                <a href="http://wikimina.flama.is">{ `wikimina.flama.is` }</a>
+              </p>
+            </div>
           </div>
         </div>
-        <DataLoader fetchData={this.fetchData} />
-        <FilterableScatterPlot dataList={this.state.dataList} options={this.state.options} />
-        <p className="information">Information: We collected the information presented from public sources and do not take responsability for the content in the external links.</p>
       </section>
     )
   }
 }
 
-export default GraphPage;
+export default GraphPage

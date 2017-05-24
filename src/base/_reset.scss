@@ -22,39 +22,42 @@ time, mark, audio, video {
   font-size: 100%;
   vertical-align: baseline;
 }
+
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
+
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
 body {
   line-height: 1;
+  background-image: linear-gradient(to right, $background-left, $background-right);
+  overflow-x: hidden;
 }
+
 ol, ul {
   list-style: none;
 }
-blockquote, q {
-  quotes: none;
-}
-blockquote:before, blockquote:after,
-q:before, q:after {
-  content: '';
-  content: none;
-}
-table {
-  border-collapse: collapse;
-  border-spacing: 0;
+
+button, select {
+  font-family: 'Circular';
 }
 
-// More resets
 a {
-  &,
-  &:visited {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+
+  &, &:visited {
     color: inherit;
   }
-  &,
-  &:hover,
-  &:active {
+  &, &:hover, &:active {
     text-decoration: inherit;
   }
 }
@@ -66,5 +69,19 @@ select, input, button, a {
 
   &:focus {
     outline: none;
+  }
+}
+
+h1, h2, h3 {
+  color: #fff;
+}
+
+p {
+  color: $light-purple;
+
+  > a {
+    border-bottom: 2px solid $selected;
+    padding-bottom: 2px;
+    &:hover { color: #fff; }
   }
 }

@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PropTypes from 'prop-types'
 
 import { apiKey } from '../../alicia-keys'
 
@@ -10,8 +11,10 @@ class DataLoader extends Component {
     return <div />
   }
 
-  componentWillMount() {
-    this.request().then(data => this.props.fetchData(data))
+  componentDidMount() {
+    this.request()
+      .then(data => this.props.fetchData(data))
+      .catch(error => console.error(error))
   }
 
   request = () => {
@@ -29,6 +32,7 @@ class DataLoader extends Component {
         .then(this.convertFiltersToTags)
         .then(this.removeWomenThatAreNotBorn)
         .then(this.transformBCToNegative)
+        .then(this.removeWomenThatAreNotBorn)
         .then(this.organizeByTag)
         .catch(error => console.error(error)),
       fetch(this.createUrl({ categories: true }))
@@ -37,6 +41,7 @@ class DataLoader extends Component {
         .then(ranges => ranges.map(range => range.values))
         .then(data => data[0])
         .then(data => data.map(datum => datum.map(atom => atom.trim())))
+        .catch(error => console.error(error))
     ])
     .then(([ data, categories ]) => {
       let organized = {}
@@ -47,7 +52,7 @@ class DataLoader extends Component {
         organized[categoryName] = {}
 
         subcategories.forEach(subcategory => {
-          organized[categoryName][subcategory] = data[subcategory]
+          organized[categoryName][subcategory] = Array.from(data[subcategory] || [])
         })
       })
 
@@ -58,13 +63,6 @@ class DataLoader extends Component {
     })
     .then(this.addStatusToCategories(true))
     .then(this.categoriesToArrays)
-  }
-
-  printData = label => {
-    return data => {
-      console.log(`[${label}]:`, data)
-      return data
-    }
   }
 
   segregateColsFromSheets = tables => {
@@ -105,7 +103,7 @@ class DataLoader extends Component {
 
       tagNames.forEach(filter => {
         if(woman[`Filtro ${filter}`])
-        tags.push(woman[`Filtro ${filter}`])
+          tags.push(woman[`Filtro ${filter}`])
       })
 
       woman.tags = tags
@@ -113,26 +111,23 @@ class DataLoader extends Component {
     })
   }
 
-  removeWomenThatAreNotBorn = women => women.filter(woman => !isNaN(woman.Born) && woman.Born)
-
   transformBCToNegative = women => women.map(woman => {
     let [year, bc] = woman.Born.split(" ")
     year = parseInt(year, 10)
-    if(typeof bc !== "undefined")
-    year = -year
+
+    if(typeof bc !== "undefined") year = -year
 
     woman.Born = year
     return woman
   })
 
-  organizeByTag = women => women.reduce((aggrupped, woman) => {
+  removeWomenThatAreNotBorn = women => women.filter(woman => woman.Born)
+
+  organizeByTag = women => women.reduce((acc, woman) => {
     woman.tags.forEach(tag => {
-      if(typeof aggrupped[tag] !== "undefined")
-        aggrupped[tag].push(woman)
-      else
-        aggrupped[tag] = [ woman ]
+      acc[tag] = (acc[tag] || new Set()).add(woman)
     })
-    return aggrupped
+    return acc
   }, {})
 
   addStatusToCategories = status => {
@@ -152,14 +147,8 @@ class DataLoader extends Component {
     Object.keys(dataList).forEach(categoryName => {
       let subcategories = dataList[categoryName].division
 
-      dataList[categoryName].array = Object.keys(subcategories)
-        .reduce((accumulator, subcategoryName) => {
-          let subcategory = subcategories[subcategoryName]
-
-          if(typeof subcategory === "undefined") return accumulator
-
-          return accumulator.concat(subcategory || [])
-        }, [])
+      dataList[categoryName].array = Array.from(Object.keys(subcategories)
+        .reduce((acc, subcatName) => new Set([...acc, ...subcategories[subcatName]]), new Set()))
     })
 
     return ({ dataList, options })
@@ -180,7 +169,7 @@ class DataLoader extends Component {
 }
 
 DataLoader.propTypes = {
-  fetchData: React.PropTypes.func
+  fetchData: PropTypes.func
 }
 
 export default DataLoader

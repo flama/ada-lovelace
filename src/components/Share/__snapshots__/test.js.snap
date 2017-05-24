@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the share section renders correctly 1`] = `
+<_
+  id="share"
+  name="share"
+>
+  <div
+    className="content"
+  >
+    <h3>
+      share
+    </h3>
+    <p>
+      We envision an ever-growing platform, crowdsourced by people everywhere, helping us show women who somehow have created an impact in our world!
+               Until then, you can help us by spreading the word of Wikimina :)
+    </p>
+    <div
+      className="actions"
+    >
+      <CreatedButton
+        description="Inspiring and helping to create representativity so more women become badasses."
+        url="https://wikimina.flama.is"
+        windowHeight={400}
+        windowWidth={550}
+      >
+        Facebook
+      </CreatedButton>
+      <CreatedButton
+        hashtags={
+          Array [
+            "wikimina",
+            "grrlpower",
+            "whyhistorymatters",
+            "empoweringwomen",
+          ]
+        }
+        title="Wikimina"
+        url="https://wikimina.flama.is"
+        via="studioflama"
+        windowHeight={400}
+        windowWidth={550}
+      >
+        Twitter
+      </CreatedButton>
+    </div>
+  </div>
+</_>
+`;

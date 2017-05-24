@@ -1,25 +1,29 @@
 @import '../../config';
 
 #navbar {
+  @include wrap-mobile;
+
+  > .left, > .right { padding: $space-xxxs; }
+  > .right { margin-left: $space-xxs; }
+
+  @include medium-only {
+    @include wrap-mobile;
+  }
 
   @include large-up {
     @include grid(10);
     @include offsetLeft(1);
-    @include offsetRight(2);
-  }
-
-  @include medium-only {
-    @include wrap;
-  }
-
-  @include small-only {
-    @include wrap-mobile;
   }
 
   height: 15vh;
 
   > .left, > .right {
-    margin-top: $space-xl;
+    margin-top: $space-m;
+
+    @include medium-up {
+      margin-top: $space-xl;
+    }
+    padding: $space-xxs;
     font-size: $font-size-centi;
     font-weight: bold;
     text-transform: uppercase;
@@ -34,6 +38,7 @@
   > .left, > .right > .nav-items > a {
     padding: $space-xxs;
     display: inline-block;
+    transition: all 0.3s ease;
 
     &:hover { color: #fff; }
   }
@@ -98,7 +103,7 @@
       > .nav-burger { display: block; }
     }
 
-    @include large-up {
+    @include medium-up {
       > .nav-items {
         display: inline-block;
         > a { opacity: 1; }
@@ -171,8 +176,6 @@
     }
 
   }
-
-
 
   > * { transition: all 0.3s ease; }
 

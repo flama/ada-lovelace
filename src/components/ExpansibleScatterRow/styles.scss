@@ -12,8 +12,4 @@
     overflow: hidden;
     height: 0;
   }
-
-  > .scatter-row { @include dots($light-purple, 6px); }
-
-  > .scatter-row.hidden:last-child, &:last-child .scatter-row:last-child { background-image: none; }
 }
