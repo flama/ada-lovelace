@@ -96,6 +96,7 @@
       cursor: pointer;
       position: relative;
       top: -$space-s;
+      right: -$space-xs;
 
       &:hover { color: #fff; }
 
@@ -127,7 +128,7 @@
       &.-open {
         position: fixed;
         top: $space-m;
-        right: $space-m;
+        right: $space-xs;
         z-index: 999;
 
         + .nav-items {
