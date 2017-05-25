@@ -1,4 +1,6 @@
 #app {
+  overflow-x: hidden;
+  
   &.-open {
     overflow: hidden;
 
