@@ -74,19 +74,6 @@
           text-transform: lowercase;
           margin-left: 0;
 
-          &:last-child {
-            font-size: $font-size-base;
-            line-height: $line-height-base;
-            position: absolute;
-            bottom: 0;
-            text-transform: uppercase;
-            color: $light-purple;
-
-            &:hover {
-              color: #fff;
-            }
-          }
-
           &:hover {
             color: rgba(#fff, 0.8);
           }
