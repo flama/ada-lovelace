@@ -4,24 +4,6 @@
   @media (max-width: #{640px}) {
     &.-open {
       overflow: hidden;
-
-      #navbar > a {
-        position: fixed;
-        left: 30%;
-        transform: translate(-20%, 0);
-        bottom: 4rem;
-        z-index: 999;
-        text-align: center;
-
-        font-size: 1.188rem;
-        line-height: 1.625rem;
-        text-transform: uppercase;
-        color: rgb(153, 137, 178);
-
-        &:hover {
-          color: rgba(#fff, 0.8);
-        }
-      }
     }
   }
 }

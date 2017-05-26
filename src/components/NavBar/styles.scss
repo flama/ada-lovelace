@@ -3,11 +3,13 @@
 #navbar {
   @include wrap-mobile;
   padding-top: $space-l;
+  height: 15vh;
 
   > .left, > .right { padding: $space-xxxs; }
   > .right { margin-left: $space-xxs; }
 
   @include medium-only {
+    // isn't this redundant with line 4?
     @include wrap-mobile;
   }
 
@@ -16,7 +18,23 @@
     @include offsetLeft(1);
   }
 
-  height: 15vh;
+  &.-open > a {
+    position: fixed;
+    left: 30%;
+    transform: translate(-20%, 0);
+    bottom: 4rem;
+    z-index: 999;
+    text-align: center;
+
+    font-size: 1.188rem;
+    line-height: 1.625rem;
+    text-transform: uppercase;
+    color: rgb(153, 137, 178);
+
+    &:hover {
+      color: rgba(#fff, 0.8);
+    }
+  }
 
   > .left, > .right {
     padding: $space-xxs;
@@ -25,14 +43,19 @@
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $light-purple;
-  }
 
-  > .left, > .right > .nav-items > a {
-    padding: $space-xxs;
-    display: inline-block;
-    transition: all 0.3s ease;
+    > .nav-items > a {
+      padding: $space-xxs;
+      display: inline-block;
+      transition: all 0.3s ease;
 
-    &:hover { color: #fff; }
+      // shouldn't this be covered by a more general rule?
+      // as is, this says "only color on hover if the link is positioned AND is a nav-item"
+      // is this really what we want here?
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 
   > .left {
@@ -82,6 +105,10 @@
       > .nav-burger { display: block; }
     }
 
+    // this is getting really confusing, avoid multiple `@include medium-up` throughout
+    // your code.
+    // try to refactor this by clearly separating what is a mobile stylesheet, and what
+    // is the desktop one; you could even use different files here
     @include medium-up {
       > .nav-items {
         display: inline-block;
@@ -157,7 +184,8 @@
 
   }
 
-  > * { transition: all 0.3s ease; }
+  // why is this line needed?
+  // > * { transition: all 0.3s ease; }
 
   @include small-only {
     @include wrap-mobile;
