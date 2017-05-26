@@ -2,6 +2,7 @@
 
 exports[`the NavBar renders correctly 1`] = `
 <div
+  className=""
   id="navbar"
 >
   <a
@@ -25,6 +26,7 @@ exports[`the NavBar renders correctly 1`] = `
         className="right"
         duration={500}
         offset={0}
+        onClick={[Function]}
         smooth="easeInOutQuad"
         to="share"
       >
@@ -34,6 +36,7 @@ exports[`the NavBar renders correctly 1`] = `
         className="right"
         duration={500}
         offset={0}
+        onClick={[Function]}
         smooth="easeInOutQuad"
         to="about-page"
       >

@@ -5,6 +5,7 @@ exports[`Home renders correctly 1`] = `
   id="home"
 >
   <div
+    className=""
     id="navbar"
   >
     <a
