@@ -9,6 +9,11 @@
     margin-bottom: $space-xs;
     margin-top: $space-xl;
 
+    @include medium-only {
+      @include wrap-mobile;
+      margin-bottom: $space-xs;
+    }
+
     @include large-up {
       @include grid(6);
       @include offsetLeft(3);
@@ -27,6 +32,12 @@
       @include small-only {
         line-height: $line-height-roomy;
       }
+    }
+
+    @include medium-only {
+      @include wrap-mobile;
+      display: flex;
+      align-items: center;
     }
 
     @include large-up {

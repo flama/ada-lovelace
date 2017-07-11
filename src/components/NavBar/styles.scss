@@ -2,13 +2,15 @@
 
 #navbar {
   @include wrap-mobile;
+  padding-top: $space-l;
+  height: 15vh;
 
   > .left, > .right { padding: $space-xxxs; }
   > .right { margin-left: $space-xxs; }
 
   @include medium-only {
-    @include grid(6);
-    @include offsetLeft(1);
+    // isn't this redundant with line 4?
+    @include wrap-mobile;
   }
 
   @include large-up {
@@ -16,20 +18,44 @@
     @include offsetLeft(1);
   }
 
-  height: 15vh;
+  &.-open > a {
+    position: fixed;
+    left: 30%;
+    transform: translate(-20%, 0);
+    bottom: 4rem;
+    z-index: 999;
+    text-align: center;
+
+    font-size: 1.188rem;
+    line-height: 1.625rem;
+    text-transform: uppercase;
+    color: rgb(153, 137, 178);
+
+    &:hover {
+      color: rgba(#fff, 0.8);
+    }
+  }
 
   > .left, > .right {
-    margin-top: $space-m;
-
-    @include medium-up {
-      margin-top: $space-xl;
-    }
     padding: $space-xxs;
     font-size: $font-size-centi;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: $light-purple;
+
+    > .nav-items > a {
+      padding: $space-xxs;
+      display: inline-block;
+      transition: all 0.3s ease;
+
+      // shouldn't this be covered by a more general rule?
+      // as is, this says "only color on hover if the link is positioned AND is a nav-item"
+      // is this really what we want here?
+      &:hover {
+        color: #fff;
+      }
+    }
   }
 
   > .left {
@@ -40,10 +66,131 @@
   > .right {
     display: block;
     float: right;
-    margin-left: $space-xs;
+    position: relative;
+
+    > .nav-items > a {
+      margin-left: $space-xs;
+    }
+
+    @include small-only {
+      > .nav-items {
+        max-height: 0;
+        width: 100vw;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        opacity: 0;
+        transition: all 0.3s ease;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 888;
+        background-color: rgba(#000, 0.7);
+
+        > a {
+          margin-bottom: $space-l;
+          font-size: $font-size-kilo;
+          color: #fff;
+          text-transform: lowercase;
+          margin-left: 0;
+
+          &:hover {
+            color: rgba(#fff, 0.8);
+          }
+        }
+      }
+      > .nav-burger { display: block; }
+    }
+
+    // this is getting really confusing, avoid multiple `@include medium-up` throughout
+    // your code.
+    // try to refactor this by clearly separating what is a mobile stylesheet, and what
+    // is the desktop one; you could even use different files here
+    @include medium-up {
+      > .nav-items {
+        display: inline-block;
+        > a { opacity: 1; }
+      }
+      > .nav-burger { display: none; }
+    }
+
+    > .nav-burger {
+      width: 3rem;
+      height: 3rem;
+      cursor: pointer;
+      position: relative;
+      top: -$space-s;
+      right: -$space-xs;
+
+      &:hover { color: #fff; }
+
+      &:before,
+      &:after {
+        content: '';
+        width: 20px;
+        height: 2px;
+
+        background-color: currentColor;
+
+        display: block;
+        position: absolute;
+
+        transition: all 0.3s ease;
+      }
+
+      &:before {
+        top: 17px;
+        left: 13px;
+        box-shadow: 0 12px 0 0 currentColor;
+      }
+
+      &:after {
+        top: 23px;
+        left: 13px;
+      }
+
+      &.-open {
+        position: fixed;
+        top: $space-m;
+        right: $space-xs;
+        z-index: 999;
+
+        + .nav-items {
+          opacity: 1;
+          max-height: 100vh;
+        }
+
+        &:before,
+        &:after {
+          top: 23px;
+          left: 11px;
+          width: 24px;
+        }
+
+        &:before {
+          transform: rotate(45deg);
+          box-shadow: 0 0 0 0 transparent;
+        }
+
+        &:after {
+          transform: rotate(-45deg);
+        }
+      }
+
+    }
+
   }
 
-  > * { transition: all 0.3s ease; }
+  // why is this line needed?
+  // > * { transition: all 0.3s ease; }
 
-  > *:hover { color: #fff; }
+  @include small-only {
+    @include wrap-mobile;
+
+    > .left, > .right  > .nav-items > a { padding: $space-xxxs; }
+    > .right > .right > .nav-items > a { margin-left: $space-xxs; }
+  }
 }

@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 
@@ -25,7 +24,7 @@ describe("ExpansibleScatterRow", () => {
   })
 
   it("should render categories corretly", () => {
-    expect(expansible).toMatchSnapshot()
+    expect(toJSON(expansible)).toMatchSnapshot()
   })
 
   it("should render subcategories correctly", () => {
@@ -40,7 +39,7 @@ describe("ExpansibleScatterRow", () => {
         array: []
       }, domain
     })
-    expect(expansible).toMatchSnapshot()
+    expect(toJSON(expansible)).toMatchSnapshot()
   })
 
   it("shouldn't render more than 20 items in the same 11 year period", () => {
@@ -60,6 +59,6 @@ describe("ExpansibleScatterRow", () => {
           datum, datum, datum, datum, datum, datum, datum]
       }, domain
     })
-    expect(expansible).toMatchSnapshot()
+    expect(toJSON(expansible)).toMatchSnapshot()
   })
 })

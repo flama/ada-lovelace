@@ -1,0 +1,9 @@
+#app {
+  overflow-x: hidden;
+
+  @media (max-width: #{640px}) {
+    &.-open {
+      overflow: hidden;
+    }
+  }
+}

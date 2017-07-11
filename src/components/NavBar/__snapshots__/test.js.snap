@@ -2,6 +2,7 @@
 
 exports[`the NavBar renders correctly 1`] = `
 <div
+  className=""
   id="navbar"
 >
   <a
@@ -11,17 +12,37 @@ exports[`the NavBar renders correctly 1`] = `
   >
     made with ♥ by flama
   </a>
-  <a
+  <div
     className="right"
-    onClick={[Function]}
   >
-    share
-  </a>
-  <a
-    className="right"
-    onClick={[Function]}
-  >
-    about us
-  </a>
+    <div
+      className="nav-burger"
+      onClick={[Function]}
+    />
+    <div
+      className="nav-items"
+    >
+      <_
+        className="right"
+        duration={500}
+        offset={0}
+        onClick={[Function]}
+        smooth="easeInOutQuad"
+        to="share"
+      >
+        share
+      </_>
+      <_
+        className="right"
+        duration={500}
+        offset={0}
+        onClick={[Function]}
+        smooth="easeInOutQuad"
+        to="about-page"
+      >
+        about us
+      </_>
+    </div>
+  </div>
 </div>
 `;

@@ -1,4 +1,5 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 import NavBar from '../NavBar'
 
 import './home.png'
@@ -6,7 +7,7 @@ import './styles.scss'
 
 const Home = props => (
   <section id="home">
-    <NavBar current="home" />
+    <NavBar open={ props.open } toggleMenu={ props.toggleMenu } />
     <div className="body">
       <h1>wikimina</h1>
       <p>{ `Both men and women have crafted the world as we know it.
@@ -15,5 +16,10 @@ const Home = props => (
     </div>
   </section>
 )
+
+Home.propTypes = {
+  open: PropTypes.bool,
+  toggleMenu: PropTypes.func,
+}
 
 export default Home

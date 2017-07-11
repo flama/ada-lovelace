@@ -38,6 +38,7 @@ html {
 body {
   line-height: 1;
   background-image: linear-gradient(to right, $background-left, $background-right);
+  overflow-x: hidden;
 }
 
 ol, ul {
