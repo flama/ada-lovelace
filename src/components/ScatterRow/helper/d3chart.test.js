@@ -7,6 +7,8 @@ describe('d3chartHelper', () => {
   let Ball = {}
   const body = document.getElementsByTagName('body')[0]
 
+  let getBalls = () => d3.selectAll('.d3-point')
+
   beforeAll(() => {
     state = {
       domain: {
@@ -51,9 +53,9 @@ describe('d3chartHelper', () => {
     })
 
     it('makes all the balls grow', () => {
-      expect(parseInt(getBalls().attr('r'))).toBe(0)
+      expect(+(getBalls().attr('r'))).toBe(0)
       d3.timerFlush()
-      expect(parseInt(getBalls().attr('r'))).toBe(5)
+      expect(+(getBalls().attr('r'))).toBe(5)
     })
   })
 
@@ -81,8 +83,6 @@ describe('d3chartHelper', () => {
       expect(Ball.shrink).toHaveBeenCalled()
     })
   })
-
-  let getBalls = () => d3.selectAll('.d3-point')
 
   function fireEvent(el, etype) {
     if(Event) {

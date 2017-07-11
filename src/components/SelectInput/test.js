@@ -1,5 +1,4 @@
 import React from 'react'
-import ReactDOM from 'react-dom'
 import { mount } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 
