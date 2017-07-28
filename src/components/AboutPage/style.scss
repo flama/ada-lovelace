@@ -4,22 +4,6 @@
   padding-top: $space-xl;
   padding-bottom: $space-m;
 
-  > h2 { margin-bottom: $space-s; }
-
-  > h3 {
-    margin-bottom: $space-s;
-    margin-top: $space-xl;
-  }
-
-  > .content {
-    margin-bottom: $space-m;
-
-    > p {
-      color: $text-purple;
-      margin-bottom: $space-m;
-    }
-  }
-
   @include large-up {
     @include grid(6);
     @include offsetLeft(3);
@@ -29,8 +13,8 @@
     }
 
     > h3 {
-      margin-bottom: $space-s;
       margin-top: 0;
+      margin-bottom: $space-s;
     }
 
     > .content {
@@ -39,6 +23,22 @@
       > p { margin-bottom: $space-m; }
     }
   }
-
   @include wrap-mobile;
+
+  > h2 { margin-bottom: $space-s; }
+
+  > h3 {
+    margin-top: $space-xl;
+    margin-bottom: $space-s;
+  }
+
+  > .content {
+    margin-bottom: $space-m;
+
+    > p {
+      margin-bottom: $space-m;
+
+      color: $text-purple;
+    }
+  }
 }

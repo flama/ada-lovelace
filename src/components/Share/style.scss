@@ -26,11 +26,14 @@
       color: #fff;
       opacity: 0.3;
     }
+  }
 
-    button, .SocialMediaShareButton {
-      display: inline-block;
-      @include button;
-    }
+  > .content > .button {
+    @include button;
+    margin-left: 0;
 
+    padding: 12px 36px;
+
+    font-size: $font-size-base;
   }
 }

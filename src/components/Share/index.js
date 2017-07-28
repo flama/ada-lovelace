@@ -1,39 +1,21 @@
 import React from 'react'
 import { Element } from 'react-scroll'
-import { ShareButtons } from 'react-share'
 
 import './style.scss'
 
-const {
-  FacebookShareButton,
-  TwitterShareButton
-} = ShareButtons
-
 const Share = props => {
-  const host = "http://wikimina.flama.is"
-
   return (
     <Element name="share" id="share">
       <div className="content">
         <h3>share</h3>
         <p>
           { `We envision an ever-growing platform, crowdsourced by people everywhere, helping us show women who somehow have created an impact in our world!
-         Until then, you can help us by spreading the word of Wikimina :)` }
+          ` }
         </p>
-        <div className="actions">
-          <FacebookShareButton url={ host }
-            description={
-              `Inspiring and helping to create representativity so more women become badasses.`
-            }>
-            Facebook
-          </FacebookShareButton>
-          <TwitterShareButton url={ host }
-            title="Wikimina"
-            via="studioflama"
-            hashtags={['wikimina', 'grrlpower', 'whyhistorymatters', 'empoweringwomen']} >
-            Twitter
-          </TwitterShareButton>
-        </div>
+        <p>
+          {`Just click bellow and you can tell us who are the amazing women that inspire you and made a dent in our world.`}
+        </p>
+        <a href="https://flama.typeform.com/to/RHoEAz" target="_blank" className="button">Keep Inspiring!</a>
       </div>
     </Element>
   )

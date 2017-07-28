@@ -1,25 +1,36 @@
 @import '../../config';
 
 #footer {
-  width: 100%;
+  width: 84vw;
+  height: 60px;
+  margin: 0 auto;
+
+  @include medium-only {
+    width: 100%;
+  }
+
+  @include small-only {
+    width: 100%;
+    height: 120px;
+  }
 
   > .content {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    @include small-only {
+      align-items: flex-start;
+    }
+
+    @include medium-up {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
     @include wrap-mobile;
-    padding-top: $space-m;
-    padding-bottom: $space-m;
-
-    @include medium-only {
-      @include wrap-mobile;
-      padding-top: $space-xs;
-      padding-bottom: $space-xs;
-    }
-
-    @include large-up {
-      @include grid(2);
-      @include offsetLeft(1);
-      padding-top: $space-xs;
-      padding-bottom: $space-xs;
-    }
 
     > .link {
       font-size: $font-size-centi;
@@ -29,6 +40,28 @@
       transition: all 0.3s ease;
 
       &:hover { color: #fff; }
+
+      @include small-only {
+        margin-bottom: $space-xs;
+      }
     }
   }
+
+  > .content > .actions > span {
+    font-size: $font-size-deci;
+    text-transform: uppercase;
+    color: $light-purple;
+    margin-right: $space-xxs;
+    letter-spacing: 1px;
+  }
+
+  > .content > button, .SocialMediaShareButton {
+    display: inline-block;
+    @include button;
+
+    @include small-only {
+      margin-right: $space-xxs;
+    }
+  }
+
 }

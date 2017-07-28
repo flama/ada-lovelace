@@ -25,7 +25,7 @@
     @include wrap-mobile;
 
     > p {
-      margin-bottom: $space-xl;
+      margin-bottom: $space-m;
       font-size: $font-size-base;
       line-height: $line-height-base;
 
@@ -45,9 +45,11 @@
       @include offsetLeft(3);
       display: flex;
       align-items: center;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
     }
   }
-
+  
   > .wrapper {
     padding-top: $space-xxl;
     padding-bottom: $space-xxl;
