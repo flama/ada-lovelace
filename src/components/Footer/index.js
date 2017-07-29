@@ -19,7 +19,7 @@ const Footer = props => {
           made with ♥ by flama
         </a>
         <div className="actions">
-          <span>Share:</span>
+          <span>Share</span>
           <FacebookShareButton url={ host }
             description={
               `Inspiring and helping to create representativity so more women become badasses.`
