@@ -4,6 +4,7 @@
   width: 100%;
   overflow: auto;
   background-color: rgba(#000, 0.2);
+  padding-bottom: 20px;
 
   > .content {
     @include wrap-mobile;

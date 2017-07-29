@@ -7,7 +7,7 @@ const Share = props => {
   return (
     <Element name="share" id="share">
       <div className="content">
-        <h3>share</h3>
+        <h3>Collaborate with Wikimina</h3>
         <p>
           { `We envision an ever-growing platform, crowdsourced by people everywhere, helping us show women who somehow have created an impact in our world!
           ` }
